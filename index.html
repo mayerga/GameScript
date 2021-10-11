@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameScript</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="head" id="inicio">
+        
+        <nav class="menu-navegacion">
+            <a href="https://drive.google.com/drive/folders/1vpRbUDu_MUxJYO_n6WkyApzATLtB1vic?usp=sharing">Drive</a>
+            <a href="https://trello.com/b/4fzQYHMN/icc02p9-desarrollo-fullstack">Trello</a>
+        </nav>
+        <div class="contenedor-head">
+           <h1 class="titulo"> ¿Preparados para la partida?</h1>
+           <p class="copy">Recuerden leer las instrucciones antes de empezar</p>
+
+        </div>
+    </header>
+
+    <section class="Explicacion-proyecto" id="explicacion">
+        <h2 class="subtitulo">Instrucciones del juego</h2>
+        <div class="contenedor-explicacion">
+            <img src="img/checklist-explicacion2.png" alt="">
+            <div class="checklist">
+                <div class="checklist-explicacion">
+                    <h3 class="n-service"><span class="number">1</span>Primero lee las instrucciones del juevo</h3>
+                        <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, aspernatur. Repellendus, quas ea consequatur natus, voluptatem nostrum iure fuga atque laboriosam deserunt laborum fugiat eos velit est reprehenderit voluptas molestiae.
+                        </p>
+                </div>
+                <div class="checklist-explicacion">
+                    <h3 class="n-service"><span class="number">2</span>Cuantos jugadores van a participar</h3>
+                        <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, aspernatur. Repellendus, quas ea consequatur natus, voluptatem nostrum iure fuga atque laboriosam deserunt laborum fugiat eos velit est reprehenderit voluptas molestiae.
+                        </p>
+                </div>
+                <div class="checklist-explicacion">
+                    <h3 class="n-service"><span class="number">3</span>¿En local o en linea?</h3>
+                        <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, aspernatur. Repellendus, quas ea consequatur natus, voluptatem nostrum iure fuga atque laboriosam deserunt laborum fugiat eos velit est reprehenderit voluptas molestiae.
+                        </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="partida" id="partidaId">
+        <div class="contenedor-partida">
+            <h2>Elija avatar y arrastre a su derecha</h2>
+            <div class="jugadores">
+                <form action="" id="form">
+                    <img src="img/funko1.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+                <form action="" id="form">
+                    <img src="img/funko2.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+                
+                <form action="" id="form">
+                    <img src="img/funko3.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+                
+                <form action="" id="form">
+                    <img src="img/funko4.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+                
+                <form action="" id="form">
+                    <img src="img/funko5.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+                
+                <form action="" id="form">
+                    <img src="img/funko6.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+            </div>
+            <div class="jugadores-elegidos">
+                <h2>Jugadxr o jugadorxs elegidos, máximo 4 jugadores</h2>
+            </div>
+        </div>
+
+    </section>
+
+    
+</body>
+</html>
