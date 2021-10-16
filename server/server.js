@@ -1,15 +1,15 @@
 const http = require('http');
 const fs = require('fs');
+const router =require('./router/router.js');
 
-const serverConfigFile = fs.readSync(`${__dirname}/config/env.json`,'utf-8');
-console.log(serverConfigFile);
-const hostname = '127.0.0.1';
-const port = 3000;
+const serverConfigFile = fs.readFileSync(`${__dirname}/config/env.json`,'utf-8');
+
+const serverConfig = JSON.parse(serverConfigFile);
+const hostname = serverConfig['hostname'];
+const port = serverConfig['port'];
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+  router.init(req,res);
 });
 
 server.listen(port, hostname, () => {
