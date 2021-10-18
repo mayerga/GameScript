@@ -28,7 +28,7 @@ exports.init = function (req, res) {
     );
   }
   //Añadido elementos carpeta IMG P.W
-  else if (path.match("\.img$")){
+  else if (path.match("\.img")){
     res.setHeader("Content-Type",IMG_CONTENT_TYPE);
       const css = fs.readFile(
         `${__dirname}/../public/`+path,
@@ -43,7 +43,7 @@ exports.init = function (req, res) {
       );
   } 
   //Añadido elementos carpeta CSS P.W
-  else if (path.match("\.css$")){
+  else if (path.match("\.css")){
     res.setHeader("Content-Type",CSS_CONTENT_TYPE);
       const css = fs.readFile(
         `${__dirname}/../public/`+path,

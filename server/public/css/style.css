@@ -12,7 +12,7 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 .menu-navegacion{
-    color: white;
+    color: rgb(212, 71, 71);
 
 }
 .contenedor{
@@ -23,7 +23,7 @@ body{
     padding: 60px 0;
     
 }
-header{
+.contenedor-head{
     height: 100;
     background: linear-gradient(to top, rgba(235, 195, 163, 0.5) 0%, rgba(97, 79, 41, 0.5) 100%);
     color: rgb(58, 54, 54);
@@ -47,24 +47,35 @@ header{
     color: dimgray;
     margin-bottom: 40px;
     font-size: 40px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.tabler_img{
+     margin-left: 30px; margin-right: 30px;
 }
 .contenedor-explicacion{
     display: flex;
     justify-content:space-evenly;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
 }
 
-.contenedor-explicacion img{
-    width: 20%;
-    
 
-}
 .checklist{
-    width: 45%;
+    width: 100%;
+
+}
+.center-block{
+    float:none
 }
 
+.tablero{
+    margin-bottom: 10px;
+    margin-bottom: 7px;
+    color: dimgray;
+}
 .checklist-explicacion{
     
     margin-bottom: 10px;
