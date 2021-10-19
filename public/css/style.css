@@ -113,3 +113,6 @@ body{
 .jugadores-elegidos{
     padding: 10px;
 }
+.card{
+    background-color: rgb(92, 78, 70);
+}
