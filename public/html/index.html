@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameScript</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!--<header class="head" id="inicio"> -->
+    <div class="container-responsive">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark menu-navegacion">
+
+
+            <a class="navbar-brand col-fluid"
+                href="https://drive.google.com/drive/folders/1vpRbUDu_MUxJYO_n6WkyApzATLtB1vic?usp=sharing">
+                <img src="img/drive.png" alt="" width="20" height="20" class="d-inline-block align-text-center">
+                Drive
+            </a>
+
+            <a class="navbar-brand col-fluid" href="https://trello.com/b/4fzQYHMN/icc02p9-desarrollo-fullstack">
+                <img src="img/trello.png" alt="" width="20" height="20" class="d-inline-block align-text-center">
+                Trello
+            </a>
+
+            <form class="d-flex col-fluid">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+
+
+
+        </nav>
+
+        <div class="contenedor-head">
+            <h1 class="titulo"> ¿Preparados para la partida?</h1>
+            <p class="copy">Recuerden leer las instrucciones antes de empezar</p>
+
+        </div>
+    </div>
+
+
+    <section class="Explicacion-proyecto" id="explicacion">
+        <h2 class="subtitulo">Instrucciones del juego</h2>
+        <div class="contenedor-explicacion">
+
+
+            <div class="container pt-50"></div>
+            <div class="checklist">
+
+                <div class="checklist-explicacion">
+                    <div class="row">
+                        <div class="col-4 col-md-4 col-sm-4 col-lg-4 col-xl-4 ">
+                            <img src="img/checklist-explicacion1.jpg" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="col-8 col-md-8 col-sm-10 col-lg-8 col-xl-8">
+
+                            <h3 class="n-service"><span class="number">1</span>Primero lee las instrucciones
+                                del
+                                juevo
+                            </h3>
+                            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, aspernatur.
+                                Repellendus,
+                                quas
+                                ea consequatur natus, voluptatem nostrum iure fuga atque laboriosam deserunt
+                                laborum
+                                fugiat
+                                eos
+                                velit est reprehenderit voluptas molestiae.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="checklist-explicacion">
+                    <div class="row">
+                        <div class="col-4 col-md-4 col-sm-4 col-lg-4 col-xl-4 ">
+                            <img src="img/checklist-explicacion2.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-8 col-md-8 col-sm-8 col-lg-8 col-xl-8">
+                            <h3 class="n-service"><span class="number">2</span>Cuantos jugadores van a
+                                participar
+                            </h3>
+                            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, aspernatur.
+                                Repellendus,
+                                quas
+                                ea consequatur natus, voluptatem nostrum iure fuga atque laboriosam deserunt
+                                laborum
+                                fugiat
+                                eos
+                                velit est reprehenderit voluptas molestiae.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="checklist-explicacion">
+                    <div class="row">
+                        <div class="col-4 col-md-4 col-sm-4 col-lg-4 col-xl-4 ">
+                            <img src="img/checklist-explicacion3.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-8 col-md-8 col-sm-8 col-lg-8 col-xl-8">
+                            <h3 class="n-service"><span class="number">3</span>¿En local o en linea?</h3>
+                            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, aspernatur.
+                                Repellendus,
+                                quas
+                                ea consequatur natus, voluptatem nostrum iure fuga atque laboriosam deserunt
+                                laborum
+                                fugiat
+                                eos
+                                velit est reprehenderit voluptas molestiae.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+    </section>
+
+    <section class="partida" id="partidaId">
+        <div class="contenedor-partida">
+            <h2>Elija avatar y arrastre a su derecha</h2>
+            <div class="jugadores">
+<!--
+                <div class="card">
+                    <div class="card-body">
+                        <img src="img/funko1.jpg" class="img-fluid" alt="">
+                        <h5 class="card-title">jugador 1</h5>
+                        <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                        <input type="text" name="age" id="age" placeholder="Edad"><br>
+                        <button type="button" onclick="getData()">Enviar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <img src="img/funko2.jpg" class="img-fluid" alt="">
+                        <h5 class="card-title">jugador 2</h5>
+                        <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                        <input type="text" name="age" id="age" placeholder="Edad"><br>
+                        <button type="button" onclick="getData()">Enviar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <img src="img/funko3.jpg" class="img-fluid" alt="">
+                        <h5 class="card-title">jugador 3</h5>
+                        <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                        <input type="text" name="age" id="age" placeholder="Edad"><br>
+                        <button type="button" onclick="getData()">Enviar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <img src="img/funko4.jpg" class="img-fluid" alt="">
+                        <h5 class="card-title">jugador 4</h5>
+                        <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                        <input type="text" name="age" id="age" placeholder="Edad"><br>
+                        <button type="button" onclick="getData()">Enviar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <img src="img/funko5.jpg" class="img-fluid" alt="">
+                        <h5 class="card-title">jugador 5</h5>
+                        <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                        <input type="text" name="age" id="age" placeholder="Edad"><br>
+                        <button type="button" onclick="getData()">Enviar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <img src="img/funko6.jpg" class="img-fluid" alt="">
+                        <h5 class="card-title">jugador 6</h5>
+                        <input class type="text" name="name" id="name" placeholder="Nombre"><br>
+                        <input type="text" name="age" id="age" placeholder="Edad"><br>
+                        <button type="button" onclick="getData()">Enviar</button>
+                    </div>
+                </div>
+                -->
+
+               
+                <form action="" id="form">
+                    <img src="img/funko1.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+                <form action="" id="form">
+                    <img src="img/funko2.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+
+                <form action="" id="form">
+                    <img src="img/funko3.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+
+                <form action="" id="form">
+                    <img src="img/funko4.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+
+                <form action="" id="form">
+                    <img src="img/funko5.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+
+                <form action="" id="form">
+                    <img src="img/funko6.jpg" alt=""><br>
+                    <input type="text" name="name" id="name" placeholder="Nombre"><br>
+                    <input type="text" name="age" id="age" placeholder="Edad"><br>
+                    <button type="button" onclick="getData()">Enviar</button>
+                </form>
+
+            </div>
+            <div class="jugadores-elegidos">
+                <h2>Jugadxr o jugadorxs elegidos, máximo 4 jugadores</h2>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
