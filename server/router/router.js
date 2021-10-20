@@ -16,7 +16,7 @@ exports.init = function (req, res) {
     res.setHeader("Content-Type", HTML_CONTENT_TYPE);
 
     const index = fs.readFile(
-      `${__dirname}/../../public/index.html`,
+      `${__dirname}/../../public/html/index.html`,
       (err, data) => {
         if (err) {
           console.log("error en la carga de index.html");
@@ -27,14 +27,15 @@ exports.init = function (req, res) {
       }
     );
   }
-  //Añadido elementos carpeta IMG P.W
-  else if (path.match("/../../public/.img")){
+
+  //Añadido elementos carpeta JPG P.W
+  else if (path.match("\.png$")){
     res.setHeader("Content-Type",IMG_CONTENT_TYPE);
       const css = fs.readFile(
-        `${__dirname}/../public/`+path,
+        `${__dirname}/../../public/`+path,
         (err, data) => {
           if (err) {
-            console.log("error en la carga de IMG");
+            console.log("error en la carga de IMG.jpg");
             res.end("error en la carga de" +path);
           } else {
             res.end(data);
@@ -42,12 +43,28 @@ exports.init = function (req, res) {
         }
       );
   } 
-  
+
+  //Añadido elementos carpeta PNG P.W
+  else if (path.match("\.jpg$")){
+    res.setHeader("Content-Type",IMG_CONTENT_TYPE);
+      const css = fs.readFile(
+        `${__dirname}/../../public/`+path,
+        (err, data) => {
+          if (err) {
+            console.log("error en la carga de IMG.png");
+            res.end("error en la carga de" +path);
+          } else {
+            res.end(data);
+          }
+        }
+      );
+  } 
+
   //Añadido elementos carpeta CSS P.W
-  else if (path.match("/../../public/.css")){
+  else if (path.match("\.css$")){
     res.setHeader("Content-Type",CSS_CONTENT_TYPE);
       const css = fs.readFile(
-        `${__dirname}/../public/`+path,
+        `${__dirname}/../../public/`+path,
         (err, data) => {
           if (err) {
             console.log("error en la carga de CSS");
