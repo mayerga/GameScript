@@ -16,7 +16,7 @@ exports.init = function (req, res) {
     res.setHeader("Content-Type", HTML_CONTENT_TYPE);
 
     const index = fs.readFile(
-      `${__dirname}/../public/index.html`,
+      `${__dirname}/../../public/index.html`,
       (err, data) => {
         if (err) {
           console.log("error en la carga de index.html");
@@ -28,7 +28,7 @@ exports.init = function (req, res) {
     );
   }
   //Añadido elementos carpeta IMG P.W
-  else if (path.match("/../public/.img")){
+  else if (path.match("/../../public/.img")){
     res.setHeader("Content-Type",IMG_CONTENT_TYPE);
       const css = fs.readFile(
         `${__dirname}/../public/`+path,
@@ -42,8 +42,9 @@ exports.init = function (req, res) {
         }
       );
   } 
+  
   //Añadido elementos carpeta CSS P.W
-  else if (path.match("/../public/.css")){
+  else if (path.match("/../../public/.css")){
     res.setHeader("Content-Type",CSS_CONTENT_TYPE);
       const css = fs.readFile(
         `${__dirname}/../public/`+path,
