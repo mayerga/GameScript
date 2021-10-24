@@ -1,22 +1,23 @@
 //Modulo dentro de enrutado
 const fs = require("fs");
 const HTML_CONTENT_TYPE = "text/html";
+const ImportHTML_CONTENT_TYPE = "text/html";
 const CSS_CONTENT_TYPE = "text/css"
 const IMG_CONTENT_TYPE = "text/img"
+const JS_CONTENT_TYPE = "text/js"
 
 exports.init = function (req, res) {
   res.statusCode = 200;
 
   //path
   const path = req.url;
-  //console.log(path);
 
   //Enrutado
   if (path === "/") {
     res.setHeader("Content-Type", HTML_CONTENT_TYPE);
 
     const index = fs.readFile(
-      `${__dirname}/../../public/html/index.html`,
+      `${__dirname}/../../public/html/1_index.html`,
       (err, data) => {
         if (err) {
           console.log("error en la carga de index.html");
@@ -28,11 +29,27 @@ exports.init = function (req, res) {
     );
   }
 
-  //Añadido elementos carpeta JPG P.W
+  //Añadido elementos carpeta HTML
+  else if (path.match("\.html$")) {
+    res.setHeader("Content-Type", ImportHTML_CONTENT_TYPE);
+      const html = fs.readFile(
+        `${__dirname}/../../`+path,
+        (err, data) => {
+          if (err) {
+            console.log("error al cargar el archivo de HTML");
+            res.end("error en la carga de" +path);
+          } else {
+            res.end(data);
+          }
+        }
+      );
+  }
+
+  //Añadido elementos carpeta PNG 
   else if (path.match("\.png$")){
     res.setHeader("Content-Type",IMG_CONTENT_TYPE);
-      const css = fs.readFile(
-        `${__dirname}/../../public/`+path,
+      const png = fs.readFile(
+        `${__dirname}/../../`+path,
         (err, data) => {
           if (err) {
             console.log("error en la carga de IMG.jpg");
@@ -44,11 +61,11 @@ exports.init = function (req, res) {
       );
   } 
 
-  //Añadido elementos carpeta PNG P.W
+  //Añadido elementos carpeta JPG 
   else if (path.match("\.jpg$")){
     res.setHeader("Content-Type",IMG_CONTENT_TYPE);
-      const css = fs.readFile(
-        `${__dirname}/../../public/`+path,
+      const jpg = fs.readFile(
+        `${__dirname}/../../`+path,
         (err, data) => {
           if (err) {
             console.log("error en la carga de IMG.png");
@@ -60,21 +77,39 @@ exports.init = function (req, res) {
       );
   } 
 
-  //Añadido elementos carpeta CSS P.W
+  //Añadido elementos carpeta CSS 
   else if (path.match("\.css$")){
     res.setHeader("Content-Type",CSS_CONTENT_TYPE);
       const css = fs.readFile(
-        `${__dirname}/../../public/`+path,
+        `${__dirname}/../../`+path,
         (err, data) => {
           if (err) {
-            console.log("error en la carga de CSS");
+            console.log("error al cargar el archivo CSS");
             res.end("error en la carga de" +path);
           } else {
             res.end(data);
           }
         }
       );
-      } else {
+ } 
+      
+  //Añadido elementos carpeta JS
+  else if (path.match("\.js$")){
+    res.setHeader("Content-Type",JS_CONTENT_TYPE);
+      const js = fs.readFile(
+        `${__dirname}/../../`+path,
+        (err, data) => {
+          if (err) {
+            console.log("error en la carga de JavaScript");
+            res.end("error en la carga de" +path);
+          } else {
+            res.end(data);
+          }
+        }
+      );
+ } 
+
+  else {
     res.setHeader("Content-Type", HTML_CONTENT_TYPE);
     res.end("Otra Cualquiera");
   }
