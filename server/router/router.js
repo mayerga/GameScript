@@ -1,6 +1,6 @@
 //Modulo dentro de enrutado
 const fs = require("fs");
-const HTML_CONTENT_TYPE = "text/html";
+const INDEX_CONTENT_TYPE = "text/html";
 const ImportHTML_CONTENT_TYPE = "text/html";
 const CSS_CONTENT_TYPE = "text/css"
 const IMG_CONTENT_TYPE = "text/img"
@@ -14,8 +14,7 @@ exports.init = function (req, res) {
 
   //Enrutado
   if (path === "/") {
-    res.setHeader("Content-Type", HTML_CONTENT_TYPE);
-
+    res.setHeader("Content-Type", INDEX_CONTENT_TYPE);
     const index = fs.readFile(
       `${__dirname}/../../public/html/1_index.html`,
       (err, data) => {
