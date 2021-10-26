@@ -1,4 +1,4 @@
-//Carga de módulos
+//Carga de módulos (Componentes que necesitamos dentro de nuestro desarrollo)
 const http = require('http');
 const fs = require('fs');
 const router =require('./router/router.js');

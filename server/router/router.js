@@ -44,7 +44,7 @@ exports.init = function (req, res) {
       );
   }
 
-  //Añadido elementos carpeta PNG 
+  //Añadido elementos carpeta PNG
   else if (path.match("\.png$")){
     res.setHeader("Content-Type",IMG_CONTENT_TYPE);
       const png = fs.readFile(
@@ -58,9 +58,9 @@ exports.init = function (req, res) {
           }
         }
       );
-  } 
+  }
 
-  //Añadido elementos carpeta JPG 
+  //Añadido elementos carpeta JPG
   else if (path.match("\.jpg$")){
     res.setHeader("Content-Type",IMG_CONTENT_TYPE);
       const jpg = fs.readFile(
@@ -74,9 +74,9 @@ exports.init = function (req, res) {
           }
         }
       );
-  } 
+  }
 
-  //Añadido elementos carpeta CSS 
+  //Añadido elementos carpeta CSS
   else if (path.match("\.css$")){
     res.setHeader("Content-Type",CSS_CONTENT_TYPE);
       const css = fs.readFile(
@@ -90,8 +90,8 @@ exports.init = function (req, res) {
           }
         }
       );
- } 
-      
+ }
+
   //Añadido elementos carpeta JS
   else if (path.match("\.js$")){
     res.setHeader("Content-Type",JS_CONTENT_TYPE);
@@ -106,10 +106,10 @@ exports.init = function (req, res) {
           }
         }
       );
- } 
+ }
 
   else {
-    res.setHeader("Content-Type", HTML_CONTENT_TYPE);
+    res.setHeader("Content-Type", JS_CONTENT_TYPE);
     res.end("Otra Cualquiera");
   }
 };
