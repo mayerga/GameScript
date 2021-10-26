@@ -2,7 +2,7 @@
 //Modulo dentro de enrutado
 const fs = require("fs");
 const INDEX_CONTENT_TYPE = "text/html";
-const ImportHTML_CONTENT_TYPE = "text/html";
+const HTML_CONTENT_TYPE = "text/html";
 const CSS_CONTENT_TYPE = "text/css"
 const IMG_CONTENT_TYPE = "text/img"
 const JS_CONTENT_TYPE = "text/js"
@@ -31,7 +31,7 @@ exports.init = function (req, res) {
 
   //Añadido elementos carpeta HTML
   else if (path.match("\.html$")) {
-    res.setHeader("Content-Type", ImportHTML_CONTENT_TYPE);
+    res.setHeader("Content-Type", HTML_CONTENT_TYPE);
       const html = fs.readFile(
         `${__dirname}/../../`+path,
         (err, data) => {
