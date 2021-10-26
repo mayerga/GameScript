@@ -1,3 +1,4 @@
+/*Fichero para generar o analizar las peticiones que nos lleguen del usuario*/
 //Modulo dentro de enrutado
 const fs = require("fs");
 const INDEX_CONTENT_TYPE = "text/html";
