@@ -1,4 +1,6 @@
-/*PERFILES AUTORES*/
+@import "0_general.css";
+
+/* ------------- PERFILES AUTORES ------------- */
 .autores{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -14,7 +16,7 @@
     column-gap: 10px;
 }
 
-/*FORMULARIO CONTACTO*/
+/* ----------- FORMULARIO CONTACTO ----------- */
 .contContacto{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -22,7 +24,6 @@
 .contContacto-fomulario {
     margin-left: auto;
     margin-right: auto;
-    border: solid black;
     padding: 10px;
     max-width: 680px;
 }
@@ -33,7 +34,7 @@
     margin-top: 10px;
 }
 
-/*SNIPPET FORO*/
+/* -------------- SNIPPET FORO -------------- */
 .tarjetas{
     padding-top: 20px;
     padding-bottom: 20px;
