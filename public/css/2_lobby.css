@@ -1,8 +1,17 @@
 @import "general.css";
 
+    #contenedor-card{
+        background-color:  var(--verde3);/**/
+        border: 2cm black;
+        padding-top: 0.4cm;
+        margin-bottom: 1cm;
+        image-resolution: responsive;
+    }
+
     .card{
     background-color:  var(--verde3);/**/
     border: 2cm black;
+    padding-top: 0.4cm;
     margin-bottom: 1cm;
     image-resolution: responsive;
     }

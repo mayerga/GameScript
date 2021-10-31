@@ -48,11 +48,7 @@
     display: flex;
     justify-content: center;
 }
-.contenedor-tarjetas{
-    width: 2000px;
-}
 .tarjetas{
-    padding-top: 20px;
     padding-bottom: 20px;
     display: grid;
     grid-gap: 10px;
@@ -73,4 +69,4 @@
     max-width: 1200px;
     height: 400px;
     overflow: auto;
-  }
+}
