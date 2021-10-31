@@ -1,21 +1,48 @@
 /* PALETA DE COLORES */
 :root{
-    --blanco: #ffffff;
-    --gris: #757575;
-    --grisClaro: #DFE9F3;
-    --verde1: #333d29;
-    --verde2: #414833;
-    --verde3: #656d4a;
-    --verde4: #a4ac86;
-    
+    --blanco:   #ffffff;
+    --gris:     #757575;
+    --grisClaro:#DFE9F3;
+    --verde1:   #333d29;
+    --verde2:   #414833;
+    --verde3:   #656d4a;
+    --verde4:   #a4ac86;
 }
 
 /* TIPOGRAFÍA */
+.titulo{
 
+}
+.subtitulo{
+
+}
+.parrafo_1{
+
+}
+.parrafo_2{
+
+}
+
+/* BACKGROUNDS */
 main{
     background-color: var(--verde3);
 }
-
-.contenedor-fomulario{
+.contenedor_1{
     background-color: var(--verde4);
 }
+.contenedor_2{
+    background-color: var(--verde4);
+}
+
+/* MEDIA_QUERIES */
+/*Todo lo que está por debajo de 1024px*/
+@media (max-width: 1024px) {
+}
+
+/*Todo lo que está por debajo de 768px*/
+@media (max-width:  768px) {
+}
+
+/*Todo lo que está por debajo de 480px*/
+@media (max-width:  480px) {
+}  

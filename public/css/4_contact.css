@@ -1,11 +1,15 @@
-.grid-contenedor-formulario{
+.contContacto{
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.contenedor-fomulario {
+.contContacto-fomulario {
     margin-left: auto;
     margin-right: auto;
     border: solid black;
     padding: 10px;
     max-width: 680px;
+}
+
+.contContacto-fomulario-submit{
+    margin-top: 10px;
 }
