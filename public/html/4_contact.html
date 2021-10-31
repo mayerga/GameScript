@@ -18,18 +18,59 @@
     <body>
         <!-- HEADDER IMPORTADO -->
         <include src="\public\html\0_header.html"></include>
-        <main>
+
+        <!-- MAIN -->
+        <main class="background-main">
+            <!-- MAIN FILA 1 -->
             <div class="row align-items-center Autores-Contacto">
-                <!-- AUTORES -->
-                <div class="col-sm autores" style="border: solid ; border-color: red;">
-                    <div class="Autor">Sergio</div>
-                    <div class="Autor">Kevin</div>
-                    <div class="Autor">Manuel</div>
-                    <div class="Autor">Julio</div>
+                <!-- CONTENEDOR AUTORES -->
+                <div class="col-sm autores">
+                    <!-- AUTOR SERGIO -->
+                    <div class="content autor contenedor_4">
+                        <img src="https://thumbs.dreamstime.com/z/garnished-gothic-style-font-letter-s-english-alphabets-monochrome-38519086.jpg" 
+                        alt="sergio" width="150px" height="150px">
+                        <div>
+                            <h3>Sergio Puchades</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo perspiciatis repellendus consequuntur ea. Laudantium quod, saepe rem esse accusantium voluptatibus explicabo consequatur sapiente perferendis aut nobis, ducimus qui, nesciunt enim!</p>
+                            <a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+                        </div>
+                    </div>
+                    <!-- AUTOR KEVIN -->
+                    <div class="content autor contenedor_4">
+                        <img src="https://thumbs.dreamstime.com/z/garnished-gothic-style-font-letter-k-english-alphabets-monochrome-38517707.jpg" 
+                        alt="sergio" width="150px" height="150px">
+                        <div>
+                            <h3>Kevin Pascual</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo perspiciatis repellendus consequuntur ea. Laudantium quod, saepe rem esse accusantium voluptatibus explicabo consequatur sapiente perferendis aut nobis, ducimus qui, nesciunt enim!</p>
+                            <a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+                        </div>
+                    </div>
+                    <!-- AUTOR MANUEL -->
+                    <div class="content autor contenedor_4">
+                        <img src="https://thumbs.dreamstime.com/z/garnished-gothic-style-font-letter-m-english-alphabets-monochrome-38517528.jpg" 
+                        alt="sergio" width="150px" height="150px">
+                        <div>
+                            <h3>Manuel Garcia</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo perspiciatis repellendus consequuntur ea. Laudantium quod, saepe rem esse accusantium voluptatibus explicabo consequatur sapiente perferendis aut nobis, ducimus qui, nesciunt enim!</p>
+                            <a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+                        </div>
+                    </div>
+                    <!-- AUTOR JULIO -->
+                    <div class="content autor contenedor_4">
+                        <img src="https://thumbs.dreamstime.com/b/garnished-gothic-style-font-letter-j-english-alphabets-monochrome-38517478.jpg" 
+                        alt="sergio" width="150px" height="150px">
+                        <div>
+                            <h3>Julio César Asto</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo perspiciatis repellendus consequuntur ea. Laudantium quod, saepe rem esse accusantium voluptatibus explicabo consequatur sapiente perferendis aut nobis, ducimus qui, nesciunt enim!</p>
+                            <a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+                        </div>
+                    </div>
                 </div>
-                <!-- CONTACTO -->
-                <div class="col-sm contContacto" style="border: solid ; border-color: blue;">
-                    <form class = "contContacto-fomulario contenedor_1">
+
+                <!-- CONTENEDOR CONTACTO -->
+                <div class="col-sm contContacto">
+                    <form class = "contContacto-fomulario contenedor_4">
+                        <p class = "subtitulo">ENVIANOS TU CONSULTA</p>
                         <div class="row">
                             <div class="col-sm">
                                 <label for="exampleFormControlInput1">Nombres</label>
@@ -48,21 +89,114 @@
                             <label for="exampleFormControlTextarea1">Example textarea</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
-                        <input class="btn btn-primary contContacto-fomulario-submit" type="submit" value="Enviar">
+                        <div class="contContacto-fomulario-submit">
+                            <input class="btn btn-primary" type="submit" value="Enviar">
+                        </div>
                     </form> <!-- .contContacto-fomulario -->
                 </div> <!-- .contContacto -->
             </div>
 
-            <!-- FORO -->
-            <div class="row align-items-center Autores-Contacto">
-                <div class="col-sm Autores" style="border: solid ; border-color: yellow;">
-                    <div class="Autor">Sergio</div>
-                    <div class="Autor">Kevin</div>
-                    <div class="Autor">Manuel</div>
-                    <div class="Autor">Julio</div>
+            <!-- MAIN FILA 2 -->
+            <!-- CONTENEDOR FORO -->
+            <div class="contForo">
+                <!-- TARJETAS -->
+                <div class="contenedor_1 tarjetas">
+                    <!-- TARJETA_1 -->
+                    <div class="container tarjetas-tarjeta contenedor_3">
+                        <!-- TARJETA_Imagen -->
+                        <div>       
+                            <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-circle" width="80px" alt="User" /></a>
+                        </div>
+                        <!-- TARJETA_Texto -->     
+                        <div>
+                            <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">Está web es una mierda</a></h6>
+                            <p>
+                                lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.
+                            </p>
+                            <p class="text-muted"><a href="javascript:void(0)">drewdan</a> replied <span class="text-secondary font-weight-bold">13 minutes ago</span></p>
+                        </div>
+                    </div>
+                    <!-- TARJETA_2 -->
+                    <div class="container tarjetas-tarjeta contenedor_3">
+                        <!-- TARJETA_Imagen -->
+                        <div>
+                            <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="mr-3 rounded-circle" width="80px" alt="User" /></a>
+                        </div>
+                        <!-- TARJETA_Texto -->   
+                        <div>
+                            <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">Laravel 7 database backup</a></h6>
+                            <p>
+                                lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                            </p>
+                            <p class="text-muted"><a href="javascript:void(0)">jlrdw</a> replied <span class="text-secondary font-weight-bold">3 hours ago</span></p>
+                        </div>
+                    </div>
+
+                    <!-- TARJETA_3 -->
+                    <div class="container tarjetas-tarjeta contenedor_3">
+                        <!-- TARJETA_Imagen -->
+                        <div>
+                            <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="mr-3 rounded-circle" width="80px" alt="User" /></a>
+                        </div>
+                        <!-- TARJETA_Texto -->   
+                        <div>
+                            <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">Http client post raw content</a></h6>
+                            <p>
+                                lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                            </p>
+                            <p class="text-muted"><a href="javascript:void(0)">ciungulete</a> replied <span class="text-secondary font-weight-bold">7 hours ago</span></p>
+                        </div>
+                    </div>
+
+                    <!-- TARJETA_4 -->
+                    <div class="container tarjetas-tarjeta contenedor_3">
+                        <!-- TARJETA_Imagen -->
+                        <div>
+                            <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="mr-3 rounded-circle" width="80px" alt="User" /></a>
+                        </div>
+                        <!-- TARJETA_Texto --> 
+                        <div>
+                            <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">Top rated filter not working</a></h6>
+                            <p>
+                                lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                            </p>
+                            <p class="text-muted"><a href="javascript:void(0)">bugsysha</a> replied <span class="text-secondary font-weight-bold">11 hours ago</span></p>
+                        </div>
+                    </div>
+
+                    <!-- TARJETA_5 -->
+                    <div class="container tarjetas-tarjeta contenedor_3">
+                        <!-- TARJETA_Imagen -->
+                        <div>
+                            <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="mr-3 rounded-circle" width="80px" alt="User" /></a>
+                        </div>
+                        <!-- TARJETA_Texto --> 
+                        <div>
+                            <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">Create a delimiter field</a></h6>
+                            <p>
+                                lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                            </p>
+                            <p class="text-muted"><a href="javascript:void(0)">jackalds</a> replied <span class="text-secondary font-weight-bold">12 hours ago</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Forum List -->
+                    <ul class="pagination pagination-sm pagination-circle justify-content-center mb-0">
+                        <li class="page-item disabled">
+                            <span class="page-link has-icon"><i class="material-icons">chevron_left</i></span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
+                        <li class="page-item active"><span class="page-link">2</span></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link has-icon" href="javascript:void(0)"><i class="material-icons">chevron_right</i></a>
+                        </li>
+                    </ul>
                 </div>
+                <!-- /Forum List -->
             </div>
-        </main>
+            
+        </main> <!-- MAIN -->
 
         <!-- FOOTER IMPORTADO -->
         <include src="\public\html\9_footer.html"></include>
