@@ -123,11 +123,12 @@ tr, td, th{ border: 2px solid grey;
  }
 
 
- @media (max-width: 1090px) {
+ @media (min-width: 1024px) {
     .tableroChat{
         background-color:#656d4a;
-        display: inline-block;
-        height: 1550px;
+        display: inline-flex;
+
+        height: 750px;
         position: relative;
         
     }
@@ -142,6 +143,7 @@ tr, td, th{ border: 2px solid grey;
         border-radius: 10px;
     }
     .tablero{
+        margin-top: 40px;
         background-color: #a68a64;
         width: 650px;
         height: 650px;
@@ -175,8 +177,10 @@ tr, td, th{ border: 2px solid grey;
          border-radius: 10px;
          width: 650px;
          height: 550px;
+         margin-bottom: auto;
          
       }
+    
     #chat2 .form-control {
         border-color: transparent;
       }
@@ -186,7 +190,7 @@ tr, td, th{ border: 2px solid grey;
         box-shadow: inset 0px 0px 0px 1px transparent;
       }
     }
-@media (max-width: 770px) {
+@media(min-width: 768px) and (max-width: 1023px) {
     .body{
         margin: auto;
     }
@@ -256,15 +260,15 @@ tr, td, th{ border: 2px solid grey;
         box-shadow: inset 0px 0px 0px 1px transparent;
       }
     }   
-    
-    @media (max-width: 450px) {
+   
+    @media (min-width: 350px) and (max-width: 767px) {
         .body{
-            margin: auto;
+            margin:auto;
         }
         .tableroChat{
             background-color:#656d4a;
             display: inline-block;
-            height: 1450px;
+            height: 1650px;
             
             
         }
@@ -272,8 +276,8 @@ tr, td, th{ border: 2px solid grey;
         .divTablero{
             
             justify-content: center;
-            width: 750px;
-            height: 750px;
+            width: 850px;
+            height: 850px;
             padding: auto;
             margin-top: auto;
             border-radius: 10px;
@@ -282,13 +286,14 @@ tr, td, th{ border: 2px solid grey;
             background-color: #a68a64;
             width: 650px;
             height: 650px;
-            width: 50%;
-            height: 50%;
+            width: 55%;
+            height: 55%;
             border-collapse: collapse;
             border-radius: 0.8em;
             overflow: hidden;
             border-radius: 10px;
-            margin-left: 35px;
+            margin-left: 45px;
+            margin-top: 80px;
         }
         .tablero tr{
             
@@ -310,13 +315,14 @@ tr, td, th{ border: 2px solid grey;
             
         }
         .chat{
-            margin: auto;
+            margin:auto;
              background-color:#a4ac86;
              margin-top: auto;
              border-radius: 10px;
              width: 60%;
             height: 60%;
             height: 500px;
+            
             
           }
         #chat2 .form-control {
