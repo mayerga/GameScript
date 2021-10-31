@@ -2,11 +2,19 @@
 
 /* ------------- PERFILES AUTORES ------------- */
 .autores{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.contenedor-autores{
+    max-width: 900px;
+    padding: 20px 10px 20px 10px;
     display: grid;
     grid-gap: 20px;
     justify-items: center;
+}
+.contTitulo{
+    display: flex;
+    justify-self: flex-start;
 }
 .autor{
     max-width: 900px;
@@ -35,6 +43,13 @@
 }
 
 /* -------------- SNIPPET FORO -------------- */
+.contForo{
+    padding: 20px;
+}
+.contenedor-tarjetas{
+    border: solid black;
+    width: 2000px;
+}
 .tarjetas{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -42,11 +57,19 @@
     grid-gap: 10px;
     justify-items: center;
 }
+
 .tarjetas-tarjeta{
+    margin-left: 10px;
     padding: 10px;
     column-gap: 20px;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: start;
-    
 }
+
+.my-custom-scrollbar {
+    position: relative;
+    max-width: 1200px;
+    height: 400px;
+    overflow: auto;
+  }
