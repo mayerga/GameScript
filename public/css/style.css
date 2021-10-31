@@ -114,5 +114,14 @@ body{
     padding: 10px;
 }
 .card{
-    background-color: rgb(92, 78, 70);
+    background-color: rgb(248, 247, 247);
+}
+/* CSS background pag-Lobby*/
+.BodyCenterLobby{
+    background-color: rgb(252, 225, 190);
+}
+/*CSS background y letra headerLobby*/
+.HeaderFooterProvisional{
+    background-color: rgb(14, 13, 13);
+color:aliceblue
 }
