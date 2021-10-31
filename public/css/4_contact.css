@@ -45,9 +45,10 @@
 /* -------------- SNIPPET FORO -------------- */
 .contForo{
     padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 .contenedor-tarjetas{
-    border: solid black;
     width: 2000px;
 }
 .tarjetas{
