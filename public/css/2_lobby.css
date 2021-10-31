@@ -1,0 +1,36 @@
+@import "general.css";
+
+    .card{
+    background-color:  var(--verde3);/**/
+    border: 2cm black;
+    margin-bottom: 1cm;
+    image-resolution: responsive;
+    }
+    /* CSS background pag-Lobby*/
+    .BodyCenterLobby{
+        background-color: #414833;;
+    }
+    /*CSS background y letra headerLobby*/
+    .HeaderFooterProvisional{
+        background-color: rgb(14, 13, 13);
+    color:aliceblue
+    }
+
+    .btn-primary{
+        background-color:  #656d4a;;
+        border: black 50px;
+        color: #ffff;
+    }
+    .btn-secondary{
+        background-color:   #a4ac86;
+        border: black;
+        color: #ffff;
+    }
+    .letraTitulos{
+        font-size: 50px;
+   
+        color: #ffff;
+
+    }
+
+    
