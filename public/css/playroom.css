@@ -20,9 +20,10 @@
 
 .tableroChat{
     background-color:#656d4a;
-    display: inline-flex;
+    display:inline-flex;
     height: 750px;
 	position: relative;
+    text-align: center;
     
 }
 
@@ -64,7 +65,7 @@
 }
 .chat{
      background-color:#a4ac86;
-     margin-top: auto;
+     height: 650px;
      border-radius: 10px;
   }
 #chat2 .form-control {
@@ -147,8 +148,8 @@ tr, td, th{ border: 2px solid grey;
         border-collapse: collapse;
         border-radius: 0.8em;
         overflow: hidden;
-        border-radius: 10px;
-        margin-left: 35px;
+        border-radius: 5px;
+        margin-left: 15px;
     }
     .tablero tr{
         border: 6px solid grey;
@@ -166,11 +167,15 @@ tr, td, th{ border: 2px solid grey;
         margin-top: auto;
         border-radius: 10px;
         
+        
     }
     .chat{
          background-color:#a4ac86;
          margin-top: auto;
          border-radius: 10px;
+         width: 650px;
+         height: 550px;
+         
       }
     #chat2 .form-control {
         border-color: transparent;
@@ -206,13 +211,13 @@ tr, td, th{ border: 2px solid grey;
         background-color: #a68a64;
         width: 650px;
         height: 650px;
-        width: 80%;
-        height: 80%;
+        width: 90%;
+        height: 90%;
         border-collapse: collapse;
         border-radius: 0.8em;
         overflow: hidden;
         border-radius: 10px;
-        margin-left: 35px;
+        margin-left: 15px;
     }
     .tablero tr{
         
@@ -227,17 +232,20 @@ tr, td, th{ border: 2px solid grey;
         background-color: #656d4a;
         justify-content: center;
         
-        width: 70%;
-        height: 70%;
+        width: 50%;
+        height: 50%;
         margin-top: auto;
         border-radius: 10px;
         
     }
     .chat{
-        margin: auto;
+        width: 60%;
+        height: 60%;
+         margin: auto;
          background-color:#a4ac86;
          margin-top: auto;
          border-radius: 10px;
+         height: 475px;
       }
     #chat2 .form-control {
         border-color: transparent;
@@ -249,7 +257,7 @@ tr, td, th{ border: 2px solid grey;
       }
     }   
     
-    @media (max-width: 550px) {
+    @media (max-width: 450px) {
         .body{
             margin: auto;
         }
