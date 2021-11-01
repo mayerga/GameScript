@@ -1,0 +1,148 @@
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--verde1);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color:var(--verde2);
+}
+
+.seccion-principal{
+    display: inline-flex;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+
+.tablero{
+    
+    width: 750px;
+	height: 750px;
+    border-collapse: collapse;
+    border-radius: 0.8em;
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+
+.tablero tr{
+    border: 1px solid rgb(138, 114, 114);
+    border-bottom: 3px solid rgb(15, 15, 15);    
+}
+.tablero td{
+    border: 1px solid rgb(138, 114, 114);  
+    border-bottom: 2px solid rgb(15, 15, 15);    
+}
+.div-tablero{
+    margin-left: 200px;
+    
+}
+.div-chatprincipal{
+    margin-left: 50px;
+}
+.tabla-encabezado{
+    margin:auto;
+    width: 200px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.tabla-encabezado tr,td{
+    border: 1px solid rgb(5, 5, 5);
+    border-bottom: 3px solid rgb(5, 5, 5);
+    color: white;
+    background-color:var(--verde2);
+}
+.tabla-encabezado td{
+    border: 1px solid rgb(5, 5, 5);
+    border-bottom: 3px solid rgb(5, 5, 5);
+}
+.card{
+    height: 600px;
+    width: 500px;    
+}
+
+.tabla-score{
+    text-align: center;
+    margin-bottom: 40px;
+        
+}
+.jumbo-tabla-score{
+    margin-bottom: 40px;
+}
+.score-tabla-score{
+   display: inline-block;
+}
+.tabla-tabla-score tr{
+    border: 1px solid rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(15, 15, 15); 
+    background-color: var(--verde4);
+    color: white;
+}
+.tabla-tabla-score th{
+    border: 1px solid rgb(0, 0, 0);  
+    border-bottom: 2px solid rgb(15, 15, 15);
+    background-color: var(--verde1);
+    width: 10%;
+    height: 10%;
+
+}
+
+
+
+@media only screen and (min-width:320px) and (max-width:480px){
+    
+    }
+@media only screen and (min-width:481px) and (max-width:767px){
+    
+    }
+@media only screen and (min-width:768px) and (max-width:1023px){
+    .main{
+        align-items: center;
+    }
+    .seccion-principal{
+        display: inline-block;
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+    .tablero{
+    
+        width: 550px;
+        height: 550px;
+        border-collapse: collapse;
+        border-radius: 0.8em;
+        overflow: hidden;
+        border-radius: 10px;
+        
+    }
+    .div-tablero{
+        margin-left: 110px;
+        
+    }
+    .div-chatprincipal{
+        margin-left: 90px;
+    }
+
+
+    }
+@media only screen and (min-width:1023px) and (max-width:1800px){
+    
+    }
