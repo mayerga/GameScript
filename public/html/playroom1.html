@@ -34,10 +34,10 @@
     </nav>
     
     <!-- PRIMERA FILA -->
-    <section class="container-principal">
+    <section class="container-fluid-principal" style="border: solid black">
         
       <!-- CONTENEDOR PRIMERA FILA -->
-      <div class="container" style="border: solid blue;">
+      <div class="container-fluid" style="border: solid blue;">
         <div class="row">
             <!-- CONTENEDOR TABLERO -->
             <div class="col-sm contenedor-tablero" style="border: solid red;">
@@ -489,11 +489,10 @@
             </div>  <!-- /CONTENEDOR TABLERO -->
 
             <!-- FILA1-COLUMNA2 -->
-            <div class="col-sm contenedor-chat" style="border: solid orange;">
-              <div class="div-chatprincipal" style="border: solid cyan;">
+            <div class="col-sm contenedor-columna2">
 
                 <!-- CONTENEDOR CRONOMETRO -->
-                <div class="div-chatTablaTiempo" style="border: solid purple;" >
+                <div class="container contenedor-cronometro">
                   <table class="tabla-encabezado">
                     <tr class="cronometro">
                       <th>Tiempo</th>
@@ -513,8 +512,7 @@
                 </div> <!-- /CONTENEDOR CRONOMETRO -->
 
                 <!-- CONTENEDOR CHAT -->
-                <div style="border: solid pink;">
-                  <div>
+                <div class="container contenedor-chat">
                     <div class="card" id="chat2">
                       <div
                         class="
@@ -640,12 +638,11 @@
                     </div>
                   </div>
                 </div>
-              </div> <!-- /div-chatprincipal -->
           </div>
         </div>
       </div> <!-- /CONTENEDOR PRIMERA FILA -->
         
-    </section> <!-- container-principal -->
+    </section> <!-- container-fluid-principal -->
 
      
 
