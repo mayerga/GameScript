@@ -1,5 +1,5 @@
 
-
+/*CSS BARRA NAVEGADOR CON BOTÓN SALIR */
 ul {
     list-style-type: none;
     margin: 0;
@@ -24,14 +24,14 @@ li a {
 li a:hover {
     background-color:var(--verde2);
 }
-
+/*SECCION QUE COMPRENDE TABLERO Y CHAT*/
 .seccion-principal{
     display: inline-flex;
     margin-bottom: 40px;
     margin-top: 40px;
 }
 
-
+/*TABLERO DE JUEGO*/
 .tablero{
     
     width: 750px;
@@ -42,7 +42,7 @@ li a:hover {
     border-radius: 10px;
     
 }
-/*FILA 1*/ 
+/*PARTE QUE DEFINE TABLERO*/
 .tablero tr{
     border: 1px solid rgb(138, 114, 114);
     border-bottom: 3px solid rgb(15, 15, 15);    
@@ -51,15 +51,15 @@ li a:hover {
     border: 1px solid rgb(138, 114, 114);  
     border-bottom: 2px solid rgb(15, 15, 15);    
 }
-.contenedor-tablero{
-    display: flex;
-    justify-content: center;
+.div-tablero{
+    margin-left: 200px;
+    
 }
-.contenedor-chat{
-    display: flex;
-    justify-content: center;
+/*DIVISION QUE RECOGE TABLA TIEMPO Y CHAT*/
+.div-chatprincipal{
+    margin-left: 50px;
 }
-
+/*TABLA DE TIEMPO Y TURNO*/
 .tabla-encabezado{
     margin:auto;
     width: 200px;
@@ -67,6 +67,7 @@ li a:hover {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+/*FILAS Y COLUMNAS TABLA TIEMPO Y TURNO*/
 .tabla-encabezado tr,td{
     border: 1px solid rgb(5, 5, 5);
     border-bottom: 3px solid rgb(5, 5, 5);
@@ -77,22 +78,26 @@ li a:hover {
     border: 1px solid rgb(5, 5, 5);
     border-bottom: 3px solid rgb(5, 5, 5);
 }
+/*CHAT*/
 .card{
     height: 600px;
     width: 500px;    
 }
-
+/*SECCION QUE CONTIENE JUMBO Y TABLA USUARIO Y SCORE*/
 .tabla-score{
     text-align: center;
     margin-bottom: 40px;
         
 }
+/*JUMBO GAMESCRIPT*/
 .jumbo-tabla-score{
     margin-bottom: 40px;
 }
+/*DIVISION TABLA USUARIO SCORE*/
 .score-tabla-score{
    display: inline-block;
 }
+/*TABLA USUARIO SCORE*/
 .tabla-tabla-score tr{
     border: 1px solid rgb(0, 0, 0);
     border-bottom: 3px solid rgb(15, 15, 15); 
@@ -107,6 +112,7 @@ li a:hover {
     height: 10%;
 
 }
+
 
 
 @media only screen and (min-width:320px) and (max-width:480px){
