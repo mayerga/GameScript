@@ -1,7 +1,8 @@
+/*Fichero para generar o analizar las peticiones que nos lleguen del usuario*/
 //Modulo dentro de enrutado
 const fs = require("fs");
-const INDEX_CONTENT_TYPE = "text/html";
-const ImportHTML_CONTENT_TYPE = "text/html";
+// const INDEX_CONTENT_TYPE = "text/html";
+const HTML_CONTENT_TYPE = "text/html";
 const CSS_CONTENT_TYPE = "text/css"
 const IMG_CONTENT_TYPE = "text/img"
 const JS_CONTENT_TYPE = "text/js"
@@ -14,7 +15,7 @@ exports.init = function (req, res) {
 
   //Enrutado
   if (path === "/") {
-    res.setHeader("Content-Type", INDEX_CONTENT_TYPE);
+    res.setHeader("Content-Type", HTML_CONTENT_TYPE);
     const index = fs.readFile(
       `${__dirname}/../../public/html/1_index.html`,
       (err, data) => {
@@ -30,7 +31,7 @@ exports.init = function (req, res) {
 
   //Añadido elementos carpeta HTML
   else if (path.match("\.html$")) {
-    res.setHeader("Content-Type", ImportHTML_CONTENT_TYPE);
+    res.setHeader("Content-Type", HTML_CONTENT_TYPE);
       const html = fs.readFile(
         `${__dirname}/../../`+path,
         (err, data) => {
@@ -44,7 +45,7 @@ exports.init = function (req, res) {
       );
   }
 
-  //Añadido elementos carpeta PNG 
+  //Añadido elementos carpeta PNG
   else if (path.match("\.png$")){
     res.setHeader("Content-Type",IMG_CONTENT_TYPE);
       const png = fs.readFile(
@@ -58,9 +59,9 @@ exports.init = function (req, res) {
           }
         }
       );
-  } 
+  }
 
-  //Añadido elementos carpeta JPG 
+  //Añadido elementos carpeta JPG
   else if (path.match("\.jpg$")){
     res.setHeader("Content-Type",IMG_CONTENT_TYPE);
       const jpg = fs.readFile(
@@ -74,9 +75,9 @@ exports.init = function (req, res) {
           }
         }
       );
-  } 
+  }
 
-  //Añadido elementos carpeta CSS 
+  //Añadido elementos carpeta CSS
   else if (path.match("\.css$")){
     res.setHeader("Content-Type",CSS_CONTENT_TYPE);
       const css = fs.readFile(
@@ -90,8 +91,8 @@ exports.init = function (req, res) {
           }
         }
       );
- } 
-      
+ }
+
   //Añadido elementos carpeta JS
   else if (path.match("\.js$")){
     res.setHeader("Content-Type",JS_CONTENT_TYPE);
@@ -106,10 +107,10 @@ exports.init = function (req, res) {
           }
         }
       );
- } 
+ }
 
   else {
-    res.setHeader("Content-Type", HTML_CONTENT_TYPE);
+    res.setHeader("Content-Type", JS_CONTENT_TYPE);
     res.end("Otra Cualquiera");
   }
 };
