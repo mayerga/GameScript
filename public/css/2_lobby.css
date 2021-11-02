@@ -66,3 +66,8 @@
     margin-left: 50px;
     margin-right: 50px;
 }
+.my-custom-scrollbar {
+    position: relative;
+    max-width: min-content;
+    overflow: visible;
+}
