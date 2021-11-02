@@ -1,45 +1,68 @@
 @import "general.css";
 
-    #contenedor-card{
-        background-color:  var(--verde3);/**/
-        border: 2cm black;
-        padding-top: 0.4cm;
-        margin-bottom: 1cm;
-        image-resolution: responsive;
-    }
+#contenedor-card {
+  background-color: var(--verde3); /**/
+  border: 2cm black;
+  padding-top: 0.4cm;
+  margin-bottom: 1cm;
+  image-resolution: responsive;
+}
 
-    .card{
-    background-color:  var(--verde3);/**/
-    border: 2cm black;
-    padding-top: 0.4cm;
-    margin-bottom: 1cm;
-    image-resolution: responsive;
-    }
-    /* CSS background pag-Lobby*/
-    .BodyCenterLobby{
-        background-color: #414833;;
-    }
-    /*CSS background y letra headerLobby*/
-    .HeaderFooterProvisional{
-        background-color: rgb(14, 13, 13);
-    color:aliceblue
-    }
+.card {
+  background-color: var(--verde3); /**/
+  border: 2cm black;
+  padding-top: 0.4cm;
+  margin-bottom: 1cm;
+  image-resolution: responsive;
+}
+/* CSS background pag-Lobby*/
+.BodyCenterLobby {
+  background-color: #414833;
+  padding: 50x;
+}
+/*CSS background y letra headerLobby*/
+.HeaderFooterProvisional {
+  background-color: rgb(14, 13, 13);
+  color: aliceblue;
+}
 
-    .btn-primary{
-        background-color:  #656d4a;;
-        border: black 50px;
-        color: #ffff;
-    }
-    .btn-secondary{
-        background-color:   #a4ac86;
-        border: black;
-        color: #ffff;
-    }
-    .letraTitulos{
-        font-size: 50px;
-   
-        color: #ffff;
+.btn-primary {
+  background-color: #656d4a;
+  border: black 50px;
+  color: #ffff;
+}
+.btn-secondary {
+  background-color: #a4ac86;
+  border: black;
+  color: #ffff;
+}
+.letraTitulos {
+  font-size: 30px;
 
-    }
+  color: #ffff;
+}
+.contenedorLetra {
+  float: center;
+  display: flex;
+  text-align: center;
+  word-break: break-all;
+}
 
+
+.img-card {
+  width: 30%;
+  display: block;
+  margin: auto;
+}
+
+.contenedorSalas{
+    display: flex;
+    margin-bottom: 20px;
+    padding: 20px;
     
+}
+
+.row{
+    margin-left: 50px;
+    margin-right: 50px;
+}
