@@ -18,3 +18,30 @@ users.prototype.AddUser=function(){
     });
 
 }*/
+
+class Jugador {
+  constructor(idJjugador, nickName) {
+    this.idJugador = idJjugador;
+    this.nickName = nickName;
+    this.avatar = avatar;
+    this.color = color;
+    this.score = score;
+  }
+    partidasGanas() {}
+    PartidasJugadas() {}
+}
+
+class Partida{
+constructor(idTablero,tablero,Jugador,cronometro,contador,chat,botonesVarios){
+    this.idTablero = tablero;
+    this.tablero = tablero;
+    this.Array[Jugador] = Array[Jugador];
+    this.cronometro = cronometro;
+    this.Array[contador] = Array[contador];
+    this.chat = chat;
+    this.botonesVarios = botonesVarios;
+}
+    mostrarGanador(){}
+    mostrarJugadores(){}
+    almacenarScore(){}
+}

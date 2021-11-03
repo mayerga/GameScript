@@ -46,6 +46,7 @@
   display: flex;
   text-align: center;
   word-break: break-all;
+  text-align: center;
 }
 
 
@@ -60,14 +61,22 @@
     margin-bottom: 20px;
     padding: 20px;
     
+    
 }
 
 .row{
     margin-left: 50px;
     margin-right: 50px;
+    height: 100%;
 }
 .my-custom-scrollbar {
     position: relative;
-    max-width: min-content;
+    max-width: max-content;
     overflow: visible;
+    
 }
+.sala{
+  height: 200px;
+  padding: 10px;
+}
+
