@@ -139,38 +139,14 @@ li a:hover {                            /* Change the link color to #111 (black)
         border-bottom: 3px solid rgb(5, 5, 5);
     }
 
-/*CHAT*/
-.contenedor-chat{
-    /*border: solid pink;*/
-    display: flex;
-    justify-content: center;
-}
-.card{
-    height: 600px;
-    width: 500px;    
-}
-    @media (max-width: 480px) {
-        .card{    
-            height: 650px;
-        }
-    }  
-
-/*SECCION QUE CONTIENE JUMBO Y TABLA USUARIO Y SCORE*/
+/*SECCION QUE CONTIENE TABLA SCORE*/
 .tabla-score{
     text-align: center;
     margin-bottom: 40px;
-        
 }
-/*JUMBO GAMESCRIPT*/
-.jumbo-tabla-score{
-    margin-bottom: 40px;
-}
-/*DIVISION TABLA USUARIO SCORE*/
-.score-tabla-score{
-   display: inline-block;
-}
+
 /*TABLA USUARIO SCORE*/
-.tabla-tabla-score{
+.tabla-tabla-score{  /*PURPLE*/
     max-width: 500px;
     display:flex;
     justify-content: center;
@@ -184,22 +160,43 @@ li a:hover {                            /* Change the link color to #111 (black)
         margin-top: 20px;   
         }
     }
-.tabla-tabla-socre tr{
-    border: 1px solid rgb(0, 0, 0);
-    border-bottom: 3px solid rgb(15, 15, 15); 
-    background-color: var(--verde4);
-    color: white;
-}
+
 .tabla-tabla-score th{
     border: 1px solid rgb(0, 0, 0);  
     border-bottom: 2px solid rgb(15, 15, 15);
     background-color: var(--verde1);
     width: 500px;
-    
+    height: 40px;
+    text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-
 }
+    
+.tabla-tabla-score td{
+    border: 1px solid rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(15, 15, 15); 
+    background-color: var(--verde4);
+    height: 40px;
+    color: white;
+    text-align: center;
+}
+
+/*CHAT*/
+.contenedor-chat{
+    /*border: solid pink;*/
+    display: flex;
+    justify-content: center;
+}
+.card{ /*CONTENEDOR DE LA IMAGEN DEL CHAT*/
+    height: 600px;
+    width: 500px;    
+}
+    @media (max-width: 480px) {
+        .card{
+            width: 350px;    
+            height: 650px;
+        }
+    }  
 
 /*
 @media only screen and (min-width:320px) and (max-width:480px){
