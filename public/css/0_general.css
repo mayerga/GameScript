@@ -50,8 +50,17 @@
     background-color: var(--negro);
 }
 .background-main{
-    background-color: var(--verde3);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, black 0%, var(--verde4) 35%, var(--verde2) 100%);
+    
 }
+.background-main-footer{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, black 0%, black 35%, var(--verde2) 100%);
+    
+}
+
+
 
 .contenedor-blanco-esquinasRedondeadas{
 

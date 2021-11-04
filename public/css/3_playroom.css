@@ -23,6 +23,9 @@ li a {
 li a:hover {                            /* Change the link color to #111 (black) on hover */
     background-color:var(--verde2);
 }
+.background-main{
+    height: 1000px;
+}
 
 
 /*SECCION QUE COMPRENDE TABLERO Y CHAT*/
@@ -30,6 +33,11 @@ li a:hover {                            /* Change the link color to #111 (black)
     margin-bottom: 40px;
     margin-top: 40px;
 }
+.div-tablero{
+    
+    justify-content: center;
+}
+
 
 /*TABLERO DE JUEGO*/
 .contenedor-tablero{
@@ -44,7 +52,13 @@ li a:hover {                            /* Change the link color to #111 (black)
     border-radius: 0.8em;
     overflow: hidden;
     border-radius: 10px;
+    margin-top: 52px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
+
+/*MEDIA Q QUE AJUSTAN TABLERO EN RESPONSIVE*/
     @media (max-width:  480px) {
         .tablero{
             width: 300px;
@@ -55,6 +69,29 @@ li a:hover {                            /* Change the link color to #111 (black)
             border-radius: 10px;
         }
     } 
+    @media (max-width:  1376px) {
+        .tablero{
+            margin:auto;
+            margin-top: 30px;
+        }
+    } 
+    @media (max-width:  785px) {
+        .tablero{
+            margin:auto;
+            margin-top: 30px;
+            width: 500px;
+            height: 500px;
+        }
+    }
+    @media (max-width:  538px) {
+        .tablero{
+            margin:auto;
+            margin-top: 30px;
+            width: 350px;
+            height: 350px;
+        }
+    }
+
 
     /*COLORES PARA BORDES DE TABLEROS*/
     .tablero tr{
@@ -68,13 +105,13 @@ li a:hover {                            /* Change the link color to #111 (black)
 
 
 /*DIVISION QUE RECOGE TABLA TIEMPO Y CHAT*/
-.contenedor-columna2 {
+/*.contenedor-columna2 {
     border: solid orange;
-}
+}*/
 
 /*TABLA DE TIEMPO Y TURNO*/
 .contenedor-cronometro{
-    border: solid purple;
+    /*border: solid purple;*/
     display: flex;
     justify-content: center;
 }
@@ -105,7 +142,7 @@ li a:hover {                            /* Change the link color to #111 (black)
 
 /*CHAT*/
 .contenedor-chat{
-    border: solid pink;
+    /*border: solid pink;*/
     display: flex;
     justify-content: center;
 }
@@ -134,7 +171,7 @@ li a:hover {                            /* Change the link color to #111 (black)
    display: inline-block;
 }
 /*TABLA USUARIO SCORE*/
-.tabla-tabla-score tr{
+.tabla-tabla-socre tr{
     border: 1px solid rgb(0, 0, 0);
     border-bottom: 3px solid rgb(15, 15, 15); 
     background-color: var(--verde4);
@@ -144,9 +181,18 @@ li a:hover {                            /* Change the link color to #111 (black)
     border: 1px solid rgb(0, 0, 0);  
     border-bottom: 2px solid rgb(15, 15, 15);
     background-color: var(--verde1);
-    width: 10%;
-    height: 10%;
+    width: 500px;
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
 
+}
+
+.tabla-tabla-score{
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+    
 }
 
 
