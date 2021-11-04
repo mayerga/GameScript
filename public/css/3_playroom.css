@@ -105,28 +105,27 @@ li a:hover {                            /* Change the link color to #111 (black)
 
 
 /*DIVISION QUE RECOGE TABLA TIEMPO Y CHAT*/
-/*.contenedor-columna2 {
-    border: solid orange;
-}*/
+.contenedor-columna2 {
+    display: grid;
+
+}
 
 /*TABLA DE TIEMPO Y TURNO*/
 .contenedor-cronometro{
-    /*border: solid purple;*/
     display: flex;
     justify-content: center;
 }
-
 .tabla-encabezado{    
-    width: 500px;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-    @media (max-width:  480px) {
+    @media (min-width:  480px) {
         .tabla-encabezado{    
-            width: 350px;
+            width: 680px;
+            height: 100px;
         }
-    }  
+    }   
 
     /*COLORES PARA BORDES TABLA TIEMPO Y TURNO*/
     .tabla-encabezado tr,td{
@@ -171,6 +170,20 @@ li a:hover {                            /* Change the link color to #111 (black)
    display: inline-block;
 }
 /*TABLA USUARIO SCORE*/
+.tabla-tabla-score{
+    max-width: 500px;
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;   
+}
+    @media (max-width:  480px) {
+    .tabla-tabla-score{
+        width: 350px;
+        display:flex;
+        justify-content: center;
+        margin-top: 20px;   
+        }
+    }
 .tabla-tabla-socre tr{
     border: 1px solid rgb(0, 0, 0);
     border-bottom: 3px solid rgb(15, 15, 15); 
@@ -187,14 +200,6 @@ li a:hover {                            /* Change the link color to #111 (black)
     margin-bottom: 20px;
 
 }
-
-.tabla-tabla-score{
-    display:flex;
-    justify-content: center;
-    margin-top: 20px;
-    
-}
-
 
 /*
 @media only screen and (min-width:320px) and (max-width:480px){

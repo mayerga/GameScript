@@ -41,22 +41,28 @@
       <div class="container-fluid"> <!--style="border: solid blue;-->
         <div class="row">
             <!-- CONTENEDOR TABLERO -->
-            <div class="col-sm contenedor-tablero";><!-- style="border: solid red-->
-              <div class="div-tablero" >
-                <table class="container-fluid tabla-tabla-score">
-                  <tr class="trScoreHead">
-                    <th>User</th>
-                    <th>User</th>
-                    <th>User</th>
-                    <th>User</th>
-                  </tr>              
-                  <tr class="trScoreContenido">
-                    <td>Score</td>
-                    <td>Score</td>
-                    <td>Score</td>
-                    <td>Score</td>
-                  </tr>   
-                </table>
+            <div class="col-sm contenedor-tablero"><!-- style="border: solid red-->
+              <div class="div-tablero" style="border: solid red">
+                  <!-- CONTENEDOR CRONOMETRO -->
+                  <div class="container contenedor-cronometro" style="border: solid blue">
+                    <table class="tabla-encabezado">
+                      <tr class="cronometro">
+                        <th>Tiempo</th>
+                        <th>Turno</th>
+                        <th></th>
+                      </tr>
+                      <tr class="turno">
+                        <td class="cronometroPartida">00:00</td>
+                        <td class="turnoPartida">X</td>
+                        <td>
+                          <a href="/public/html/2_lobby.html">
+                            <button type="submit">Salir</button>
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </div> <!-- /CONTENEDOR CRONOMETRO -->
+
                 <table class="tablero">
                   <tr>
                     <td><div class="c1"></div></td>
@@ -504,30 +510,26 @@
             </div>  <!-- /CONTENEDOR TABLERO -->
 
             <!-- FILA1-COLUMNA2 -->
-            <div class="col-sm contenedor-columna2">
+            <div class="col-sm contenedor-columna2" style="border: solid yellow">
 
-                <!-- CONTENEDOR CRONOMETRO -->
-                <div class="container contenedor-cronometro">
-                  <table class="tabla-encabezado">
-                    <tr class="cronometro">
-                      <th>Tiempo</th>
-                      <th>Turno</th>
-                      <th></th>
-                    </tr>
-                    <tr class="turno">
-                      <td class="cronometroPartida">00:00</td>
-                      <td class="turnoPartida">X</td>
-                      <td>
-                        <a href="/public/html/2_lobby.html">
-                          <button type="submit">Salir</button>
-                        </a>
-                      </td>
-                    </tr>
-                  </table>
-                </div> <!-- /CONTENEDOR CRONOMETRO -->
+              <!--CONTENEDOR SCORE -->
+              <table class="container-fluid tabla-tabla-score" style="border: solid purple">
+                <tr class="trScoreHead">
+                  <th>User</th>
+                  <th>User</th>
+                  <th>User</th>
+                  <th>User</th>
+                </tr>              
+                <tr class="trScoreContenido">
+                  <td>Score</td>
+                  <td>Score</td>
+                  <td>Score</td>
+                  <td>Score</td>
+                </tr>   
+              </table> <!--/CONTENEDOR SCORE -->
 
                 <!-- CONTENEDOR CHAT -->
-                <div class="container contenedor-chat">
+                <div class="container-fluid contenedor-chat" style="border: solid orange">
                     <div class="card" id="chat2">
                       <div
                         class="
