@@ -107,7 +107,6 @@ li a:hover {                            /* Change the link color to #111 (black)
 /*DIVISION QUE RECOGE TABLA TIEMPO Y CHAT*/
 .contenedor-columna2 {
     display: grid;
-
 }
 
 /*TABLA DE TIEMPO Y TURNO*/
@@ -197,45 +196,3 @@ li a:hover {                            /* Change the link color to #111 (black)
             height: 650px;
         }
     }  
-
-/*
-@media only screen and (min-width:320px) and (max-width:480px){
-    
-    }
-@media only screen and (min-width:481px) and (max-width:767px){
-    
-    }
-@media only screen and (min-width:768px) and (max-width:1023px){
-    .main{
-        align-items: center;
-    }
-    .seccion-principal{
-        display: inline-block;
-        margin-bottom: 40px;
-        margin-top: 40px;
-    }
-    .tablero{
-    
-        width: 550px;
-        height: 550px;
-        border-collapse: collapse;
-        border-radius: 0.8em;
-        overflow: hidden;
-        border-radius: 10px;
-        
-    }
-    .div-tablero{
-        margin-left: 110px;
-        
-    }
-    .div-chatprincipal{
-        margin-left: 90px;
-    }
-
-
-    }
-@media only screen and (min-width:1023px) and (max-width:1800px){
-    
-    }
-
-*/
