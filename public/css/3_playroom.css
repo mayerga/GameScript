@@ -1,4 +1,8 @@
 @import "0_general.css";
+/*CONTENEDOR MAIN*/
+.contenedor-main{
+    padding-bottom: 40px;
+}
 
 /*CSS BARRA NAVEGADOR CON BOTÓN SALIR */
 ul {
@@ -23,10 +27,6 @@ li a {
 li a:hover {                            /* Change the link color to #111 (black) on hover */
     background-color:var(--verde2);
 }
-.background-main{
-    height: 1000px;
-}
-
 
 /*SECCION QUE COMPRENDE TABLERO Y CHAT*/
 .container-principal{
@@ -124,7 +124,19 @@ li a:hover {                            /* Change the link color to #111 (black)
             width: 680px;
             height: 100px;
         }
-    }   
+    }  
+    @media (max-width:  480px) {
+        .tabla-encabezado{    
+            width: 420px;
+            height: 100px;
+        }
+    }
+    @media (max-width:  380px) {
+        .tabla-encabezado{    
+            width: 350px;
+            height: 100px;
+        }
+    } 
 
     /*COLORES PARA BORDES TABLA TIEMPO Y TURNO*/
     .tabla-encabezado tr,td{
