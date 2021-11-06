@@ -18,7 +18,7 @@
 /* CSS background pag-Lobby*/
 .BodyCenterLobby {
   background-color: #414833;
-  padding: 50x;
+  padding: 50px;
 }
 /*CSS background y letra headerLobby*/
 .HeaderFooterProvisional {
@@ -52,7 +52,7 @@
 
 .img-card {
   width: 30%;
-  display: block;
+  display: flex;
   margin: auto;
 }
 
@@ -79,4 +79,66 @@
   height: 200px;
   padding: 10px;
 }
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background-color: var(--verde3);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 100;
+  width: auto;
+ 
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+  position: absolute;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+ 
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
 
