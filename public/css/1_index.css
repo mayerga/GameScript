@@ -1,4 +1,12 @@
 /** HEADER-NAVBAR **/
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
 .color-brown {
     color: white;
     background-color: brown;
