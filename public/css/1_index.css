@@ -50,6 +50,7 @@
     display: table;
     float: left;
     padding: 0px 20px;
+    text-decoration: none;
 }
 
 .navigation a:last-child{
@@ -63,7 +64,6 @@
     color: white;
     font-family: 'Montserrat';
     font-style: 16px;
-    text-decoration: none;
 }
 
 /** HEADER-NAVBAR **/
