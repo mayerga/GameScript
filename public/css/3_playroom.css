@@ -105,28 +105,27 @@ li a:hover {                            /* Change the link color to #111 (black)
 
 
 /*DIVISION QUE RECOGE TABLA TIEMPO Y CHAT*/
-/*.contenedor-columna2 {
-    border: solid orange;
-}*/
+.contenedor-columna2 {
+    display: grid;
+
+}
 
 /*TABLA DE TIEMPO Y TURNO*/
 .contenedor-cronometro{
-    /*border: solid purple;*/
     display: flex;
     justify-content: center;
 }
-
 .tabla-encabezado{    
-    width: 500px;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-    @media (max-width:  480px) {
+    @media (min-width:  480px) {
         .tabla-encabezado{    
-            width: 350px;
+            width: 680px;
+            height: 100px;
         }
-    }  
+    }   
 
     /*COLORES PARA BORDES TABLA TIEMPO Y TURNO*/
     .tabla-encabezado tr,td{
@@ -140,61 +139,64 @@ li a:hover {                            /* Change the link color to #111 (black)
         border-bottom: 3px solid rgb(5, 5, 5);
     }
 
+/*SECCION QUE CONTIENE TABLA SCORE*/
+.tabla-score{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/*TABLA USUARIO SCORE*/
+.tabla-tabla-score{  /*PURPLE*/
+    max-width: 500px;
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;   
+}
+    @media (max-width:  480px) {
+    .tabla-tabla-score{
+        width: 350px;
+        display:flex;
+        justify-content: center;
+        margin-top: 20px;   
+        }
+    }
+
+.tabla-tabla-score th{
+    border: 1px solid rgb(0, 0, 0);  
+    border-bottom: 2px solid rgb(15, 15, 15);
+    background-color: var(--verde1);
+    width: 500px;
+    height: 40px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+    
+.tabla-tabla-score td{
+    border: 1px solid rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(15, 15, 15); 
+    background-color: var(--verde4);
+    height: 40px;
+    color: white;
+    text-align: center;
+}
+
 /*CHAT*/
 .contenedor-chat{
     /*border: solid pink;*/
     display: flex;
     justify-content: center;
 }
-.card{
+.card{ /*CONTENEDOR DE LA IMAGEN DEL CHAT*/
     height: 600px;
     width: 500px;    
 }
     @media (max-width: 480px) {
-        .card{    
+        .card{
+            width: 350px;    
             height: 650px;
         }
     }  
-
-/*SECCION QUE CONTIENE JUMBO Y TABLA USUARIO Y SCORE*/
-.tabla-score{
-    text-align: center;
-    margin-bottom: 40px;
-        
-}
-/*JUMBO GAMESCRIPT*/
-.jumbo-tabla-score{
-    margin-bottom: 40px;
-}
-/*DIVISION TABLA USUARIO SCORE*/
-.score-tabla-score{
-   display: inline-block;
-}
-/*TABLA USUARIO SCORE*/
-.tabla-tabla-socre tr{
-    border: 1px solid rgb(0, 0, 0);
-    border-bottom: 3px solid rgb(15, 15, 15); 
-    background-color: var(--verde4);
-    color: white;
-}
-.tabla-tabla-score th{
-    border: 1px solid rgb(0, 0, 0);  
-    border-bottom: 2px solid rgb(15, 15, 15);
-    background-color: var(--verde1);
-    width: 500px;
-    
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-}
-
-.tabla-tabla-score{
-    display:flex;
-    justify-content: center;
-    margin-top: 20px;
-    
-}
-
 
 /*
 @media only screen and (min-width:320px) and (max-width:480px){
