@@ -48,7 +48,13 @@ body{
 }
 
 .mask{
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);    
+}
+@media(max-width:572px){
+    .mask{
+        display:inline-block;
+        justify-content: center;
+    }
 }
 
 .imagenes-final{
