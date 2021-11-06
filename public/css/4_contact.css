@@ -17,6 +17,7 @@
     justify-self: flex-start;
 }
 .autor{
+    border: solid var(--gris2);
     max-width: 900px;
     padding: 5px;
     display: grid;
@@ -30,17 +31,23 @@
     padding-bottom: 20px;
 }
 .contContacto-fomulario {
+    border: solid var(--gris2);
+    display: grid;
+    row-gap: 15px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
     max-width: 680px;
 }
-
-.contContacto-fomulario-submit{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-}
+    /*FORMULARIO - TEXT BOX*/
+    .formulario-textBox{
+        height: 200px;
+    }
+    /*BOTÓN DE ENVIAR*/
+    .contContacto-fomulario-submit{
+        display: flex;
+        justify-content: flex-end;
+    }
 
 /* -------------- SNIPPET FORO -------------- */
 .contForo{

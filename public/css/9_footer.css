@@ -44,29 +44,3 @@
     }
     
 } 
-
-/*@media (min-width:575px) {
-    #div-tarjetas{
-        width: 100px;
-        display:block; 
-    }
-    
-} 
-@media (min-width:575px) {
-    #tarjetas{
-        height:  70px;
-        margin-bottom: -200px;
-        
-    }
-    #contenedor-tarjetas{
-        display: flex;
-    justify-content: center;
-    }
-} 
-@media (max-width:780px) {
-    .background-main{
-        
-        height: 1500px;
-        
-    }
-} 
