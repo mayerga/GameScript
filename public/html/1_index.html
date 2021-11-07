@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GameScript</title>
-        <!-- CSS's from INTERNET
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-            <!-- Box Icons CSS -->
-            <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-            <!-- Google fonts CSS -->
-            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-            <!-- BootsTrap CSS -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-        <!-- CSS from FILE -->
-            <link rel="stylesheet" href="/public/css/0_general.css">
-            <link rel="stylesheet" href="/public/css/1_index.css">
-            <link rel="stylesheet" href="/public/css/9_footer.css">
-            <link rel="stylesheet" href="/public/css/normalize.css">
-        <!--SCRIPTS-->
-            <script src="clases.js"></script>    
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<head> 
+    <!-- CSS Exportado -->
+    <link rel="stylesheet" href="/public/css/0_general.css">
+    <link rel="stylesheet" href="/public/css/0_header.css">
+    <link rel="stylesheet" href="/public/css/1_index.css">
+    <link rel="stylesheet" href="/public/css/9_footer.css">
+    <link rel="stylesheet" href="/public/css/normalize.css"> 
+    <!-- CSS's from INTERNET
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- Box Icons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Google fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- BootsTrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
 
-    <body>
-        <!-- HEADDER IMPORTADO -->
-        <include src="\public\html\0_header.html"></include>
+<body>
+    <!-- HEADDER IMPORTADO <include src="\public\html\0_header.html"></include> -->
+    <!-- HEADER IMPORTADO -->
+    <header class="background-negro">
+        <!-- NAVBAR NEGRA -->
+        <div class="navbar-superior">
+            <span><i>Un producto de GameScript</i></span>
+        </div> <!-- /NAVBAR NEGRA -->
+    
+        <!-- NAVBAR GRIS -->
+        <nav class="navbar navbar-expand-sm background-gris navbar-dark">
+            <div class="container-fluid">
 
-        <!--HERO-->
-        <!-- BACKGROUND IMAGE -->
-        <div 
-        id="intro-example"
-        class="p-5 text-center bg-image"
-        href=""
-        style="background-image: url('/public/img/pattern.jpg');">
+                <a class="navbar-brand logo_container" href="#">
+                    <h1>GameScript</h1>
+                </a>
 
-        <!-- BACKGROUND TRANSPARENTE -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse navBar-enlaces" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3000/1_index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3000/2_lobby.html">Lobby</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3000/3_playroom.htm">PlayRoom</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3000/4_contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> <!-- /NAVBAR GRIS -->
+    </header> <!-- /HEADER IMPORTADO -->
+
+    <!--HERO-->
+    <!-- BACKGROUND IMAGE -->
+    <div 
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    href=""
+    style="background-image: url('/public/img/pattern.jpg');">
+
+    <!-- BACKGROUND TRANSPARENTE -->
         <div class="mask">
             <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white">
@@ -60,118 +98,96 @@
             </div>
             </div>
         </div>
-        </div>
-        <!--/HERO-->
-
-        <main>
-    <!-- SEPARADOR FUNKOS -->
-    <div id="separador-funkos">
-        <div class="content bg-success"></div>
     </div>
+    <!--/HERO-->
 
-    <!-- FUNKOS -->
-    <div id="funkos"  class="px-5 pb-5 bg-success">
-        <div class="container">
-            <div class="row">
-                <h2 class="text-center text-white text-shadow">FUNKOS</h2>
-            </div>
-            <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4">
-                <div class="col-sm">
-                    <img src="/public/img/figure01.png" alt="funko 1" class="w-100 funko">
-                    <div class="text-center"><span class="funko-name h5 p-2">Jugador 01</span></div>
+    <main>
+        <!-- SEPARADOR FUNKOS -->
+        <div id="separador-funkos">
+            <div class="content bg-success"></div>
+        </div>
+
+        <!-- FUNKOS -->
+        <div id="funkos"  class="px-5 pb-5 bg-success">
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-center text-white text-shadow">FUNKOS</h2>
                 </div>
-                <div class="col-sm">
-                    <img src="/public/img/figure02.png" alt="funko 2" class="w-100 funko">
-                    <div class="text-center"><span class="funko-name h5 p-2">Jugador 02</span></div>
-                </div>
-                <div class="col-sm">
-                    <img src="/public/img/figure03.png" alt="funko 3" class="w-100 funko">
-                    <div class="text-center"><span class="funko-name h5 p-2">Jugador 03</span></div>
-                </div>
-                <div class="col-sm">
-                    <img src="/public/img/figure04.png" alt="funko 4" class="w-100 funko">
-                    <div class="text-center"><span class="funko-name h5 p-2">Jugador 04</span></div>
+                <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4">
+                    <div class="col-sm">
+                        <img src="/public/img/figure01.png" alt="funko 1" class="w-100 funko">
+                        <div class="text-center"><span class="funko-name h5 p-2">Jugador 01</span></div>
+                    </div>
+                    <div class="col-sm">
+                        <img src="/public/img/figure02.png" alt="funko 2" class="w-100 funko">
+                        <div class="text-center"><span class="funko-name h5 p-2">Jugador 02</span></div>
+                    </div>
+                    <div class="col-sm">
+                        <img src="/public/img/figure03.png" alt="funko 3" class="w-100 funko">
+                        <div class="text-center"><span class="funko-name h5 p-2">Jugador 03</span></div>
+                    </div>
+                    <div class="col-sm">
+                        <img src="/public/img/figure04.png" alt="funko 4" class="w-100 funko">
+                        <div class="text-center"><span class="funko-name h5 p-2">Jugador 04</span></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+    
+    <!-- FOOTER IMPORTADO <include src="\public\html\9_footer.html"></include>-->
+    <!-- FOOTER IMPORTADO -->
+    <footer class="background-negro" id="main-footer">
+        <!-- CONTENEDOR FOOTER -->
+        <div class="container-md p-5">
 
+            <!-- ROW 1 -->
+            <div class="footer-row1">
+                <!-- LICENCIAS-GAMESCRIPT -->
+                <div>
+                <img class="licencia" src="/public/img/Licencias/GS.png" alt="Pegui3"/>
+                </div>
+    
+                <!-- LICENCIA-GAMESCRIPT -->
+                <div>
+                <img
+                    class="licencia" src="/public/img/Licencias/Pegi3.jpg" alt="Pegui3"/>
+                </div>
+    
+                <!-- LICENCIA-GAMESCRIPT -->
+                <div>
+                <img 
+                    class="licencia" src="/public/img/Licencias/uocx.jpg" alt="Pegui3"/>
+                </div>
+            </div> <!-- /ROW 1 -->
+    
+            <!-- SUBTITULO -->
+            <div class="container-fluid">
+                <h3 class="footer-row2" style="font-weight: bold;">
+                ENLACES DE INTERES
+                </h3>
+    
+            </div> <!-- SUBTITULO -->
+    
+            <!-- ENLACES -->
+            <div class="row footer-row3">
+            <div class="col-sm row3-enlace"><a href="#">P9 (GitHub)</a></div>
+            <div class="col-sm row3-enlace"><a href="#">Google Site de Julio</a></div>
+            <div class="col-sm row3-enlace"><a href="#">Google Site de Kevin</a></div>
+            <div class="col-sm row3-enlace"><a href="#">Google Site de Sergio</a></div>
+            <div class="col-sm row3-enlace"><a href="#">Google Site de Manuel</a></div>
+            </div>
+        </div> <!-- ENLACES -->
+    </footer><!-- /FOOTER IMPORTADO -->
 
-</main>
-
-
-                <!-- <a class="navbar-brand col-fluid"
-                    href="https://drive.google.com/drive/folders/1vpRbUDu_MUxJYO_n6WkyApzATLtB1vic?usp=sharing">
-                    <img src="/public/img/drive.png" alt="" width="20" height="20" class="d-inline-block align-text-center">
-                    Drive
-                </a>
-
-                <a class="navbar-brand col-fluid" href="https://trello.com/b/4fzQYHMN/icc02p9-desarrollo-fullstack">
-                    <img src="/public/img/trello.png" alt="" width="20" height="20" class="d-inline-block align-text-center">
-                    Trello
-                </a> -->
-
-
-        <!-- FOOTER IMPORTADO <include src="\public\html\9_footer.html"></include>-->
-        
-
-        <footer class="background-negro" id="main-footer">
-            <!-- licencia -->
-            <div class="container-md p-5" id="contenedor-licencia">
-              <!-- ROW 1 -->
-              <div class="footer-row1">
-                  <!-- LICENCIA-GAMESCRIPT -->
-                  <div>
-                    <img 
-                      class="licencia"
-                      src="/public/img/Licencias/GS.png"
-                      alt="Pegui3"/>
-                  </div>
-      
-                  <!-- LICENCIA-GAMESCRIPT -->
-                  <div>
-                    <img
-                      class="licencia"
-                      src="/public/img/Licencias/Pegi3.jpg"
-                      alt="Pegui3"
-                    />
-                  </div>
-      
-                  <!-- LICENCIA-GAMESCRIPT -->
-                  <div>
-                    <img 
-                      class="licencia"
-                      src="/public/img/Licencias/uocx.jpg" 
-                      alt="Pegui3" 
-                    />
-                  </div>
-      
-              </div> <!-- /ROW 1 -->
-      
-              <!-- SUBTITULO -->
-              <div class="container-fluid">
-                  <h3 class="footer-row2" style="font-weight: bold;">
-                    ENLACES DE INTERES
-                  </h3>
-      
-              </div> <!-- SUBTITULO -->
-      
-              <!-- ENLACES -->
-              <div class="row footer-row3">
-                <div class="col-sm row3-enlace"><a href="#">P9 (GitHub)</a></div>
-                <div class="col-sm row3-enlace"><a href="#">Google Site de Julio</a></div>
-                <div class="col-sm row3-enlace"><a href="#">Google Site de Kevin</a></div>
-                <div class="col-sm row3-enlace"><a href="#">Google Site de Sergio</a></div>
-                <div class="col-sm row3-enlace"><a href="#">Google Site de Manuel</a></div>
-              </div>
-            </div> <!-- ENLACES -->
-      
-            
-          </footer><!-- FOOTER EXPORTADO -->
-
-        <!-- SCRIPTS DEL BOOTSTRAP -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="/scripts/scripts/import.js"></script>   
-    </body>
+    <!-- SCRIPTS -->
+    <!-- BOOTSTRAP.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <!-- JQUERY.JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- IMPORT.JS -->
+    <script src="/scripts/scripts/import.js"></script>   
+</body>
 </html>

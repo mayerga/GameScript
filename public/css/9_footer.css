@@ -31,33 +31,3 @@
 .row3-enlace{
     text-align: center;
 }
-/*
-@media (min-width:700px) {
-    #tarjetas{
-        width: 300px;
-        height: 100px;
-        
-    }
-} 
-@media (min-width:576px) {
-    #tarjetas{
-        height:  70px;
-        margin-bottom: -200px;        
-    }
-    #div-tarjetas{
-        height: 260px;
-        
-    }
-} 
-@media (max-width:575px) {
-    #div-tarjetas{
-        width: 100px;
-    }
-    #tarjetas{
-        height:  70px;
-        margin-bottom: -200px; 
-        display: block;       
-    }
-    
-} 
-*/
