@@ -13,7 +13,7 @@ exports.init = function (req, res) {
   //path
   const path = req.url;
 
-  //Enrutado
+  //Enrutado (INDEX)
   if (path === "/") {
     res.setHeader("Content-Type", HTML_CONTENT_TYPE);
     const index = fs.readFile(
@@ -29,7 +29,55 @@ exports.init = function (req, res) {
     );
   }
 
-  //Añadido elementos carpeta HTML
+  //Enrutado (LOBBY)
+  else if (path === "/2_lobby.html") {
+    res.setHeader("Content-Type", HTML_CONTENT_TYPE);
+    const index = fs.readFile(
+      `${__dirname}/../../public/html/2_lobby.html`,
+      (err, data) => {
+        if (err) {
+          console.log("error en la carga de lobby.html");
+          res.end("error en la carga");
+        } else {
+          res.end(data);
+        }
+      }
+    );
+  }
+
+  //Enrutado (PLAYROOM)
+  else if (path === "/3_playroom.html") {
+    res.setHeader("Content-Type", HTML_CONTENT_TYPE);
+    const index = fs.readFile(
+      `${__dirname}/../../public/html/3_playroom.html`,
+      (err, data) => {
+        if (err) {
+          console.log("error en la carga de lobby.html");
+          res.end("error en la carga");
+        } else {
+          res.end(data);
+        }
+      }
+    );
+  }
+  
+  //Enrutado (CONTACT)
+  else if (path === "/4_contact.html") {
+    res.setHeader("Content-Type", HTML_CONTENT_TYPE);
+    const index = fs.readFile(
+      `${__dirname}/../../public/html/4_contact.html`,
+      (err, data) => {
+        if (err) {
+          console.log("error en la carga de lobby.html");
+          res.end("error en la carga");
+        } else {
+          res.end(data);
+        }
+      }
+    );
+  }
+
+  /**Añadido elementos carpeta HTML
   else if (path.match("\.html$")) {
     res.setHeader("Content-Type", HTML_CONTENT_TYPE);
       const html = fs.readFile(
@@ -43,7 +91,7 @@ exports.init = function (req, res) {
           }
         }
       );
-  }
+  }**/
 
   //Añadido elementos carpeta PNG
   else if (path.match("\.png$")){
