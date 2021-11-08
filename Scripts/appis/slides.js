@@ -1,4 +1,4 @@
-/* --- API WEB STORAGE --- */
+/* --- API SLIDES --- */
 var slideIndex = 1;
 showSlides(slideIndex);
 

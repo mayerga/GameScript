@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lobby</title>
 </head>
-<head>  
+</head>  
     <!-- CSS Exportado -->
     <link rel="stylesheet" href="/public/css/0_general.css">
     <link rel="stylesheet" href="/public/css/0_header.css">
@@ -61,19 +61,18 @@
         </nav> <!-- /NAVBAR GRIS -->
     </header> <!-- /HEADER IMPORTADO -->
 
+    <!--EMPIEZA EL CUERPO DE LA PAGINA-->
     <main>
-        <!--EMPIEZA EL CUERPO DE LA PAGINA-->
         <div class="BodyCenterLobby">
             <div class="container-reponsive">
                 <div class=row>
 
-                    <!--Inicio parte Perfiles-->
+                    <!--CONTENEDOR ESCOGE TU FUNKO -->
                     <div class="col">
                         <!-- style="border: solid black;"-->
-
                         <div class="row">
                             <strong class="titulo letraTitulos ">
-                                <div class="contenedorLetra"> Tarjetas</div>
+                                <div class="contenedorLetra"> Escoge tu Funko:</div>
                             </strong>
 
                             <div class="slideshow-container">
@@ -82,8 +81,8 @@
                                 <div id="contenedor-card">
                                     <!--style="border: solid blue;"-->
                                     <div class="mySlides">
-                                        <div>
-                                            <img draggable="true" ondragstart="drag(event)" class="img-card"
+                                        <div >
+                                            <img id="img-draggable" class="img-card" 
                                                 src="/public/img/figure01.png">
                                         </div>
                                     </div>
@@ -95,7 +94,7 @@
                                     <!--style="border: solid blue;"-->
                                     <div class="mySlides">
                                         <div>
-                                            <img draggable="true" ondragstart="drag(event)" class="img-card"
+                                            <img id="img-draggable" class="img-card" 
                                                 src="/public/img/figure02.png">
                                         </div>
                                     </div>
@@ -114,12 +113,10 @@
                                 <input type="text" id="form12" class="form-control" placeholder="Nickname" />
                             </div>
                         </div>
-                    </div>
-                    <!--FIN PARTE PERFILES-->
+                    </div> <!-- /CONTENEDOR ESCOGE TU FUNKO -->
 
 
-                    <!--Inicio Salas-->
-
+                    <!--CONTENEDOR SALAS -->
                     <div class="col ">
                         <!--style="border: solid black;"-->
 
@@ -133,15 +130,10 @@
                                 <div class="contenedorSalas">
                                     <div class="col-12">
                                         <!--Boton 1-->
-                                        <!--Div que llama a funcion Drop y escoge que elemento puede arrastrase-->
-                                        <div id="ondrop" ondrop="drop(event)" ondragover="allowDrop(event)">
-
-                                            <button type="button" class=" btn btn-primary col-12  sala ">
-                                                <div class="titulo"> Sala
-                                                    1</div>
-
-                                            </button>
-                                        </div>
+                                        <button type="button" class="subtitulo btn btn-primary col-12 sala" 
+                                        id="sala-destino">
+                                            <div class="titulo">Sala 1</div>
+                                        </button>
                                         <!--elemento muestra aforo sala-->
                                         <button type="button" class=" btn btn-secondary col-12">
                                             <div class=" subtitulo">Capacidad Sala:</div>
@@ -158,14 +150,10 @@
                                 <div class="contenedorSalas">
                                     <div class="col-12">
                                         <!--Boton 1-->
-
-                                        <!--Div que llama a funcion Drop y escoge que elemento puede arrastrase-->
-                                        <div id="ondrop" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                            <button type="button" class="subtitulo btn btn-primary col-12 sala">
-                                                <div class="titulo"> Sala
-                                                    2</div>
-                                            </button>
-                                        </div>
+                                        <button type="button" class="subtitulo btn btn-primary col-12 sala"
+                                        id="sala-destino">
+                                            <div class="titulo"> Sala 2</div>
+                                        </button>
                                         <!--elemento muestra aforo sala-->
                                         <button type="button" class=" btn btn-secondary col-12">
                                             <div class=" subtitulo">Capacidad Sala:</div>
@@ -182,12 +170,10 @@
                                 <div class="contenedorSalas">
                                     <div class="col-12">
                                         <!--Boton 1-->
-                                        <div id="ondrop" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                            <button type="button" class="subtitulo btn btn-primary col-12 sala">
-                                                <div class="titulo"> Sala
-                                                    3</div>
-                                            </button>
-                                        </div>
+                                        <button type="button" class="subtitulo btn btn-primary col-12 sala"
+                                        id="sala-destino">
+                                            <div class="titulo"> Sala 3</div>
+                                        </button>
                                         <!--elemento muestra aforo sala-->
                                         <button type="button" class="btn btn-secondary col-12">
                                             <div class=" subtitulo">Capacidad Sala:</div>
@@ -204,12 +190,10 @@
                                 <div class="contenedorSalas">
                                     <div class="col-12">
                                         <!--Boton 1-->
-                                        <div id="ondrop" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                            <button type="button" class="subtitulo btn btn-primary col-12 sala">
-                                                <div class="titulo"> Sala
-                                                    4</div>
-                                            </button>
-                                        </div>
+                                        <button type="button" class="subtitulo btn btn-primary col-12 sala"
+                                        id="sala-destino">
+                                            <div class="titulo"> Sala 4</div>
+                                        </button>
                                         <!--elemento muestra aforo sala-->
                                         <button type="button" class="btn btn-secondary col-12">
                                             <div class=" subtitulo">Capacidad Sala:</div>
@@ -226,12 +210,10 @@
                                 <div class="contenedorSalas">
                                     <div class="col-12 ">
                                         <!--Boton 1-->
-                                        <div id="ondrop" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                            <button type="button" class="subtitulo btn btn-primary col-12 sala">
-                                                <div class="titulo"> Sala
-                                                    5</div>
-                                            </button>
-                                        </div>
+                                        <button type="button" class="subtitulo btn btn-primary col-12 sala"
+                                        id="sala-destino">
+                                            <div class="titulo"> Sala 5</div>
+                                        </button>
                                         <!--elemento muestra aforo sala-->
                                         <button type="button" class="btn btn-secondary col-12">
                                             <div class=" subtitulo">Capacidad Sala:</div>
@@ -243,14 +225,9 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
-                    </div>
-
-
-                    <!--FIN DE LAS SALAS-->
+                    </div> <!--CONTENEDOR SALAS -->
 
                 </div>
 
@@ -310,7 +287,9 @@
         crossorigin="anonymous"></script>
     <!-- JQUERY.JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- IMPORT.JS -->
-    <script src="/scripts/scripts/import.js"></script>   
+    <!-- APPI's -->
+    <script src="/scripts/appis/import.js"></script>
+    <script src="/scripts/appis/dragDrop.js"></script>
+    <script src="/scripts/appis/slides.js"></script>   
 </body>
 </html>
