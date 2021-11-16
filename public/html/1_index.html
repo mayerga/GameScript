@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
-<head> 
+
+<head>
     <!-- CSS Exportado -->
     <link rel="stylesheet" href="/public/css/0_general.css">
     <link rel="stylesheet" href="/public/css/0_header.css">
     <link rel="stylesheet" href="/public/css/1_index.css">
     <link rel="stylesheet" href="/public/css/9_footer.css">
-    <link rel="stylesheet" href="/public/css/normalize.css"> 
+    <link rel="stylesheet" href="/public/css/normalize.css">
     <!-- CSS's from INTERNET
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
@@ -22,7 +23,8 @@
     <!-- Google fonts CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- BootsTrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
@@ -33,7 +35,7 @@
         <div class="navbar-superior">
             <span><i>Un producto de GameScript</i></span>
         </div> <!-- /NAVBAR NEGRA -->
-    
+
         <!-- NAVBAR GRIS -->
         <nav class="navbar navbar-expand-sm background-gris navbar-dark">
             <div class="container-fluid">
@@ -42,7 +44,8 @@
                     <h1>GameScript</h1>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -68,33 +71,57 @@
 
     <!--HERO-->
     <!-- BACKGROUND IMAGE -->
-    <div 
-    id="intro-example"
-    class="p-5 text-center bg-image"
-    href=""
-    style="background-image: url('/public/img/pattern.jpg');">
+    <div id="intro-example" class="p-5 text-center bg-image" href=""
+        style="background-image: url('/public/img/pattern.jpg');">
 
-    <!-- BACKGROUND TRANSPARENTE -->
-        <div class="mask">
-            <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="text-white">
-                <h1 class="mb-3">GameScript</h1>
-                <h5 class="mb-4">El juego del momento</h5>
-                <a class="btn btn-outline-light btn-lg m-2"
-                    href="localhost:3000/2_lobby.html"
-                    role="button"
-                    rel="nofollow"
-                    target="_blank"
-                >Lobby</a>
-                <a class="btn btn-outline-light btn-lg m-2"
-                    href="localhost:3000/4_contact.html"
-                    target="_blank"
-                    role="button"
-                >Contacto</a>
+        <!-- BACKGROUND TRANSPARENTE -->
+
+
+        
+            <div class="row ">
+                <div class="col mask content-mask">
+                    <div class="text-white">
+                        <h1 class="mb-3">GameScript</h1>
+                        <h5 class="mb-4">El juego del momento</h5>
+                        <div class="row">
+
+                        </div class="col-12">
+
+                        <a class="btn btn-outline-light btn-lg m-2" href="localhost:3000/2_lobby.html" role="button"
+                            rel="nofollow" target="_blank">Lobby</a>
+
+                        <a class="btn btn-outline-light btn-lg m-2" href="localhost:3000/4_contact.html" target="_blank"
+                            role="button">Contacto</a>
+                    </div>
+                </div>
+                <div class="col mask content-mask">
+                    <div class="row">
+                        <form>
+                            <div class="text-white">
+
+                                <h1 class="mb-3">inicio Sesion</h1>
+                            </div>
+                            <div class="col content-name ">
+                                <a class="btn btn-outline-light btn-lg m-2">Nombre: 
+                                    <input  type="text"
+                                        name="nombre"></a>
+                            </div>
+                            <div class="col">
+                                <a>
+                                    <input class="btn btn-outline-light btn-lg m-2" type="submit" value="Enviar">
+                                    <input class="btn btn-outline-light btn-lg m-2" type="reset" value="Borrar">
+                                </a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
             </div>
-            </div>
+
+
         </div>
-    </div>
+    
+
     <!--/HERO-->
 
     <main>
@@ -104,7 +131,7 @@
         </div>
 
         <!-- FUNKOS -->
-        <div id="funkos"  class="px-5 pb-5 bg-success">
+        <div id="funkos" class="px-5 pb-5 bg-success">
             <div class="container">
                 <div class="row">
                     <h2 class="text-center text-white text-shadow">FUNKOS</h2>
@@ -130,7 +157,7 @@
             </div>
         </div>
     </main>
-    
+
     <!-- FOOTER IMPORTADO <include src="\public\html\9_footer.html"></include>-->
     <!-- FOOTER IMPORTADO -->
     <footer class="background-negro" id="main-footer">
@@ -141,37 +168,35 @@
             <div class="footer-row1">
                 <!-- LICENCIAS-GAMESCRIPT -->
                 <div>
-                <img class="licencia" src="/public/img/Licencias/GS.png" alt="Pegui3"/>
+                    <img class="licencia" src="/public/img/Licencias/GS.png" alt="Pegui3" />
                 </div>
-    
+
                 <!-- LICENCIA-GAMESCRIPT -->
                 <div>
-                <img
-                    class="licencia" src="/public/img/Licencias/Pegi3.jpg" alt="Pegui3"/>
+                    <img class="licencia" src="/public/img/Licencias/Pegi3.jpg" alt="Pegui3" />
                 </div>
-    
+
                 <!-- LICENCIA-GAMESCRIPT -->
                 <div>
-                <img 
-                    class="licencia" src="/public/img/Licencias/uocx.jpg" alt="Pegui3"/>
+                    <img class="licencia" src="/public/img/Licencias/uocx.jpg" alt="Pegui3" />
                 </div>
             </div> <!-- /ROW 1 -->
-    
+
             <!-- SUBTITULO -->
             <div class="container-fluid">
                 <h3 class="footer-row2" style="font-weight: bold;">
-                ENLACES DE INTERES
+                    ENLACES DE INTERES
                 </h3>
-    
+
             </div> <!-- SUBTITULO -->
-    
+
             <!-- ENLACES -->
             <div class="row footer-row3">
-            <div class="col-sm row3-enlace"><a href="#">P9 (GitHub)</a></div>
-            <div class="col-sm row3-enlace"><a href="#">Google Site de Julio</a></div>
-            <div class="col-sm row3-enlace"><a href="#">Google Site de Kevin</a></div>
-            <div class="col-sm row3-enlace"><a href="#">Google Site de Sergio</a></div>
-            <div class="col-sm row3-enlace"><a href="https://sites.google.com/d/1w71cTitxWTFsNNLsnaRgpwUFylisNmJG/p/1gMkWDZj1iVrb1GvNGqxocxv1uw8HX5xX/edit">Google Site de Manuel</a></div>
+                <div class="col-sm row3-enlace"><a href="#">P9 (GitHub)</a></div>
+                <div class="col-sm row3-enlace"><a href="#">Google Site de Julio</a></div>
+                <div class="col-sm row3-enlace"><a href="#">Google Site de Kevin</a></div>
+                <div class="col-sm row3-enlace"><a href="#">Google Site de Sergio</a></div>
+                <div class="col-sm row3-enlace"><a href="#">Google Site de Manuel</a></div>
             </div>
         </div> <!-- ENLACES -->
     </footer><!-- /FOOTER IMPORTADO -->
@@ -184,6 +209,7 @@
     <!-- JQUERY.JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- IMPORT.JS -->
-    <script src="/scripts/scripts/import.js"></script>   
+    <script src="/scripts/scripts/import.js"></script>
 </body>
+
 </html>
