@@ -6,16 +6,16 @@ const form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let jugador = JSON.stringify(`jugador${i++}`);
-  sessionStorage.setItem(jugador, form.nombre.value);
+  localStorage.setItem(jugador, form.nombre.value);
   
   alert(
     "!BIENVENIDO JUGADOR! ENCANTADO DE CONTAR CONTIGO, QUE EMPIEZE EL JUEGO " +
-      sessionStorage.getItem(jugador)
+      localStorage.getItem(jugador)
   );
 });
 
 form.addEventListener("reset", (e) => {
   e.preventDefault();
-  sessionStorage.clear();
+  localStorage.clear();
   i = 0;
 });
