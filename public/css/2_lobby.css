@@ -101,6 +101,10 @@
   user-select: none;
 }
 
+#form12{
+  margin-top: 20px;
+}
+
 /* Position the "next button" to the right */
 .next {
   position: absolute;
