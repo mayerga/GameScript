@@ -75,8 +75,6 @@
         style="background-image: url('/public/img/pattern.jpg');">
 
         <!-- BACKGROUND TRANSPARENTE -->
-
-
         
             <div class="row ">
                 <div class="col mask content-mask">
@@ -94,17 +92,18 @@
                             role="button">Contacto</a>
                     </div>
                 </div>
+                <!-- Inicio Sesion -->
                 <div class="col mask content-mask">
                     <div class="row">
-                        <form>
+                        <form id="form">
                             <div class="text-white">
-
                                 <h1 class="mb-3">inicio Sesion</h1>
                             </div>
                             <div class="col content-name ">
                                 <a class="btn btn-outline-light btn-lg m-2">Nombre: 
-                                    <input  type="text"
+                                    <input  type="text" id="nombre"
                                         name="nombre"></a>
+                                        
                             </div>
                             <div class="col">
                                 <a>
@@ -116,9 +115,9 @@
                         </form>
                     </div>
                 </div>
+                <!-- /Inicio Sesion -->
+                
             </div>
-
-
         </div>
     
 
@@ -209,7 +208,8 @@
     <!-- JQUERY.JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- IMPORT.JS -->
-    <script src="/scripts/scripts/import.js"></script>
+    <script src="/Scripts/appis/import.js"></script>
+    <script src="/Scripts/appis/webStorage.js"></script>
 </body>
 
 </html>
