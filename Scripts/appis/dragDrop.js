@@ -1,32 +1,33 @@
 /* --- FUNCIONES DRAG & DROP --- */
 
-  window.addEventListener("load", prohibido, false);
+  //window.addEventListener("load", prohibido, false);
   window.addEventListener("load", salaLlena, false);
 
   //Inicialización de elementos
-  var img_draggable = document.getElementById("img-draggable");
-  var sala_destino = document.getElementById("sala-destino");
+  var imagenesFunkos = document.getElementById("img-draggable");
+  var salasDestino = document.querySelectorAll(".sala");
 
   function prohibido(){
-    img_draggable.addEventListener("dragend", 
+    imagenesFunkos.addEventListener("dragend", 
         function(){alert("CUIDADO: no se puede arrastrar aquí.");}, 
         false);
   }    
 
-
   function salaLlena(){
-    //Eventos de D&D.
-    sala_destino.addEventListener("dragover",
-        function(e){e.preventDefault();}, false);
+      for(var i = 0; i < salasDestino.length; i++ ){
+          //Eventos de D&D.
+          salasDestino[i].addEventListener("dragover",
+              function(e){e.preventDefault();}, false);
 
-    sala_destino.addEventListener("dragleave",
-        function(e){e.preventDefault();}, false);
+          salasDestino[i].addEventListener("dragleave",
+              function(e){e.preventDefault();}, false);
 
-    sala_destino.addEventListener("drop", 
-        soltado, false);
+          salasDestino[i].addEventListener("drop", 
+              abrirSala, false);
+      }
   }
 
-  function soltado(e){
+  function abrirSala(e){
     alert("¡SALA LLENA! Prueba con cualquier otra sala.");
   }
 
