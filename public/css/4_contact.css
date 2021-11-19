@@ -71,6 +71,7 @@
     justify-content: start;
 }
 
+/* -------------- SCROLLBAR -------------- */
 .my-custom-scrollbar {
     position: relative;
     max-width: 1200px;

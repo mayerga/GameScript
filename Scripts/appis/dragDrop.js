@@ -28,7 +28,8 @@
   }
 
   function abrirSala(e){
-    alert("¡SALA LLENA! Prueba con cualquier otra sala.");
+    //alert("¡SALA LLENA! Prueba con cualquier otra sala.");
+    window.open("http://localhost:3000/3_playroom.html");
   }
 
   /* 
