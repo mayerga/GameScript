@@ -1,19 +1,13 @@
 /* --- FUNCIONES DRAG & DROP --- */
 
-  //window.addEventListener("load", prohibido, false);
-  window.addEventListener("load", salaLlena, false);
+  window.addEventListener("load", tratarEntrarSala, false);
 
   //Inicialización de elementos
-  var imagenesFunkos = document.getElementById("img-draggable");
-  var salasDestino = document.querySelectorAll(".sala");
+  var imagenesFunkos = document.querySelectorAll(".imgFunko");
+  var salasDestino = document.querySelectorAll(".contendorRecibeFunko");
 
-  function prohibido(){
-    imagenesFunkos.addEventListener("dragend", 
-        function(){alert("CUIDADO: no se puede arrastrar aquí.");}, 
-        false);
-  }    
-
-  function salaLlena(){
+  //Función central
+  function tratarEntrarSala(){
       for(var i = 0; i < salasDestino.length; i++ ){
           //Eventos de D&D.
           salasDestino[i].addEventListener("dragover",
@@ -23,16 +17,23 @@
               function(e){e.preventDefault();}, false);
 
           salasDestino[i].addEventListener("drop", 
-              abrirSala, false);
+              puedesEntrar, false);
       }
   }
 
-  function abrirSala(e){
-    //alert("¡SALA LLENA! Prueba con cualquier otra sala.");
+  //Funciones específicas
+  function puedesEntrar(e){
     window.open("http://localhost:3000/3_playroom.html");
   }
 
   /* 
+  function SalaLlena(){
+    imagenesFunkos.addEventListener("dragend", 
+        function(){alert("¡SALA LLENA! Prueba con cualquier otra sala.");}, 
+        false);
+  }    
+
+
   function allowDrop(ev) {
       ev.preventDefault();
   }

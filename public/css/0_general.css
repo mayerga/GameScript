@@ -87,6 +87,10 @@
 @media (max-width:  480px) {
 }  
 
+/*Todo lo que está por debajo de 376px*/
+@media (max-width:  3760px) {
+}  
+
 *{
     margin: 0;
     padding: 0;
