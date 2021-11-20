@@ -1,50 +1,59 @@
-/* --- FUNCIONES DRAG & DROP --- */
+    /* --- FUNCIONES DRAG & DROP --- */
 
-  window.addEventListener("load", tratarEntrarSala, false);
+    window.addEventListener("load", initDrag, false);
 
-  //Inicialización de elementos
-  var imagenesFunkos = document.querySelectorAll(".imgFunko");
-  var salasDestino = document.querySelectorAll(".contendorRecibeFunko");
+    //Variables
+    let imagenesFunkos = document.querySelectorAll(".imgFunko");
+    let contenedorDestino = document.querySelectorAll(".contendorRecibeFunko");
 
-  //Función central
-  function tratarEntrarSala(){
-      for(var i = 0; i < salasDestino.length; i++ ){
-          //Eventos de D&D.
-          salasDestino[i].addEventListener("dragover",
-              function(e){e.preventDefault();}, false);
+    /* ------ FUNCION CENTRAL ------ */
+    function initDrag(){
+       for(i in imagenesFunkos){ 
+            imagenesFunkos[i].addEventListener("dragstart", dragIniciado, false);
+            imagenesFunkos[i].addEventListener("drag", draggeando, false);
+            imagenesFunkos[i].addEventListener("dragend", dragFinalizado, false);
+        }
+    }
 
-          salasDestino[i].addEventListener("dragleave",
-              function(e){e.preventDefault();}, false);
+    //Funciones imagenesFunkos
+    function dragIniciado(e){
+        let padre = document.createElement('div');  //Estamos creando un elemento padre que contiene dentro un div
+        let clon  = this.cloneNode(true);           //Realiza un clon del elemento arrastrado.  
+        clon.style.height = "100%";
+        clon.style.width = "100%";
+        padre.appendChild(clon);                    //El elemento pasado, se agrega como hijo del padre.
+        e.dataTransfer.setData('text', padre.innerHTML)
+    }
 
-          salasDestino[i].addEventListener("drop", 
-              puedesEntrar, false);
-      }
-  }
+    function draggeando(e){
+        for(let j in contenedorDestino){
+            contenedorDestino[j].addEventListener("dragover", dragSobreContainer, false);
+            contenedorDestino[j].addEventListener("dragleave", dragSalioContainer, false);
+            contenedorDestino[j].addEventListener("drop", dragEntroContainer, false);
+        }
+    }
 
-  //Funciones específicas
-  function puedesEntrar(e){
-    window.open("http://localhost:3000/3_playroom.html");
-  }
+    function dragFinalizado(e){
+        e.preventDefault();
+    }
 
-  /* 
-  function SalaLlena(){
-    imagenesFunkos.addEventListener("dragend", 
-        function(){alert("¡SALA LLENA! Prueba con cualquier otra sala.");}, 
-        false);
-  }    
+    //Funciones contenedorDestino
+    function dragSobreContainer(e){
+        e.preventDefault();
+        this.style.backgroundColor = "#0b5ed7";
+    }
 
+    function dragSalioContainer(e){
+        e.preventDefault();
+        this.style.backgroundColor = "#0d6efd";
+    }
 
-  function allowDrop(ev) {
-      ev.preventDefault();
-  }
-
-  function drag(ev) {
-      ev.dataTransfer.setData("text", ev.target.id);
-  }
-
-  function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-  }*/
-
+    function dragEntroContainer(e){
+        e.preventDefault();
+        this.style.backgroundColor = "#0d6efd";
+        
+        let imgTransferida = e.dataTransfer.getData('text');
+        this.innerHTML = imgTransferida;
+        window.open("http://localhost:3000/3_playroom.html");
+        
+    }
