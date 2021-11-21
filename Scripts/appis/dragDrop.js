@@ -23,7 +23,7 @@
         clon.style.width = "100%";
         padre.appendChild(clon);                    //El elemento pasado, se agrega como hijo del padre.
         e.dataTransfer.setData('text', padre.innerHTML)
-    }
+    }                  
 
     function draggeando(e){
         for(let j in contenedorDestino){
@@ -51,9 +51,7 @@
     function dragEntroContainer(e){
         e.preventDefault();
         this.style.backgroundColor = "#0d6efd";
-        
-        let imgTransferida = e.dataTransfer.getData('text');
-        this.innerHTML = imgTransferida;
+        let imgTransferida = e.dataTransfer.getData('text'); 
+        this.innerHTML = imgTransferida; 
         window.open("http://localhost:3000/3_playroom.html");
-        
     }
