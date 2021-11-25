@@ -1,25 +1,33 @@
 
 /*LA SIGUIENTE CLASE DEBERÍA SER ABSTRACTA PERO SOLO SE PUEDE CON TYPESCRIPT NO PERMITIDO EN ESTE PRODUCTO */
-class casilla{
-    /*DEFINIMOS CONSTRUCTOR*/ 
-    constructor(color){
-        this.color=color;
+class Casilla{
+    /* ------ CONSTRUCTOR ------ */ 
+    constructor(){
+        this._color = null;        //String
+        this._ocupado = false;     //Boolean
     }
 
-    /*DEFINIMOS GETTERS & SETTERS */
+    /* --- GETTERS & SETTERS --- */
     set color(valor){
-        this.color=valor;
+        this._color=valor;
     }
     get color(){
-        return this.color;
+        return this._color;
     }
-    
-    /*DEFINIMOS METODOS */
-        /*GETCASILLAOCUPADA TIPO BOOLEAN */
-    getCasillaOcupada(){
-         
+    set ocupado(valor){
+        this._ocupado = valor;
     }
-    setCapturadoJugador(){
+    get ocupado(){
+        return this._ocupado;
+    }
 
+    /* -------- METODOS -------- */
+    /**
+     * Devuelve una casilla vacia
+     */
+    getnuevaCasilla(){
+        return new Casilla(null, false);  
     }
 }
+
+module.exports.Casilla = Casilla;
