@@ -25,17 +25,23 @@ class TableroJuego{
     }
 
     /* --- METODOS DE CLASE --- */
-    //Estamos testeando la opción 1: No se requiere una variable global
-    //y el atributo tableroDeJuego cambiará en cada linea.
-    imprimeTableroJuego(){      //Privado
+    imprimeTableroJuego(){  
         console.log(`Has creado un nuevo tablero de ${this.fila} filas + ${this.columna} columnas`);
     }
 
+    /**
+     * Inicializa el tablero con todas sus casillas nulas y vacias.
+     */
     crea_tableroDeJuego(){
         this.defineDimension_tableroDeJuego(this._tableroDeJuego);
         this.instanciarCasillas_tableroDeJuego(this._tableroDeJuego);
     }
 
+    /**
+     * Define el tamaño del tablero, haciendolo una Matriz bidimensional de filas y columnas.
+     * La intención de esté módulo, es que más adelante se pueda escoger el tamaño del tablero.
+     * @param {*} tableroDeJuego 
+     */
     defineDimension_tableroDeJuego(tableroDeJuego){
         //Inicializamos las filas
         tableroDeJuego = new Array(this.fila);
@@ -47,6 +53,11 @@ class TableroJuego{
         this._tableroDeJuego = tableroDeJuego;
     }
 
+    /**
+     * Asigna una casilla vacia (de la clase 'Casilla.js') a cada 
+     * una de las posiciones de la Matriz del tablero.
+     * @param {*} tableroDeJuego 
+     */
     instanciarCasillas_tableroDeJuego(tableroDeJuego){       
         for (var i = 0; i < this.fila; i++){
             for (var j = 0; j < this.columna; j++){
