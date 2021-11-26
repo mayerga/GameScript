@@ -1,11 +1,15 @@
 class Jugador {
-    constructor(idJjugador, nickName) {
-      this.idJugador = idJjugador;
-      this.nickName = nickName;
-      this.avatar = avatar;
-      this.color = color;
-      this.score = score;
+    constructor(idJugador, nickName) {
+        this._idJugador = idJugador;
+        this._nickName = nickName;
+        this._avatar = null;
+        this._color = null;
+        this._score = null;
     }
-      partidasGanas() {}
-      PartidasJugadas() {}
-  }
+
+
+    partidasGanas() {}
+    PartidasJugadas() {}
+}
+
+module.exports.Jugador = Jugador;

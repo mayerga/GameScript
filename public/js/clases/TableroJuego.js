@@ -1,4 +1,4 @@
-const casilla = require ('./Casilla');
+//const casilla = require ('./Casilla');
 
 class TableroJuego{
     
@@ -61,10 +61,13 @@ class TableroJuego{
     instanciarCasillas_tableroDeJuego(tableroDeJuego){       
         for (var i = 0; i < this.fila; i++){
             for (var j = 0; j < this.columna; j++){
-                tableroDeJuego[i][j] = new casilla.Casilla();
+                //Asignar a cada casilla un <td> del HTML
+                let casillaLLena = new Casilla(i, j);
+                //---------------------------------------
+                tableroDeJuego[i][j] = casillaLLena;
             }
         }
     }
 }
 
-module.exports.TableroJuego = TableroJuego;
+//module.exports.TableroJuego = TableroJuego;

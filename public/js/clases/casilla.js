@@ -1,10 +1,15 @@
-
-/*LA SIGUIENTE CLASE DEBERÍA SER ABSTRACTA PERO SOLO SE PUEDE CON TYPESCRIPT NO PERMITIDO EN ESTE PRODUCTO */
 class Casilla{
     /* ------ CONSTRUCTOR ------ */ 
+    /*
     constructor(){
-        this._color = null;        //String
-        this._ocupado = false;     //Boolean
+        this._color     = null;        //String
+        this._ocupado   = false;     //Boolean
+    }
+    */
+    constructor(coordenadaX, coordenadaY){
+        this.celdaHTML  = document.getElementById("c"+coordenadaX+coordenadaY);
+        this._color     = null;        //String
+        this._ocupado   = false;     //Boolean
     }
 
     /* --- GETTERS & SETTERS --- */
@@ -21,13 +26,8 @@ class Casilla{
         return this._ocupado;
     }
 
-    /* -------- METODOS -------- */
-    /**
-     * Devuelve una casilla vacia
-     */
-    getnuevaCasilla(){
-        return new Casilla(null, false);  
-    }
+    /* ---- MÉTODOS DE CLASE ---- */
+
 }
 
-module.exports.Casilla = Casilla;
+//module.exports.Casilla = Casilla;

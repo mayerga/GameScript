@@ -1,13 +1,9 @@
-const claseTableroDeJuego = require ('./TableroJuego');
-
-//DECLARACIÓN DE VARIALBES
-tableroDeJuego = new claseTableroDeJuego.TableroJuego(20, 20);
-tableroDeJuego.crea_tableroDeJuego();
-console.log(tableroDeJuego);
+//const claseTableroDeJuego = require ('./TableroJuego');
+window.addEventListener("load", play, false);
 
 //FUNCIÓN PRINCIPAL
-/*
 function play(){
-
+    let tableroDeJuego = new TableroJuego(20, 20);
+    tableroDeJuego.crea_tableroDeJuego();
+    console.log(tableroDeJuego);    
 }
-*/
