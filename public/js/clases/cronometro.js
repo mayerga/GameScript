@@ -13,26 +13,42 @@ class cronometro {
 
   inicializaCronometro() {
     let secInicio = 10;
-    this._segundos = secInicio;           //Revisar al final
-    let seconds = document.getElementById('seconds');
+    this._segundos = secInicio; //Revisar al final
+    let seconds = document.getElementById("seconds");
+
+    window.setInterval(
+      function(){
+      console.log (this._segundos);
+      seconds.innerHTML = this._segundos; //POR AQUÍ HAY QUE METER EL SET INTERVAL
+      this._segundos= secInicio--;
+      
+    if (this._segundos == 0) {
+      alert("Se acabo el tiempo! Cambio de Turno");
+      clearInterval();
+    }
     
-    this.cuentaAtrasCronometro(seconds);
+  
+      },1000);
+  
     //return this._segundos;
   }
 
-  cuentaAtrasCronometro(seconds) {
-    while(this._segundos >=0){
-    console.log(this._segundos);
-    seconds.innerHTML = this._segundos;   //POR AQUÍ HAY QUE METER EL SET INTERVAL
-    this._segundos--;
-    }   
-  }
+  // cuentaAtrasCronometro(seconds) {
+     
+  //     console.log(this._segundos);
+  //     seconds.innerHTML = this._segundos; //POR AQUÍ HAY QUE METER EL SET INTERVAL
+  //     this._segundos--;
 
-  reiniciaCronometro(){
+  //   if (this._segundos == 0) {
+  //     alert("Se acabo el tiempo! Cambio de Turno");
+  //     clearInterval();
+  //   }
+    
+  // }
 
-    if (this._segundos == 0){
-
-        alert("Se acabo el tiempo! Cambio de Turno" );
+  reiniciaCronometro() {
+    if (this._segundos == 0) {
+      alert("Se acabo el tiempo! Cambio de Turno");
     }
 
     this.inicializaCronometro();
