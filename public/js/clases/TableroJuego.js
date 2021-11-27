@@ -10,23 +10,27 @@ class TableroJuego{
     };
 
     /* --- GETTERS & SETTERS --- */
-    get fila(){
+    get getFila(){
         return this._fila;
     }
-    set fila(valor){
+    set setFila(valor){
         this._fila=valor;
     }
 
-    get columna(){
+    get getColumna(){
         return this._columna;
     }
-    set columna(valor){
+    set setColumna(valor){
         this._columna=valor;
     }
-
+    
+    get getTableroDeJuego(){
+        return this._tableroDeJuego;
+    }
+    
     /* --- METODOS DE CLASE --- */
-    imprimeTableroJuego(){  
-        console.log(`Has creado un nuevo tablero de ${this.fila} filas + ${this.columna} columnas`);
+    imprimeResultado(){  
+        console.log(`Has creado un nuevo tablero de ${this._fila} filas + ${this._columna} columnas`);
     }
 
     /**
@@ -35,6 +39,7 @@ class TableroJuego{
     crea_tableroDeJuego(){
         this.defineDimension_tableroDeJuego(this._tableroDeJuego);
         this.instanciarCasillas_tableroDeJuego(this._tableroDeJuego);
+        this.imprimeResultado();
     }
 
     /**
@@ -44,10 +49,10 @@ class TableroJuego{
      */
     defineDimension_tableroDeJuego(tableroDeJuego){
         //Inicializamos las filas
-        tableroDeJuego = new Array(this.fila);
+        tableroDeJuego = new Array(this._fila);
         //Agregamos a cada fila sus columna
-        for (var i = 0; i < this.fila; i++){
-            tableroDeJuego[i] = new Array(this.columna);
+        for (var i = 0; i < this._fila; i++){
+            tableroDeJuego[i] = new Array(this._columna);
         }
         //Asignamos la matriz a '_tableroDeJuego'
         this._tableroDeJuego = tableroDeJuego;
@@ -59,14 +64,15 @@ class TableroJuego{
      * @param {*} tableroDeJuego 
      */
     instanciarCasillas_tableroDeJuego(tableroDeJuego){       
-        for (var i = 0; i < this.fila; i++){
-            for (var j = 0; j < this.columna; j++){
+        for (var i = 0; i < this._fila; i++){
+            for (var j = 0; j < this._columna; j++){
                 //Asignar a cada casilla un <td> del HTML
-                let casillaLLena = new Casilla(i, j);
+                let casillaVacia = new Casilla(i, j);
                 //---------------------------------------
-                tableroDeJuego[i][j] = casillaLLena;
+                tableroDeJuego[i][j] = casillaVacia;
             }
         }
+        //this._tableroDeJuego = tableroDeJuego;
     }
 }
 

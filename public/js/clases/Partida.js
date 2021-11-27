@@ -1,4 +1,6 @@
 class Partida{
+        
+    /* --- MÉTODO CONSTRUCTOR --- */ 
     constructor(idTablero,tablero,Jugador,cronometro,contador,chat,botonesVarios){
         this.idTablero = tablero;
         this.tablero = tablero;
@@ -8,6 +10,11 @@ class Partida{
         this.chat = chat;
         this.botonesVarios = botonesVarios;
     }
+
+    /* --- GETTERS & SETTERS --- */
+
+
+    /* --- METODOS DE CLASE --- */
         mostrarGanador(){}
         mostrarJugadores(){}
         almacenarScore(){}
