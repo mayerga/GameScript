@@ -4,4 +4,4 @@ function autoplay(){
     cronoJugador.inicializaCronometro();
 }
 
-
+//autoplay();
