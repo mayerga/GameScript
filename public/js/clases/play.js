@@ -1,5 +1,5 @@
 //const claseTableroDeJuego = require ('./TableroJuego');
-window.addEventListener("load", play, false);
+//window.addEventListener("load", play, false);
 
 let tableroDeJuego;
 
@@ -39,7 +39,7 @@ function play(){
     //y = Math.round(Math.random()*19);
 
 
-    let jugador1 = new Jugador('02', 'Kevin');
+    let jugador2 = new Jugador('02', 'Kevin');
     jugador2.setColor("purple");
     //SelectCell(x,y);
 }

@@ -12,19 +12,19 @@ class cronometro {
   }
 
   inicializaCronometro() {
-
     let secInicio = 10;
-    this._segundos = secInicio;
-
-    return this._segundos;
+    this._segundos = secInicio;           //Revisar al final
+    let seconds = document.getElementById('seconds');
+    
+    this.cuentaAtrasCronometro(seconds);
+    //return this._segundos;
   }
 
-  cuentaAtrasCronometro(param) {
-    
+  cuentaAtrasCronometro(seconds) {
     while(this._segundos >=0){
-    param.innerHTML = this._segundos;
+    console.log(this._segundos);
+    seconds.innerHTML = this._segundos;   //POR AQUÍ HAY QUE METER EL SET INTERVAL
     this._segundos--;
-    //console.log(this._segundos + "hola");
     }   
   }
 
