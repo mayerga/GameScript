@@ -1,3 +1,6 @@
+const segundosInicio = 10;
+const seconds = document.getElementById("seconds");
+
 class cronometro {
   constructor() {
     this._segundos;
@@ -11,34 +14,44 @@ class cronometro {
     this._segundos = segundos;
   }
 
-  inicializaCronometro() {
-    let secInicio = 10;
-    this._segundos = secInicio; //Revisar al final
-    let seconds = document.getElementById("seconds");
-    this.cuentaAtrasCronometro(seconds);
+  inicializaCronometro(valorInicio) {
+    
+    this._segundos = segundosInicio; //Revisar al final
+    this.cuentaAtrasCronometro(seconds, segundosInicio);
+   
 
-
-  
     //return this._segundos;
   }
 
-  cuentaAtrasCronometro(seconds) {
-    window.setInterval(() => {  
-      seconds.innerHTML = this._segundos;
-      console.log (this._segundos);     
-      this._segundos = --this._segundos;    
-      
-    if (this._segundos == -2) 
-      this.reiniciaCronometro();
-    },1000); 
+resetTime(inicio){
+  clearInterval(inicio);
+
+  
+}
+
+  cuentaAtrasCronometro(seconds, valorInicio) {
+    
+    let contador = valorInicio;
+    console.log(seconds.innerHTML = contador);
+    let inicio = window.setInterval(() => {
+      if(contador > 0){
+      console.log(seconds.innerHTML = --contador);
+    } if( contador ==0){
+        this.resetTime(inicio);
+        console.log("se acabado el turno")
+    this._segundos = segundosInicio;
+    seconds.innerHTML = this._segundos
+      }
+    }, 1000);
+    
   }
 
-  reiniciaCronometro() {
-    console.log("Se acabo el tiempo! Cambio de Turno");
-    clearInterval();
-    this.inicializaCronometro();
-    //cambiar turno jugador
-  }
+  // reiniciaCronometro() {
+  //   console.log("Se acabo el tiempo! Cambio de Turno");
+  //   clearInterval();
+  //   this.inicializaCronometro();
+  //   //cambiar turno jugador
+  // }
 }
 /*------------------------------------------------------------------*/
 
@@ -62,12 +75,12 @@ class cronometro {
 
 // }
 
-  //Cuenta atras V1.     
-  //     console.log(this._segundos);
-  //     seconds.innerHTML = this._segundos; //POR AQUÍ HAY QUE METER EL SET INTERVAL
-  //     this._segundos--;
+//Cuenta atras V1.
+//     console.log(this._segundos);
+//     seconds.innerHTML = this._segundos; //POR AQUÍ HAY QUE METER EL SET INTERVAL
+//     this._segundos--;
 
-  //   if (this._segundos == 0) {
-  //     alert("Se acabo el tiempo! Cambio de Turno");
-  //     clearInterval();
-  //   
+//   if (this._segundos == 0) {
+//     alert("Se acabo el tiempo! Cambio de Turno");
+//     clearInterval();
+//
