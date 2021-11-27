@@ -23,4 +23,4 @@ function autoplay(){
     // cronoJugador.reiniciaCronometro();
 }
 
-autoplay();
+//autoplay();
