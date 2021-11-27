@@ -1,14 +1,8 @@
 class Casilla{
     /* ------ CONSTRUCTOR ------ */ 
-    /*
-    constructor(){
-        this._color     = null;        //String
-        this._ocupado   = false;     //Boolean
-    }
-    */
     constructor(coordenadaX, coordenadaY){
-        this._celdaHTML  = document.getElementById("c"+coordenadaX+coordenadaY);
-        this._color     = null;        //String
+        this._celdaHTML = document.getElementById("c"+coordenadaX+coordenadaY);
+        this._dueño     = null;      //String
         this._ocupado   = false;     //Boolean
     }
 
@@ -16,23 +10,18 @@ class Casilla{
     get getCeldaHTML(){
         return this._celdaHTML;
     }
-
-    setColor(valor){
-        this._color = valor;
+    setOcupado(boolano){
+        this._ocupado = boolano;
     }
-    get getColor(){
-        return this._color;
-    }
-    setOcupado(valor){
-        this._ocupado = valor;
-    }
-    get getOcupado(){
-        return this._ocupado;
+    setDueño(nuevoDueño){
+        this._dueño = nuevoDueño;
     }
 
     /* ---- MÉTODOS DE CLASE ---- */
-    casillaOcupada(){
-        this.getCeldaHTML.style.background="red";
+    casillaOcupada(color, dueño){
+        console.log(color);
+        this.getCeldaHTML.style.background = color;
+        this.setDueño(dueño);
         this.setOcupado(true);
     }
 }

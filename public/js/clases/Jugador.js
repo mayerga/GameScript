@@ -10,24 +10,35 @@ class Jugador {
     }
 
     /* --- GETTERS & SETTERS --- */
+    getNickName(){
+        return this._nickName;
+    }
+
     setColor(valor){
         this._color = valor;
     }
 
+    getColor(){
+        return this._color;
+    }
+
     /* --- METODOS DE CLASE --- */
     asignarCasillaInicio(tableroDeJuego){
-        console.log(tableroDeJuego);
+        //Decide coordenadas de inicio
         let x = Math.round(Math.random()*19);
         let y = Math.round(Math.random()*19);
-        //Imprime coordenadas
+        //Imprime coordenadas de inicio
         console.log(x);
         console.log(y);
 
         //Cambia casillaVacia a casillaOcupada
-        let casillaPlayer1 = tableroDeJuego[x][y];
-        console.log(casillaPlayer1);
-        casillaPlayer1.casillaOcupada();
-        console.log(casillaPlayer1);
+        let casillaJugador  = tableroDeJuego[x][y];
+        let colorJugador    = this.getColor();
+        let nickNameJugador = this.getNickName();
+
+        console.log(casillaJugador);
+        casillaJugador.casillaOcupada(colorJugador, nickNameJugador);
+        console.log(casillaJugador);
     }
 
 

@@ -15,46 +15,31 @@ class cronometro {
     let secInicio = 10;
     this._segundos = secInicio; //Revisar al final
     let seconds = document.getElementById("seconds");
+    this.cuentaAtrasCronometro(seconds);
 
-    window.setInterval(
-      function(){
-      console.log (this._segundos);
-      seconds.innerHTML = this._segundos; //POR AQUÍ HAY QUE METER EL SET INTERVAL
-      this._segundos= secInicio--;
-      
-    if (this._segundos == 0) {
-      alert("Se acabo el tiempo! Cambio de Turno");
-      clearInterval();
-    }
-    
-  
-      },1000);
+
   
     //return this._segundos;
   }
 
-  // cuentaAtrasCronometro(seconds) {
-     
-  //     console.log(this._segundos);
-  //     seconds.innerHTML = this._segundos; //POR AQUÍ HAY QUE METER EL SET INTERVAL
-  //     this._segundos--;
-
-  //   if (this._segundos == 0) {
-  //     alert("Se acabo el tiempo! Cambio de Turno");
-  //     clearInterval();
-  //   }
-    
-  // }
+  cuentaAtrasCronometro(seconds) {
+    window.setInterval(() => {  
+      seconds.innerHTML = this._segundos;
+      console.log (this._segundos);     
+      this._segundos = --this._segundos;    
+      
+    if (this._segundos == -2) 
+      this.reiniciaCronometro();
+    },1000); 
+  }
 
   reiniciaCronometro() {
-    if (this._segundos == 0) {
-      alert("Se acabo el tiempo! Cambio de Turno");
-    }
-
+    console.log("Se acabo el tiempo! Cambio de Turno");
+    clearInterval();
     this.inicializaCronometro();
+    //cambiar turno jugador
   }
 }
-
 /*------------------------------------------------------------------*/
 
 //     constructor(/*enum-SOLO PERMITIDO CON TYPESCRIPT*/){
@@ -76,3 +61,13 @@ class cronometro {
 //     }
 
 // }
+
+  //Cuenta atras V1.     
+  //     console.log(this._segundos);
+  //     seconds.innerHTML = this._segundos; //POR AQUÍ HAY QUE METER EL SET INTERVAL
+  //     this._segundos--;
+
+  //   if (this._segundos == 0) {
+  //     alert("Se acabo el tiempo! Cambio de Turno");
+  //     clearInterval();
+  //   
