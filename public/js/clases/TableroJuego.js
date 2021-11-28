@@ -68,11 +68,9 @@ class TableroJuego{
             for (var j = 0; j < this._columna; j++){
                 //Asignar a cada casilla un <td> del HTML
                 let casillaVacia = new Casilla(i, j);
-                //---------------------------------------
                 tableroDeJuego[i][j] = casillaVacia;
             }
         }
-        //this._tableroDeJuego = tableroDeJuego;
     }
 }
 

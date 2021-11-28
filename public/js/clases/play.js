@@ -2,40 +2,40 @@
 window.addEventListener("load", play, false);
 
 let tableroDeJuego;
-
-
-//PASO 1: Cambiar el código POO.
-//1.2: Casilla tiene que tener color o dueño.
-//Que el dueño le asigne el color.
-//PASO 2: Instanciar un jugador.
-//PASO 3: Agregar 4 players.
-//PASO 4: 
-
+let jugadores = new Array();
 //FUNCIÓN PRINCIPAL
 function play(){
 
-    //Se crea un nuevo tablero de juego de 20casillas x 20casillas.
-    tableroDeJuego = new TableroJuego(20, 20); 
-    tableroDeJuego.crea_tableroDeJuego();
-    tableroDeJuego = tableroDeJuego.getTableroDeJuego;
+    //Si play => Se inicia una nueva partida.
+    let partida = new Partida();
+    tableroDeJuego = partida.getTableroDeJuego();
 
-    //Si play => Comenzar juego
+    //si (nºJugadores > 1) entonces 
+    //Instanciar jugadores dentro de partidas:
     let jugador1 = new Jugador('01', 'Julito');
-    //Esto está aislado del método constructor, porqué
-    //se tiene la intención que en un futuro, el jugador,
-    //pueda escoger su propio color;
     jugador1.setColor("blue");
-    jugador1.asignarCasillaInicio(tableroDeJuego);
+    jugadores.push(jugador1)
 
     let jugador2 = new Jugador('02', 'Kevin');
     jugador2.setColor("red");
-    jugador2.asignarCasillaInicio(tableroDeJuego);  
+    jugadores.push(jugador2)
 
     let jugador3 = new Jugador('03', 'Sergio');
     jugador3.setColor("green");
-    jugador3.asignarCasillaInicio(tableroDeJuego);
+    jugadores.push(jugador3)
 
     let jugador4 = new Jugador('04', 'Manu');
     jugador4.setColor("orange");
-    jugador4.asignarCasillaInicio(tableroDeJuego);   
+    jugadores.push(jugador4)
+
+        /*NOTA: {Los setColor se encuentran aislados del método constructor, 
+                porqué se tiene la intención que en un futuro, el jugador,
+                pueda escoger su propio color} */
+
+    //Se pasa los jugadores al metodo asignarCasillaInicio
+    partida.asignarJugadoresCasillaInicio(jugadores);
+    partida.nuevaRonda();
+    //LÓGICA DE CAPTURA + SOCKET.IO
+    //PASO 1: ASIGNAR TURNO
+    //nuevaRonda();
 }

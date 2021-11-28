@@ -27,20 +27,28 @@ class Jugador {
         //Decide coordenadas de inicio
         let x = Math.round(Math.random()*19);
         let y = Math.round(Math.random()*19);
-        //Imprime coordenadas de inicio
-        console.log(x);
-        console.log(y);
 
-        //Cambia casillaVacia a casillaOcupada
+        //Declaración de variables 
         let casillaJugador  = tableroDeJuego[x][y];
         let colorJugador    = this.getColor();
         let nickNameJugador = this.getNickName();
-
-        console.log(casillaJugador);
-        casillaJugador.casillaOcupada(colorJugador, nickNameJugador);
-        console.log(casillaJugador);
+        
+        //Si la casilla; no está ocupada -> cambia casillaVacia a casillaOcupada
+        if(!casillaJugador.getOcupado()){
+            casillaJugador.casillaOcupada(colorJugador, nickNameJugador);
+            console.log(casillaJugador);
+        } else {
+            this.asignarCasillaInicio(tableroDeJuego);
+        }
     }
 
+    //capturaCasilla();
+    //PASO 1: SOMBREAR CASILLAS ALHEDAÑAS.
+    //PASO 2: PINTAR CASILLA ALHEDAÑA Y CAMBIAR ESTADO.
+    //PASO 3: ¿Si está ocupada no se puede ocupar? -> Salta alerta.
+    //PASO 4: SUMAR PUNTOS AL SCORE.
+    //PASO 5: CAMBIAR TURNO.
+    capturaCasilla(){}
 
     partidasGanas() {}
     PartidasJugadas() {}
