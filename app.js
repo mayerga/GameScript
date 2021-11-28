@@ -19,10 +19,16 @@ io.on("connection", function(socket)  {
  
 
   socket.emit("messages", function(){
-
-    print("Bienvenido a nuestro Juego");
     
   });
+
+  socket.on("chat:message", (data) => {
+    io.sockets.emit("chat:message", data);
+ });
+
+ socket.on("chat:typing", (data) => {
+     socket.broadcast.emit("chat:typing", data);
+ })
 });
 
 server.listen(port, function () {
