@@ -18,32 +18,32 @@ class Cronometro {
 
   /* --- METODOS DE CLASE --- */
   inicializaCronometro() {
-    this._segundos = this._segundosInicio; 
+    this._segundos = this._segundosInicio;
     this.cuentaAtrasCronometro();
   }
 
   cuentaAtrasCronometro() {
-      //Capturamos el <div/> del casillero de los segundos y lo imprimimos por pantalla
-      const seconds = document.getElementById("seconds");
-      console.log(seconds.innerHTML = this._segundosInicio);
-      
-      let contador = this._segundos;
-      let i = 0;
+    //Capturamos el <div/> del casillero de los segundos y lo imprimimos por pantalla
+    const seconds = document.getElementById("seconds");
+    console.log((seconds.innerHTML = this._segundosInicio));
 
-      let inicio = window.setInterval(() => {
-        while (contador > 0){
-            console.log(seconds.innerHTML = --contador);
-        } 
+    let contador = this._segundos;
+    let i = 0;
 
-        //if(contador == 0){
-        //    clearInterval(inicio); 
-        //  console.log("se acabado tu turno")
-        //  inicializaCronometro();
-          //this.resetTime(inicio);
-          //this._segundos = this._segundosInicio;
-          //seconds.innerHTML = this._segundosInicio;
-        //}
+    while (contador >= 0) {
+      window.setTimeout(() => {
+        console.log((seconds.innerHTML = --contador));
       }, 1000);
+    }
+
+    //if(contador == 0){
+    //    clearInterval(inicio);
+    //  console.log("se acabado tu turno")
+    //  inicializaCronometro();
+    //this.resetTime(inicio);
+    //this._segundos = this._segundosInicio;
+    //seconds.innerHTML = this._segundosInicio;
+    //}
   }
 
   /*
