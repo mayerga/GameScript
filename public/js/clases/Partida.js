@@ -25,9 +25,9 @@ class Partida{
     autoAsignarID(){}
     nuevoTableroDeJuego(){
         //Se crea un nuevo tablero de juego de 20casillas x 20casillas.
-        tableroDeJuego = new TableroJuego(20, 20); 
-        tableroDeJuego.crea_tableroDeJuego();
-        tableroDeJuego = tableroDeJuego.getTableroDeJuego;
+        let nuevoTableroDeJuego = new TableroJuego(20, 20); 
+        nuevoTableroDeJuego.crea_tableroDeJuego();
+        tableroDeJuego = nuevoTableroDeJuego.getTableroDeJuego;
         return tableroDeJuego;
     }
 
@@ -58,19 +58,19 @@ class Partida{
         let cronometro = new Cronometro();
 
         if (!this._ganador){
+            jugadorActual = this._jugadores[0];
+            console.log(jugadorActual);
+            jugadorActual.capturaCasilla();
+
+            /*
             let i = 0;
+            cronometro.inicializaCronometro();
             while(i < this._jugadores.length){
                 jugadorActual = this._jugadores[i];
-                cronometro.inicializaCronometro();
-                //return -> terminado(true);
-                //mientras(!terminado) hacer
- 
-                    //-> devuelve un evento cuando llega a 0
                 console.log(jugadorActual);
-                //finHacer
-                //jugadorActual.capturaCasilla();
                 i++;
             }
+            */
         }
         //else (Juego terminado);
     }
@@ -78,4 +78,4 @@ class Partida{
     mostrarGanador(){}
     mostrarJugadores(){}
     almacenarScore(){}
-    }
+}
