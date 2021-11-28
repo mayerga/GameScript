@@ -1,12 +1,13 @@
-const segundosInicio = 10;
-const seconds = document.getElementById("seconds");
+//const segundosInicio = 10;
+//const seconds = document.getElementById("seconds");
 
 class Cronometro {
   constructor() {
-    this._segundos;
     this._segundosInicio = 10;
+    this._segundos;
   }
 
+  /* --- GETTERS & SETTERS --- */
   get segundos() {
     return this._segundos;
   }
@@ -15,32 +16,41 @@ class Cronometro {
     this._segundos = segundos;
   }
 
+  /* --- METODOS DE CLASE --- */
   inicializaCronometro() {
-    
-    this._segundos = segundosInicio; //Revisar al final
-    this.cuentaAtrasCronometro(seconds, segundosInicio);
-    //return this._segundos;
+    this._segundos = this._segundosInicio; 
+    this.cuentaAtrasCronometro();
   }
 
+  cuentaAtrasCronometro() {
+      //Capturamos el <div/> del casillero de los segundos y lo imprimimos por pantalla
+      const seconds = document.getElementById("seconds");
+      console.log(seconds.innerHTML = this._segundosInicio);
+      
+      let contador = this._segundos;
+      let i = 0;
+
+      let inicio = window.setInterval(() => {
+        while (contador > 0){
+            console.log(seconds.innerHTML = --contador);
+        } 
+
+        //if(contador == 0){
+        //    clearInterval(inicio); 
+        //  console.log("se acabado tu turno")
+        //  inicializaCronometro();
+          //this.resetTime(inicio);
+          //this._segundos = this._segundosInicio;
+          //seconds.innerHTML = this._segundosInicio;
+        //}
+      }, 1000);
+  }
+
+  /*
   resetTime(inicio){
     clearInterval(inicio); 
   }
-
-  cuentaAtrasCronometro(seconds, valorInicio) {
-  
-    let contador = valorInicio;
-    console.log(this.seconds.innerHTML = contador);
-    let inicio = window.setInterval(() => {
-      if(contador > 0){
-      console.log(seconds.innerHTML = --contador);
-    } if( contador ==0){
-        this.resetTime(inicio);
-        console.log("se acabado el turno")
-    this._segundos = segundosInicio;
-    this.seconds.innerHTML = this._segundos
-      }
-    }, 1000);
-  }
+  */
 
   // reiniciaCronometro() {
   //   console.log("Se acabo el tiempo! Cambio de Turno");
