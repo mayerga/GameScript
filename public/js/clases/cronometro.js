@@ -1,9 +1,10 @@
 const segundosInicio = 10;
 const seconds = document.getElementById("seconds");
 
-class cronometro {
+class Cronometro {
   constructor() {
     this._segundos;
+    this._segundosInicio = 10;
   }
 
   get segundos() {
@@ -14,25 +15,21 @@ class cronometro {
     this._segundos = segundos;
   }
 
-  inicializaCronometro(valorInicio) {
+  inicializaCronometro() {
     
     this._segundos = segundosInicio; //Revisar al final
     this.cuentaAtrasCronometro(seconds, segundosInicio);
-   
-
     //return this._segundos;
   }
 
-resetTime(inicio){
-  clearInterval(inicio);
-
-  
-}
+  resetTime(inicio){
+    clearInterval(inicio); 
+  }
 
   cuentaAtrasCronometro(seconds, valorInicio) {
-    
+  
     let contador = valorInicio;
-    console.log(seconds.innerHTML = contador);
+    console.log(this.seconds.innerHTML = contador);
     let inicio = window.setInterval(() => {
       if(contador > 0){
       console.log(seconds.innerHTML = --contador);
@@ -40,10 +37,9 @@ resetTime(inicio){
         this.resetTime(inicio);
         console.log("se acabado el turno")
     this._segundos = segundosInicio;
-    seconds.innerHTML = this._segundos
+    this.seconds.innerHTML = this._segundos
       }
     }, 1000);
-    
   }
 
   // reiniciaCronometro() {

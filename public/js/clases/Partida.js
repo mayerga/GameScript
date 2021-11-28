@@ -55,14 +55,24 @@ class Partida{
     //
     nuevaRonda(){
         let jugadorActual;
+        let cronometro = new Cronometro();
+
         if (!this._ganador){
             let i = 0;
             while(i < this._jugadores.length){
                 jugadorActual = this._jugadores[i];
+                cronometro.inicializaCronometro();
+                //return -> terminado(true);
+                //mientras(!terminado) hacer
+ 
+                    //-> devuelve un evento cuando llega a 0
+                console.log(jugadorActual);
+                //finHacer
                 //jugadorActual.capturaCasilla();
                 i++;
             }
         }
+        //else (Juego terminado);
     }
 
     mostrarGanador(){}
