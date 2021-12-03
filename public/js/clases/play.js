@@ -42,6 +42,7 @@ function play(){
     console.log("-------------------------------");
     
 }
+
 let iJugador = 0;
 function capturarSiSePuede(x_Pulsado, y_Pulsado){
     //Declaración de variables
@@ -95,3 +96,9 @@ function capturarSiSePuede(x_Pulsado, y_Pulsado){
         if(iJugador == 4) iJugador = 0;
     }
 }
+
+//MÁS COSAS:
+/*
+ * BOTÓN DE PLAY
+ * POP UP QUE INDIQUÉ GANADOR DEL JUEGO
+ */
