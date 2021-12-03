@@ -47,3 +47,18 @@ window.include || (window.include = 1, addEventListener("load", function() {
 		})
 	} else u && e();
 }));
+
+const button = document.getElementById('nombreUsuario');
+button.addEventListener('click', function(e){
+	console.log('El botón fue clicado');
+
+	fetch('/clicked', {method: 'POST'}).then(function(response){
+		if(response.ok){
+			console.log('El click fue grabado');
+			return;
+		}
+		throw new Error('Error');
+	}).catch(function(error){
+		console.log(error);
+	});
+});
