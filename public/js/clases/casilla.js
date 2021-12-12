@@ -1,25 +1,43 @@
-
-/*LA SIGUIENTE CLASE DEBERÍA SER ABSTRACTA PERO SOLO SE PUEDE CON TYPESCRIPT NO PERMITIDO EN ESTE PRODUCTO */
-class casilla{
-    /*DEFINIMOS CONSTRUCTOR*/ 
-    constructor(color){
-        this.color=color;
+class Casilla{
+    /* ------ CONSTRUCTOR ------ */ 
+    constructor(coordenadaX, coordenadaY){
+        this._celdaHTML     = document.getElementById("c"+coordenadaX+coordenadaY);
+        this._coordenadaX   = coordenadaX;
+        this._coordenadaY   = coordenadaY;
+        this._dueño         = null;      
+        this._ocupado       = false;   
     }
 
-    /*DEFINIMOS GETTERS & SETTERS */
-    set color(valor){
-        this.color=valor;
-    }
-    get color(){
-        return this.color;
+    /* --- GETTERS & SETTERS --- */
+    get getCeldaHTML(){
+        return this._celdaHTML;
     }
     
-    /*DEFINIMOS METODOS */
-        /*GETCASILLAOCUPADA TIPO BOOLEAN */
-    getCasillaOcupada(){
-         
+    getCoordenadaX(){
+        return this._coordenadaX;
     }
-    setCapturadoJugador(){
+    getCoordenadaY(){
+        return this._coordenadaY;
+    }
 
+    setDueño(nuevoDueño){
+        this._dueño = nuevoDueño;
+    }
+
+    getOcupado(){
+        return this._ocupado;
+    }
+    setOcupado(boolano){
+        this._ocupado = boolano;
+    }
+
+    /* ---- MÉTODOS DE CLASE ---- */
+    ocuparCasilla(color, dueño){
+        //console.log(`El Jugador "${dueño}" de color "${color}" se ha unido a la partida.`);
+        this.getCeldaHTML.style.background = color;
+        this.setDueño(dueño);
+        this.setOcupado(true);
     }
 }
+
+//module.exports.Casilla = Casilla;
