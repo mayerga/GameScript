@@ -79,37 +79,45 @@
         <div class="row ">
             <div class="col mask content-mask">
                 <div class="text-white">
-                    <h1 class="mb-3">GameScript</h1>
-                    <h5 class="mb-4">El juego del momento</h5>
-                    <div class="row">
-
-                    </div class="col-12">
-
-                    <a class="btn btn-outline-light btn-lg m-2" href="localhost:3000/2_lobby.html" role="button"
-                        rel="nofollow" target="_blank">Lobby</a>
-
-                    <a class="btn btn-outline-light btn-lg m-2" href="localhost:3000/4_contact.html" target="_blank"
-                        role="button">Contacto</a>
+                    <form action="/register" method="post">
+                        <h1 class="mb-3">GameScript</h1>
+                        <h2>Crea tu usuario</h2>
+                        <div class="section">
+                            <div class="tittle">Username</div>
+                            <div class="field"><input type="text" id="username" name="username"></div>
+                        </div>
+                        <div class="section">
+                            <div class="tittle">Password</div>
+                            <div class="field"><input type="text" id="password" name="password"></div>
+                        </div>   
+                        <div class="section">
+                            <div class="button1"><input type="submit" value="Register"> </div>                            
+                        </div>                                        
+                    </form>                    
+                    <h1></h1>                    
                 </div>
             </div>
             <!-- Inicio Sesion -->
             <div class="col mask content-mask">
                 <div class="row">
-                    <form id="form">
-                        <div class="text-white">
-                            <h1 class="mb-3">inicio Sesion</h1>
-                        </div>
+                    <form action="/authenticate" method="post">                        
+                            <h1 class="mb-3">inicio Sesion</h1>                        
                         <div class="col content-name ">
-                            <a class="btn btn-outline-light btn-lg m-2">Nombre:
-                                <input type="text" id="nombre" name="nombre"></a>
+                            <div class="section">
+                                <div class="tittle">Username</div>
+                                <div class="field"><input type="text" id="username" name="username"></div>
+                            </div>
+                            <div class="section">
+                                <div class="tittle">Password</div>
+                                <div class="field"><input type="text" id="password" name="password"></div>
+                            </div>
+                            <div class="section">
+                                <h1></h1>
+                                <div class="button2"><input type="submit" value="Login"></div>                            
+                            </div>  
 
                         </div>
-                        <div class="col">
-                            <a>
-                                <input class="btn btn-outline-light btn-lg m-2" type="submit" value="Enviar">
-                                <input class="btn btn-outline-light btn-lg m-2" type="reset" value="Borrar">
-                            </a>
-                        </div>
+                        
 
                     </form>
                 </div>
