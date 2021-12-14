@@ -1,0 +1,8 @@
+
+[MODELO]
+Contiene sólo los datos de aplicación más puros, 
+no contiene ninguna lógica que describa cómo presentar 
+los datos a un usuario.
+
+[CONCLUSIÓN]
+En esté package colocaremos los datos.
