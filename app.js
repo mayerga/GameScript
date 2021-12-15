@@ -62,7 +62,7 @@ app.post('/authenticate',(req,res)=>{
                 if(err){
                     res.status(500).send('ERROR AL AUTENTICAR');
                 }else if(result){
-                    resl.status(200).send('USUARIO AUTENTICADO CORRECTAMENTE');
+                    res.status(200).send('USUARIO AUTENTICADO CORRECTAMENTE');
                 }else{
                     res.status(500).send('USUARIO Y/O CONTRASEÑA INCORRECTA');
                 }
