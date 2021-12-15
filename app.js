@@ -6,7 +6,7 @@ const io = require("socket.io")(server);
 const path=require('path');
 const bodyParser=require('body-parser');
 const mongoose=require('mongoose');
-const user = require("./model/user");
+const User = require("./model/user");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -28,7 +28,7 @@ mongoose.connect(mongo_uri, function(err){
 })
 app.post('/register',(req,res)=>{
     const {username,password}=req.body;
-    const user=new user({username,password});
+    const user=new User({username,password});
     user.save(err =>{
         if (err){
             res.status(500).send('ERROR AL REGISTRAR USUARIO');
@@ -41,13 +41,13 @@ app.post('/register',(req,res)=>{
 });
 app.post('/authenticate',(req,res)=>{
     const{username,password}=req.body;
-    user.findOne({username},(err,user)=>{
+    User.findOne({username},(err,User)=>{
         if(err){
             res.status(500).send('ERROR AL AUTENTICAR AL USUARIO');
-        }else if(!user){
+        }else if(!User){
             res.status(500).send('EL USUARIO NO EXISTE');
         }else{
-            user.isCorrectPassword(password,(err,result)=>{
+            User.isCorrectPassword(password,(err,result)=>{
                 if(err){
                     res.status(500).send('ERROR AL AUTENTICAR');
                 }else if(result){
@@ -65,8 +65,8 @@ app.post('/authenticate',(req,res)=>{
 app.use(require("./routes/html"));
 io.on("connection", function(socket)  {
     console.log("Alguien se ha conectado con Sockets")
-  socket.emit("messages", function(){    
-  });
+  /*socket.emit("messages", function(){    
+  });*/
   socket.on("chat:message", (data) => {
     io.sockets.emit("chat:message", data);
  });
