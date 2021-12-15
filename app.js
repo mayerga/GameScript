@@ -1,28 +1,33 @@
-const express = require("express"); //Importamos la librería de Express.
-const app = express(); //Guadamos la librería en una variable.
-const port = 3000;
-
-const server = require("http").Server(app);
-const io = require("socket.io")(server);
-const path=require('path');
-const bodyParser=require('body-parser');
-const mongoose=require('mongoose');
-const User = require("./model/user");
+const express   = require("express"); //Importamos la librería de Express.
+const app       = express(); //Guadamos la librería en una variable.
+const path      = require('path');
+const port      = 3000;
 
 //const router    = require("./routes/html")
 //app.use(router);
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// APPI REST USER
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
-
 // Static Files
+
 app.use(express.static(path.join(__dirname,'public')));
-//app.use(express.static("public"));
 app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use("/public/js", express.static(__dirname + "/public/js"));
 app.use("/public/img", express.static(__dirname + "/public/img"));
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// APPI REST USER
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
+
+const bodyParser=require('body-parser');
+const mongoose=require('mongoose');
+const User = require("./model/user");
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+
 
 const mongo_uri='mongodb://localhost:27017/db';
 mongoose.connect(mongo_uri, function(err){
