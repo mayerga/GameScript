@@ -25,7 +25,19 @@ mongoose.connect(mongo_uri, function(err){
     }else{
         console.log('Se ha conectado correctamente a la base de datos');
     }
-})
+});
+
+//funcion parar cerrar la conexion con la base de datos
+module.exports.close = function(callback){
+    if(db){
+        db.close(function(err,result){
+            console.log("Desconectado de la base de datos");
+            db=null;
+            callback(err);
+        });
+    }
+};
+
 app.post('/register',(req,res)=>{
     const {username,password}=req.body;
     const user=new User({username,password});
@@ -37,7 +49,6 @@ app.post('/register',(req,res)=>{
         }
 
     });
-
 });
 app.post('/authenticate',(req,res)=>{
     const{username,password}=req.body;
