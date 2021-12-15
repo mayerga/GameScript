@@ -10,7 +10,6 @@ class turno {
     turnos.innerHTML = inicioTurno;
     autoplay();
     this._turno++;
-   
   }
 
 
