@@ -17,12 +17,11 @@ app.use("/public/img", express.static(__dirname + "/public/img"));
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // APPI REST USER
-const server = require("http").Server(app);
-const io = require("socket.io")(server);
-
-const bodyParser=require('body-parser');
-const mongoose=require('mongoose');
-const User = require("./model/user");
+const server        = require("http").Server(app);
+const io            = require("socket.io")(server);
+const bodyParser    = require('body-parser');
+const mongoose      = require('mongoose');
+const User          = require("./model/user");
 
 
 app.use(bodyParser.json());

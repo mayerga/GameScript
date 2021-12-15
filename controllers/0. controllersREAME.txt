@@ -1,4 +1,19 @@
-[Controlador] 
+[--- CONTIENE --- ]
+
+-> Contiene la API-RESTFull, que está compuesta por:
+-> Los métodos REST:
+    - Post. 
+    - Get.
+    - Put.
+    - Delete.
+-> Los métodos CRUD:
+    - Create.
+    - Read.
+    - Put.
+    - Delete.
+-> Y sus correspondientes validaciones.
+
+[--- DEFINICIÓN ---] 
 Existe entre la vista y el modelo. Escucha los eventos 
 desencadenados por la vista y ejecuta el procedimiento 
 adecuado a estos eventos. Por ejemplo, un controlador 
@@ -6,11 +21,3 @@ puede actualizar un modelo cambiando los atributos de
 un personaje en un videojuego así como también puede 
 modificar la vista mostrando el personaje actualizado 
 en el juego.
-
-[CONCLUSIÓN]
-Aquí colocaremos las APPIs REST de nuestras distintas 
-clases con sus métodos
-Get.
-Post.
-Put.
-Delete.

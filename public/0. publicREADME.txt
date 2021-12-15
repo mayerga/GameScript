@@ -1,4 +1,10 @@
-[VISTA] 
+[ --- DEFINICIÓN --- ] 
+-> Ficheros estáticos HTML
+-> Ficheros estáticos CSS
+-> Ficheros estáticos IMG
+-> Ficheros estáticos JS
+
+[ --- DEFINICIÓN --- ] 
 Presenta los datos del modelo al usuario. 
 La vista sabe cómo acceder a los datos del modelo, 
 pero no sabe qué significa esta información o 

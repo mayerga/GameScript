@@ -1,0 +1,10 @@
+[ --- CONTIENE --- ]
+
+-> Aquí irán los modelos de los registros (basados en los objetos) 
+-> El modelo contendra, los campos con sus respectivas validaciones.
+-> Los ficheros de esté paquete no contienen ninguna lógica.
+
+[ --- DEFINICIÓN --- ]
+Contiene sólo los datos de aplicación más puros, 
+no contiene ninguna lógica que describa cómo presentar 
+los datos a un usuario.
