@@ -24,6 +24,10 @@ header {
   color: white;
 }
 
+.row{
+  color: white;
+}
+
 .iframe-header {
   width: 100%;
   height: 300px;
