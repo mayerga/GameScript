@@ -108,7 +108,8 @@ MÉTODOS APPI-REST:
 ===========================================================
 ------------------------- MONGO-DB ------------------------
 ===========================================================
-RUN: mongod --dbpath (dirPaquete);
+INDICAR DIRECCIÓN DONDE 
+SE ALMACENARÁN LOS DATOS: mongod --dbpath (dirPaquete);
 
 
 Métodos de mongo DB:

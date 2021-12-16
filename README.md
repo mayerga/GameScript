@@ -27,13 +27,13 @@ Arquitectura:
 - PASO 2.1: [APP.JS]
     Arquitectura recomendada:
     -------------------------
-    - DEPENDENCIAS DE TERCEROS
-    - DEPENDENCIAS PROPIAS
-    - CONECCIÓN A LA BBDD
+    // DEPENDENCIAS DE TERCEROS
+    // DEPENDENCIAS PROPIAS
+    // CONECCIÓN A LA BBDD
         -> con MONGOOSE : Se crea la conección con la BBDD. ( mongoose.conect() )
-    - MIDDLEWARES
-    - EXPORTACIÓN Y UTILIZACIÓN DE RUTAS
-    - CONECCIÓN CLIENTE SERVIDOR
+    // MIDDLEWARES
+    // EXPORTACIÓN Y UTILIZACIÓN DE RUTAS
+    // CONECCIÓN CLIENTE SERVIDOR
         -> con EXPRESS  : Se crea la conección en entre el servidor y el cliente. ( app.listen() )
 
 - PASO 2.2: [PUBLIC]
