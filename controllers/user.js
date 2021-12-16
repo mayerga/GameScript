@@ -81,6 +81,7 @@ route.post('/login',(req,res)=>{
 //- REST Put 
 //- CRUD Update
 
+/*
 route.put('/update/:id', function(req, res){
     let body = req.params.id;
     User.updateOne({"_id": body._id}, {
@@ -104,6 +105,30 @@ route.put('/update/:id', function(req, res){
         }
     });
 });
+*/
+ruta.put('/update/:id', (req, res) => {
+
+    let id      = req.params.id;
+    let body    = req.body;
+
+    actualizarUser(id, body)
+        .then( valor => res.json({ valor }))
+        .catch( err => res.status(400).json({ err }));
+
+});
+
+//- CRUD Update  
+actualizarUser = async(id, body) => {
+
+    return user = await User.findOneAndUpdate({ "_id" : id}, {
+        $set: {
+            username: body.username,
+            password: body.password
+        }
+    }, { new: true });
+     
+};
+
 
 // --------------------------------------------------- //
 // ---------------------  DELETE --------------------- //
