@@ -1,38 +1,50 @@
 const express   = require('express');
 const User      = require("../models/user-model");
+const Joi       = require('@hapi/joi');
 const route     = express.Router();
 
 /*TODO: 
     - Falta corregir el GET
     - Faltan el UPDATE y el DELETE
     - Aplicar los metodos crud a los objetos.
+    - Cambiar los JSNO por ALERT (OPCIONAL)
 */
 
 //DEFINICIÓN DEL VALIDADOR DE PARÁMETROS:
+const schema = Joi.object({
+    nombre: Joi.string()
+        .min(3)
+        .required(),
+    
+    password: Joi.string()
+        .min(6),
+
+});
 
 // --------------------------------------------------- //
 // ---------------------  CREATE --------------------- //
 // --------------------------------------------------- //
-//- REST Post  
-//- CRUD Create  
 
-route.post('/register', (req, res)=> {
+//- REST Post  
+route.post('/user/register', (req, res)=> {
     
-    //const {username,password}=req.body;
     const body = req.body;
     
     //VALIDACIÓN
-    //TODO: faltan validaciones (OPCIONAL)
+    const {error, value} = schema.validate({ 
+        nombre      : body.nombre,
+        password    : body.password
+    });
 
     //EJECUCIÓN DEL MÉTODO
-    //TODO: Cambiar los SEND por ALERT (OPCIONAL)
+    
     crearUsuario(body)
         .then ( valor => res.status(200).json({ valor }))
         .catch ( err => res.status(400).json({ err }));
 
 });
 
-
+//- CRUD Create  
 crearUsuario = async(body) => {
 
     let user = new User({
@@ -44,69 +56,78 @@ crearUsuario = async(body) => {
 
 };
 
-
 // --------------------------------------------------- //
 // ----------------------  READ ---------------------- //
 // --------------------------------------------------- //
-//- REST Get
-//- CRUD Read 
 
-//¿?¿?¿?¿?¿? -> ¿NO DEBERÍA SER UN GET?
-route.post('/login',(req,res)=>{
-    const{username,password}=req.body;
-    User.findOne({username},(err,User)=>{
-        if(err){
-            res.status(500).send('ERROR AL AUTENTICAR AL USUARIO');
-        }else if(!User){
-            res.status(500).send('EL USUARIO NO EXISTE');
+//- REST GET-ALL
+route.get('/user/all', (req, res) => {
+
+    listarUsuarios()
+        .then( valor => res.json({ valor }))
+        .catch( err => res.status(400).json({ err }));
+
+});
+
+
+//- CRUD READ-ALL
+listarUsuarios = async() => {
+
+    return User.find()
+
+};
+
+//- REST GET-ONE
+route.get('/user/login', (req, res) => {
+
+    const { username, password } = req.body;
+
+    userLogin( username, password )
+        .then( valor => res.json({ valor }))
+        .catch( err => res.status(400).json({ err }));
+
+});
+
+//TODO: GET ESTÁ AÚN INCOMPLETO; devuelve el usuario, pero no lo almacena.
+userLogin = async( username, password ) => {
+
+    return await User.find({ "username": username, "password": password });
+        
+};
+
+/*
+userLogin = async( username, password ) => {
+
+    return await User.findOne( username, ( User, res ) => {
+        
+        if( !User ){
+            res.status(500).send( 'USUARIO Y/O CONTRASEÑA INCORRECTA' );
+            return;
         }else{
-            User.isCorrectPassword(password,(err,result)=>{
-                if(err){
+
+            User.isCorrectPassword( password, ( err, result ) => {
+                if( err ){
                     res.status(500).send('ERROR AL AUTENTICAR');
-                }else if(result){
+                    return;
+                } else if( result ){
                     res.status(200).send('USUARIO AUTENTICADO CORRECTAMENTE');
                 }else{
                     res.status(500).send('USUARIO Y/O CONTRASEÑA INCORRECTA');
+                    return;
                 }
             });
         }
     });
-});
 
-
+}
+*/
 
 // --------------------------------------------------- //
 // ---------------------  UPDATE --------------------- //
 // --------------------------------------------------- //
-//- REST Put 
-//- CRUD Update
 
-/*
-route.put('/update/:id', function(req, res){
-    let body = req.params.id;
-    User.updateOne({"_id": body._id}, {
-        $set: {
-            username: body.username,
-            password: body.password
-        }
-    },
-    function(error, info){
-        if(error){
-            res.json({
-                // resultado: false,
-                // msg: 'No se ha podido modificar el usuario',
-                error
-            });
-        } else{
-            res.json({
-                // resultado: true,
-                info: info
-            });
-        }
-    });
-});
-*/
-route.put('/update/:id', (req, res) => {
+//- REST Put 
+route.put('/user/:id', (req, res) => {
 
     let id      = req.params.id;
     let body    = req.body;
@@ -133,9 +154,26 @@ actualizarUser = async(id, body) => {
 // --------------------------------------------------- //
 // ---------------------  DELETE --------------------- //
 // --------------------------------------------------- //
-//- REST Delete 
-//- CRUD Delete  
 
+//- REST Delete 
+//RECUERDA: En las bases de datos reales, no es usual eliminar un dato.
+//          Por ello, lo que se suele hacer, es desactivar dichos usuarios.
+route.delete('/user/:id', (req, res) => {
+
+    desactivarUsuario(req.params.id)
+        .then( valor => res.json({ valor }))
+        .catch( err => res.status(400).json({ err }));
+
+});
+
+//- CRUD Delete  
+desactivarUsuario = async(id) => {
+
+    return usuario = await User.findOneAndUpdate({ "_id": id }, {
+        $set: { estado : false }
+    }, { new: true });
+
+}
 
 module.exports = route;
 

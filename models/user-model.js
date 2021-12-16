@@ -6,7 +6,8 @@ const saltRounds = 10;
 const userSchema = new mongoose.Schema({
 
     username: { type: String, required: true, unique: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+    estado  : { type: Boolean, default: true }
 
 });
 
@@ -31,14 +32,13 @@ userSchema.pre('save',function(next){
 
 
 //funcion que compara password creado
-userSchema.methods.isCorrectPassword = function(password,callback){
-    bcrypt.compare(password, this.password,function(err, same){
-        if(err){
-            callback(err);
-        }else{
-            callback(err,same);
-        }
+userSchema.methods.isCorrectPassword = ( password, callback ) => {
+    
+    bcrypt.compare(password, this.password, ( err, same ) => {
+        if( err ) callback( err );
+        else callback ( same );
     });
+
 }
 */
 
