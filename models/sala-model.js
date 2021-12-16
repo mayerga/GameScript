@@ -14,4 +14,4 @@ const partidaSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.modul('Partida', partidaSchema);
+module.exports = mongoose.model('Sala', partidaSchema);

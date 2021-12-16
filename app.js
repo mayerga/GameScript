@@ -6,6 +6,7 @@ const app       = express();
 //DEPENDENCIAS PROPIAS
 const views     = require('./routes');
 const users     = require('./controllers/user');
+const salas     = require('./controllers/sala');
 const port      = 3000;
 
 //CONECCIÓN A LA BBDD

@@ -1,7 +1,7 @@
 const express   = require('express');
 const Sala      = require('../models/sala-model');
 const Joi       = require('@hapi/joi');
-const ruta      = express.Router();
+const route     = express.Router();
 
 //DEFINICIÓN DEL VALIDADOR DE PARÁMETROS:
 
@@ -33,3 +33,5 @@ const ruta      = express.Router();
 // --------------------------------------------------- //
 //- REST Delete 
 //- CRUD Delete 
+
+module.exports = route;

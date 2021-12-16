@@ -106,7 +106,7 @@ route.put('/update/:id', function(req, res){
     });
 });
 */
-ruta.put('/update/:id', (req, res) => {
+route.put('/update/:id', (req, res) => {
 
     let id      = req.params.id;
     let body    = req.body;
