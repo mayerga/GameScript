@@ -2,14 +2,14 @@ class Partida{
         
     /* --- MÉTODO CONSTRUCTOR --- */ 
     constructor(){
-        //this.idTablero = tablero;                 //Necesario para MONGO
+        //this.idTablero = tablero;                 
         this._tableroDeJuego = this.nuevoTableroDeJuego();
         this._jugadores      = null;       
         this._cronometro     = null;               
         this._tableroScore   = null     
         this._chat           = null;
         this._ronda          = 0;
-        this._ganador        = false;               //Necesario para MONGO                           
+        this._ganador        = false;                                    
         //this.botonesVarios = botonesVarios;         
     }
 

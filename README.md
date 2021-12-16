@@ -51,7 +51,7 @@ Arquitectura:
     - UPDATE    : (REST-Put)    + (CRUD-Update) + (Validate)
     - DELETE    : (REST-Delete) + (CRUD-Delete)
 
-        -> Se testean los CRUD con POSTMAN + MONGODB (Roboto || Canvas).
+        -> Se testean los CRUD con POSTMAN + MONGODB (Roboto || Compass).
 -----------------------------------------------------------------------------------------------------------------------
 
 - PASO 3: 

@@ -26,6 +26,7 @@ app.use("/public/img", express.static(__dirname + "/public/img"));
 
 //EXPORTACIÓN Y UTILIZACIÓN DE RUTAS CONTROLADOR
 app.use(users);
+app.use(salas);
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

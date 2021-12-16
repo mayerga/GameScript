@@ -3,8 +3,8 @@ const User      = require("../models/user-model");
 const route     = express.Router();
 
 /*TODO: 
-    - Falta corregir el GET.
-    - Faltan el UPDATE y el DELETE.
+    - Falta corregir el GET
+    - Faltan el UPDATE y el DELETE
     - Aplicar los metodos crud a los objetos.
 */
 
