@@ -81,6 +81,30 @@ route.post('/login',(req,res)=>{
 //- REST Put 
 //- CRUD Update
 
+route.put('/update/:id', function(req, res){
+    let body = req.params.id;
+    User.updateOne({"_id": body._id}, {
+        $set: {
+            username: body.username,
+            password: body.password
+        }
+    },
+    function(error, info){
+        if(error){
+            res.json({
+                // resultado: false,
+                // msg: 'No se ha podido modificar el usuario',
+                error
+            });
+        } else{
+            res.json({
+                // resultado: true,
+                info: info
+            });
+        }
+    });
+});
+
 // --------------------------------------------------- //
 // ---------------------  DELETE --------------------- //
 // --------------------------------------------------- //
