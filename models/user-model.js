@@ -3,18 +3,20 @@ const bcrypt    = require('bcrypt');
 
 const saltRounds = 10;
 
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
 
+    //REQUIRED:
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    estado  : { type: Boolean, default: true }
+
+    //NOT REQUIRED:
+    estado  : { type: Boolean, default: true },
+    score   : { type: Number, default: 0}
 
 });
 
-//TODO: CONVERSAR 
 //funcion que permite crear password
-/*
-userSchema.pre('save',function(next){
+UserSchema.pre('save',function(next){
     if(this.isNew || this.isModified('password')){
         const document=this;
         bcrypt.hash(document.password, saltRounds,(err, hashedPassword)=>{
@@ -30,17 +32,17 @@ userSchema.pre('save',function(next){
     }
 });
 
-
 //funcion que compara password creado
-userSchema.methods.isCorrectPassword = ( password, callback ) => {
-    
-    bcrypt.compare(password, this.password, ( err, same ) => {
-        if( err ) callback( err );
-        else callback ( same );
+UserSchema.methods.isCorrectPassword=function(password,callback){
+    bcrypt.compare(password, this.password,function(err, same){
+        if(err){
+            callback(err);
+        }else{
+            callback(err,same);
+        }
     });
-
 }
-*/
+
 
 //Exportación del modelo
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', UserSchema);

@@ -4,9 +4,9 @@ const mongoose  = require('mongoose');
 const app       = express(); 
 
 //DEPENDENCIAS PROPIAS
-const views     = require('./routes');
-const users     = require('./controllers/user');
-const salas     = require('./controllers/sala');
+const views     = require('./routes/index');
+const users     = require('./routes/user');
+const salas     = require('./routes/sala');
 const port      = 3000;
 
 //CONECCIÓN A LA BBDD
@@ -18,16 +18,19 @@ mongoose.connect('mongodb://localhost/GameScript_DB')
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-//EXPORTACIÓN Y UTILIZACIÓN DE RUTAS ESTÁTICAS
+//RUTAS
 app.use(views);
+app.use(users);
+app.use(salas);
+
+//PUBLIC
 app.use(express.static(__dirname + '/public'));
 app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use("/public/js", express.static(__dirname + "/public/js"));
 app.use("/public/img", express.static(__dirname + "/public/img"));
 
-//EXPORTACIÓN Y UTILIZACIÓN DE RUTAS CONTROLADOR
-app.use(users);
-app.use(salas);
+
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
