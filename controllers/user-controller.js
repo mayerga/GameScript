@@ -2,7 +2,8 @@ const express   = require('express');
 const User      = require("../models/user-model");
 const Joi       = require('@hapi/joi');
 const route     = express.Router();
-import passport from "passport";
+//import passport from "passport";
+const passport  = require('passport');
 
 /*TODO: 
     - Corregir el redireccionamiento.
@@ -83,11 +84,11 @@ route.post('/user/login', ( req, res )=>{
     });
 });
 
-export const signin = passport.authenticate("local", {
+route.post("/users/signin", passport.authenticate("local", {
     successRedirect: "/notes",
     failureRedirect: "/users/signin",
     failureFlash: true,
-});
+}));
 
 //MEDIANTE SingIN
 
