@@ -176,12 +176,21 @@
                 <div class="col-sm text-center" style="border-style: inset;">       
                         <h1 style="color: white">SCORE</h1>
                     <p id="score-incrementable" style="font-size: 100px">0</p>
-                    <button class="btn btn-primary mb-2" type="button" onclick="incrementButtom()">AUMENTAR SCORE</button>                                                                
+                    <button class="btn btn-primary mb-2" type="button" onclick="incrementButtomScore()">AUMENTAR SCORE</button>                                                                
+                </div> <!-- /BOTÓN SCORE -->  
+
+                <script src="/public/js/helpers/incrementScore.js"></script>
+
+                <div class="col-sm text-center" style="border-style: inset;">       
+                        <h1 style="color: white">SALAS ACTIVAS</h1>
+                    <p id="salas-incrementable" style="font-size: 100px">0</p>
+                    <button class="btn btn-primary mb-2" type="button" onclick="incrementButtomSalas()">CREAR NUEVA SALA</button>                                                                
                 </div> <!-- /BOTÓN SCORE -->  
 
                 <script src="/public/js/helpers/incrementScore.js"></script>
 
                 <!-- BOTÓN NUEVA SALA -->  
+                <!--
                 <div class="col-sm" style="border: solid black;">
                     <form action="/salas/nuevaSala" method="post">
                         <div class="section">
@@ -193,7 +202,7 @@
                         <div class="section">
                             <div class="button1"><input type="submit" value="register"> </div>                            
                         </div>                                        
-                    </form>   
+                    </form> -->   
                 </div> <!-- /BOTÓN NUEVA SALA --> 
 
             </div>
