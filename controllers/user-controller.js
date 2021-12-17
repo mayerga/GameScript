@@ -2,6 +2,7 @@ const express   = require('express');
 const User      = require("../models/user-model");
 const Joi       = require('@hapi/joi');
 const route     = express.Router();
+import passport from "passport";
 
 /*TODO: 
     - Corregir el redireccionamiento.
@@ -82,6 +83,13 @@ route.post('/user/login', ( req, res )=>{
     });
 });
 
+export const signin = passport.authenticate("local", {
+    successRedirect: "/notes",
+    failureRedirect: "/users/signin",
+    failureFlash: true,
+});
+
+//MEDIANTE SingIN
 
 // --------------------------------------------------- //
 // ----------------------  READ ---------------------- //
