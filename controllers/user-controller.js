@@ -1,8 +1,7 @@
-const express   = require('express');
 const User      = require("../models/user-model");
 const Joi       = require('@hapi/joi');
 const passport  = require('passport');
-const route     = express.Router();
+
 
 //DEFINICIÓN DE REGLAS DE VALIDACIÓN:
 const schema = Joi.object({
@@ -26,55 +25,7 @@ const renderPlayroom = (req, res) => {
 // --------------------------------------------------- //
 // ---------------------  LOGIN ---------------------- //
 // --------------------------------------------------- //
-//MÉTODO 1 (DESCARTADO)
-route.post('/user/login', ( req, res )=>{
-
-    const{username,password}=req.body;
-    User.findOne({username},(err,User)=>{
-        if(err){
-            res.status(500).send('ERROR AL AUTENTICAR AL USUARIO');
-        }else if(!User){
-            res.status(500).send('EL USUARIO NO EXISTE');
-        }else{
-            User.isCorrectPassword(password,(err,result)=>{
-                if(err){
-                    res.status(500).send('ERROR AL AUTENTICAR');
-                }else if(result){
-                    res.status(200).send('USUARIO AUTENTICADO CORRECTAMENTE');
-                }else{
-                    res.status(500).send('USUARIO Y/O CONTRASEÑA INCORRECTA');
-                }
-            });
-        }
-    });
-});
-
-//MÉTODO 2: DESCARTADO
-route.get('/user/login', (req, res) => {
-
-    const { username, password } = req.body;
-
-    validacion( username, password )
-        .then( valor => {
-            res.json({ valor })
-            console.log(valor);
-        })
-        .catch( error => res.status(400).json({ error }))
-
-});
-
-validacion = async ( username, password ) => {
-
-    return await User.find({ "username": username, "password": password });
-
-};
-
 //MEDIANTE FRAMEWORK PASSPORT
-// route.post("/user/signin", passport.authenticate("local", {
-//     successRedirect: "/2_lobby.html",
-//     failureRedirect: "/",
-// }));
-
 const userLogin = passport.authenticate("local", {
     successRedirect: "/lobby",
     //successMessage: "El usuario se ha loggeado correctamente",
@@ -196,7 +147,6 @@ desactivarUsuario = async(id) => {
 }
 
 module.exports = {
-    route,
     renderLobby,
     renderPlayroom,
     userLogin,
@@ -205,3 +155,48 @@ module.exports = {
     userUpdate,
     userDelete
 };
+
+/* CÓDIGO DESCARTADO
+//MÉTODO 1 (DESCARTADO)
+route.post('/user/login', ( req, res )=>{
+
+    const{username,password}=req.body;
+    User.findOne({username},(err,User)=>{
+        if(err){
+            res.status(500).send('ERROR AL AUTENTICAR AL USUARIO');
+        }else if(!User){
+            res.status(500).send('EL USUARIO NO EXISTE');
+        }else{
+            User.isCorrectPassword(password,(err,result)=>{
+                if(err){
+                    res.status(500).send('ERROR AL AUTENTICAR');
+                }else if(result){
+                    res.status(200).send('USUARIO AUTENTICADO CORRECTAMENTE');
+                }else{
+                    res.status(500).send('USUARIO Y/O CONTRASEÑA INCORRECTA');
+                }
+            });
+        }
+    });
+});
+
+//MÉTODO 2: DESCARTADO
+route.get('/user/login', (req, res) => {
+
+    const { username, password } = req.body;
+
+    validacion( username, password )
+        .then( valor => {
+            res.json({ valor })
+            console.log(valor);
+        })
+        .catch( error => res.status(400).json({ error }))
+
+});
+
+validacion = async ( username, password ) => {
+
+    return await User.find({ "username": username, "password": password });
+
+};
+ */
