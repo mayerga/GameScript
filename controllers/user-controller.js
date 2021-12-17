@@ -5,9 +5,13 @@ const route     = express.Router();
 //import passport from "passport";
 const passport  = require('passport');
 
-/*TODO: 
-    - Corregir el redireccionamiento.
-*/
+//RUTAS PRINCIPALES
+const renderLobby = (req, res) => {
+    res.render("users/lobby");
+};
+const renderPlayroom = (req, res) => {
+    res.render("users/playroom");
+};
 
 //DEFINICIÓN DEL VALIDADOR DE PARÁMETROS:
 const schema = Joi.object({
@@ -84,10 +88,9 @@ route.post('/user/login', ( req, res )=>{
     });
 });
 
-route.post("/users/signin", passport.authenticate("local", {
-    successRedirect: "/notes",
-    failureRedirect: "/users/signin",
-    failureFlash: true,
+route.post("/user/signin", passport.authenticate("local", {
+    successRedirect: "/2_lobby.html",
+    failureRedirect: "/",
 }));
 
 //MEDIANTE SingIN
@@ -187,4 +190,8 @@ desactivarUsuario = async(id) => {
 
 }
 
-module.exports = route;
+module.exports = {
+    route,
+    renderLobby,
+    renderPlayroom,
+};
