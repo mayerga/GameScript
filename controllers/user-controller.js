@@ -1,9 +1,19 @@
 const express   = require('express');
 const User      = require("../models/user-model");
 const Joi       = require('@hapi/joi');
-const route     = express.Router();
-//import passport from "passport";
 const passport  = require('passport');
+const route     = express.Router();
+
+//DEFINICIÓN DE REGLAS DE VALIDACIÓN:
+const schema = Joi.object({
+    nombre: Joi.string()
+        .min(3)
+        .required(),
+    
+    password: Joi.string()
+        .min(6),
+
+});
 
 //RUTAS PRINCIPALES
 const renderLobby = (req, res) => {
@@ -13,59 +23,10 @@ const renderPlayroom = (req, res) => {
     res.render("users/playroom");
 };
 
-//DEFINICIÓN DEL VALIDADOR DE PARÁMETROS:
-const schema = Joi.object({
-    nombre: Joi.string()
-        .min(3)
-        .required(),
-    
-    password: Joi.string()
-        .min(6),
-
-    //disponibilidad
-});
-
-// --------------------------------------------------- //
-// ---------------------  CREATE --------------------- //
-// --------------------------------------------------- //
-
-//- REST Post  
-route.post('/user/register', (req, res)=> {
-    
-    const body = req.body;
-    
-    //VALIDACIÓN
-    schema.validate({ 
-        nombre      : body.nombre,
-        password    : body.password
-    });
-
-    //EJECUCIÓN DEL MÉTODO
-    
-    crearUsuario(body)
-        .then ( valor => {
-            res.send({ valor }),
-            console.log(`El USUARIO ${valor.username} SE HA CREADO CORRECTAMENTE`)
-        })
-        .catch ( err => res.status(400).json({ err }));
-
-});
-
-//- CRUD Create  
-crearUsuario = async(body) => {
-
-    let user = new User({
-        username    : body.username,
-        password    : body.password
-    });
-    
-    return await user.save();
-
-};
-
 // --------------------------------------------------- //
 // ---------------------  LOGIN ---------------------- //
 // --------------------------------------------------- //
+//MÉTODO 1 (DESCARTADO)
 route.post('/user/login', ( req, res )=>{
 
     const{username,password}=req.body;
@@ -88,25 +49,89 @@ route.post('/user/login', ( req, res )=>{
     });
 });
 
-route.post("/user/signin", passport.authenticate("local", {
-    successRedirect: "/2_lobby.html",
-    failureRedirect: "/",
-}));
+//MÉTODO 2: DESCARTADO
+route.get('/user/login', (req, res) => {
 
-//MEDIANTE SingIN
+    const { username, password } = req.body;
+
+    validacion( username, password )
+        .then( valor => {
+            res.json({ valor })
+            console.log(valor);
+        })
+        .catch( error => res.status(400).json({ error }))
+
+});
+
+validacion = async ( username, password ) => {
+
+    return await User.find({ "username": username, "password": password });
+
+};
+
+//MEDIANTE FRAMEWORK PASSPORT
+// route.post("/user/signin", passport.authenticate("local", {
+//     successRedirect: "/2_lobby.html",
+//     failureRedirect: "/",
+// }));
+
+const userLogin = passport.authenticate("local", {
+    successRedirect: "/lobby",
+    //successMessage: "El usuario se ha loggeado correctamente",
+    failureRedirect: "/",
+});
+
+
+// --------------------------------------------------- //
+// ---------------------  CREATE --------------------- //
+// --------------------------------------------------- //
+
+//- REST Post  
+const userPost = (req, res)=> {
+    
+    const body = req.body;
+    
+    //VALIDACIÓN
+    schema.validate({ 
+        nombre      : body.nombre,
+        password    : body.password
+    });
+
+    //EJECUCIÓN DEL MÉTODO
+    
+    crearUsuario(body)
+        .then ( valor => {
+            res.send({ valor }),
+            console.log(`El USUARIO ${valor.username} SE HA CREADO CORRECTAMENTE`)
+        })
+        .catch ( err => res.status(400).json({ err }));
+
+};
+
+//- CRUD Create  
+crearUsuario = async(body) => {
+
+    let user = new User({
+        username    : body.username,
+        password    : body.password
+    });
+    
+    return await user.save();
+
+};
 
 // --------------------------------------------------- //
 // ----------------------  READ ---------------------- //
 // --------------------------------------------------- //
 
 //- REST GET-ALL
-route.get('/user/all', (req, res) => {
+const userGetAll = (req, res) => {
 
     listarUsuarios()
         .then( valor => res.send({ valor }))
         .catch( err => res.status(400).json({ err }));
 
-});
+};
 
 
 //- CRUD READ-ALL
@@ -116,33 +141,13 @@ listarUsuarios = async() => {
 
 };
 
-//- REST GET-ONE
-route.get('/user/login', (req, res) => {
-
-    const { username, password } = req.body;
-
-    userLogin( username, password )
-        .then( valor => {
-            res.json({ valor })
-            console.log(valor);
-        })
-        .catch( error => res.status(400).json({ error }))
-
-});
-//- CRUD READ-ONE
-userLogin = async ( username, password ) => {
-
-    return await User.find({ "username": username, "password": password });
-
-};
-
 
 // --------------------------------------------------- //
 // ---------------------  UPDATE --------------------- //
 // --------------------------------------------------- //
 
 //- REST Put 
-route.put('/user/:id', (req, res) => {
+const userUpdate = (req, res) => {
 
     let id      = req.params.id;
     let body    = req.body;
@@ -151,7 +156,7 @@ route.put('/user/:id', (req, res) => {
         .then( valor => res.json({ valor }))
         .catch( err => res.status(400).json({ err }));
 
-});
+};
 
 //- CRUD Update  
 actualizarUser = async(id, body) => {
@@ -173,13 +178,13 @@ actualizarUser = async(id, body) => {
 //- REST Delete 
 //RECUERDA: En las bases de datos reales, no es usual eliminar un dato.
 //          Por ello, lo que se suele hacer, es desactivar dichos usuarios.
-route.delete('/user/:id', (req, res) => {
+const userDelete = (req, res) => {
 
     desactivarUsuario(req.params.id)
         .then( valor => res.json({ valor }))
         .catch( err => res.status(400).json({ err }));
 
-});
+};
 
 //- CRUD Delete  
 desactivarUsuario = async(id) => {
@@ -194,4 +199,9 @@ module.exports = {
     route,
     renderLobby,
     renderPlayroom,
+    userLogin,
+    userPost,
+    userGetAll,
+    userUpdate,
+    userDelete
 };
