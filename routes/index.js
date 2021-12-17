@@ -3,14 +3,14 @@ const router = Router();
 
 console.log(process.cwd());
 
+router.get("/", (req, res) => {
+    res.sendFile(process.cwd() + "/public/html/1_index.html");
+});
 router.get("/0_head.html", (req, res) => {
     res.sendFile(process.cwd() + "/public/html/0_head.html");
 });
 router.get("/0_header.html", (req, res) => {
     res.sendFile(process.cwd() + "/public/html/0_header.html");
-});
-router.get("/", (req, res) => {
-    res.sendFile(process.cwd() + "/public/html/1_index.html");
 });
 router.get("/2_lobby.html", (req, res) => {
     res.sendFile(process.cwd() + "/public/html/2_lobby.html");

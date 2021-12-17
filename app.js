@@ -1,5 +1,6 @@
 //DEPENDENCIAS DE TERCEROS
 const express   = require('express'); 
+const path      = require('path');
 const mongoose  = require('mongoose');
 const app       = express(); 
 
@@ -24,31 +25,11 @@ app.use(users);
 app.use(salas);
 
 //PUBLIC
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, '/public')));
 app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use("/public/js", express.static(__dirname + "/public/js"));
 app.use("/public/img", express.static(__dirname + "/public/img"));
 
-
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-// ¿SOCKET-IO?
-const server        = require("http").Server(app);
-const io            = require("socket.io")(server);
-
-io.on("connection", function(socket)  {
-    console.log("Alguien se ha conectado con Sockets")
-  /*socket.emit("messages", function(){    
-  });*/
-  socket.on("chat:message", (data) => {
-    io.sockets.emit("chat:message", data);
- });
- socket.on("chat:typing", (data) => {
-     socket.broadcast.emit("chat:typing", data);
- })
-});
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -69,4 +50,23 @@ module.exports.close = function(callback){
 //CONECCIÓN CLIENTE-SERVIDOR
 app.listen(port, () => {
   console.info("Servidor", port, "en funcionamiento");
+});
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ¿SOCKET-IO?
+const server        = require("http").Server(app);
+const io            = require("socket.io")(server);
+
+io.on("connection", function(socket)  {
+    console.log("Alguien se ha conectado con Sockets")
+  /*socket.emit("messages", function(){    
+  });*/
+  socket.on("chat:message", (data) => {
+    io.sockets.emit("chat:message", data);
+ });
+ socket.on("chat:typing", (data) => {
+     socket.broadcast.emit("chat:typing", data);
+ })
 });

@@ -4,10 +4,7 @@ const Joi       = require('@hapi/joi');
 const route     = express.Router();
 
 /*TODO: 
-    - Falta corregir el GET
-    - Faltan el UPDATE y el DELETE
-    - Aplicar los metodos crud a los objetos.
-    - Cambiar los JSNO por ALERT (OPCIONAL)
+    - Corregir el redireccionamiento.
 */
 
 //DEFINICIÓN DEL VALIDADOR DE PARÁMETROS:
@@ -182,5 +179,3 @@ desactivarUsuario = async(id) => {
 }
 
 module.exports = route;
-
-
