@@ -1,14 +1,16 @@
-//DEPENDENCIAS DE TERCEROS
+//DEPENDENCIAS EXTERNAS
 const express   = require('express'); 
 const path      = require('path');
 const mongoose  = require('mongoose');
-const app       = express(); 
 
 //DEPENDENCIAS PROPIAS
-const views     = require('./routes/index');
-const users     = require('./routes/user');
-const salas     = require('./routes/sala');
+const views     = require('./routes/index-routes');
+const users     = require('./controllers/user-controller');
+const salas     = require('./controllers/sala-controller');
 const port      = 3000;
+
+//INICIALIZACIÓN
+const app       = express();
 
 //CONECCIÓN A LA BBDD
 mongoose.connect('mongodb://localhost/GameScript_DB')

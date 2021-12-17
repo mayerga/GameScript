@@ -1,0 +1,17 @@
+
+------------------
+--- CONTAINERS ---
+------------------
+-> CONTAINERS           -> https://getbootstrap.com/docs/5.0/layout/containers/ 
+-> GRID                 -> https://getbootstrap.com/docs/4.0/layout/grid/
+
+------------------
+--- ALINEACIÓN ---
+------------------
+-> .text-center         -> Alinear contenido dentro de columnas
+
+---------------
+--- SPACING ---
+---------------
+-> PADDING & MARGING    -> https://getbootstrap.com/docs/4.0/utilities/spacing/
+-> GAP                  -> https://getbootstrap.com/docs/5.0/utilities/spacing/#gap 

@@ -15,9 +15,9 @@ const UserSchema = new mongoose.Schema({
 
 });
 
-//funcion que permite crear password
-UserSchema.pre('save',function(next){
-    if(this.isNew || this.isModified('password')){
+//Funcion que permite encriptar password
+UserSchema.pre('save', function(next) {
+    if(this.isNew || this.isModified('password')) {
         const document=this;
         bcrypt.hash(document.password, saltRounds,(err, hashedPassword)=>{
             if(err){
