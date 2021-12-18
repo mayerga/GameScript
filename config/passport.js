@@ -18,7 +18,7 @@ passport.use(
 
         if (!user) {
 
-            return done(null, false, { message: "NO SE HA ENCONTRADO EL USUARIO" });
+            return done(null, false, { message: "Usuario no identificado." });
         
         } else {
 
@@ -26,7 +26,7 @@ passport.use(
             const match = await user.matchPassword(password);
             
             if (match) return done(null, user);
-            else return done(null, false, { message: "Incorrect Password." });
+            else return done(null, false, { message: "Contraseña incorrecta." });
 
         }
     })

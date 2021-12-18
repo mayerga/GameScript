@@ -4,17 +4,21 @@ const passport  = require('passport');
 
 
 //DEFINICIÓN DE REGLAS DE VALIDACIÓN:
-const schema = Joi.object({
-    nombre: Joi.string()
+const userValidateSchema = Joi.object({
+
+    username: Joi.string()
         .min(3)
         .required(),
     
     password: Joi.string()
-        .min(6),
+        .min(4)
+        .required(),
 
 });
 
-//RUTAS PRINCIPALES
+// --------------------------------------------------- //
+// ---------------  RUTAS PRINCIPALES ---------------- //
+// --------------------------------------------------- //
 const renderLobby = (req, res) => {
     res.render("users/lobby");
 };
@@ -23,40 +27,53 @@ const renderPlayroom = (req, res) => {
 };
 
 // --------------------------------------------------- //
-// ---------------------  LOGIN ---------------------- //
+// ----------------  LOGIN & LOGOUT ------------------ //
 // --------------------------------------------------- //
 //MEDIANTE FRAMEWORK PASSPORT
 const userLogin = passport.authenticate("local", {
-    successRedirect: "/lobby",
-    //successMessage: "El usuario se ha loggeado correctamente",
-    failureRedirect: "/",
+    successRedirect : "/lobby",
+    failureRedirect : "/",
+    failureFlash    : true,
 });
 
+const userLogout = (req, res) => {
+    req.logout()
+    res.redirect('/');
+};
 
 // --------------------------------------------------- //
 // ---------------------  CREATE --------------------- //
 // --------------------------------------------------- //
 
 //- REST Post  
-const userPost = (req, res)=> {
-    
-    const body = req.body;
-    
+const userPost = (req, res) => {
+
+    const body  = req.body;
+
     //VALIDACIÓN
-    schema.validate({ 
-        nombre      : body.nombre,
+    const { error, value } =  userValidateSchema.validate({ 
+        username      : body.username,
         password    : body.password
     });
 
     //EJECUCIÓN DEL MÉTODO
-    
-    crearUsuario(body)
-        .then ( valor => {
-            res.send({ valor }),
-            console.log(`El USUARIO ${valor.username} SE HA CREADO CORRECTAMENTE`)
-        })
-        .catch ( err => res.status(400).json({ err }));
-
+    if(!error) {   
+        crearUsuario(body)
+            .then ( valor => {
+                req.flash('success_msg', 'El usuario se ha creado correctamente'),
+                console.log(`El USUARIO ${valor.username} SE HA CREADO CORRECTAMENTE`),
+                res.redirect('/')
+            })
+            .catch ( err => {
+                res.status(400),
+                req.flash('error_msg', 'ERROR: Ya existe un usuario con esté nombre, porfavor, vuelva a intentarlo con otro nombre'),
+                res.redirect('/')
+            })
+    } else {
+        res.status(400),
+        req.flash('error_msg', `ERROR: ${error.details[0].message}`),
+        res.redirect('/')
+    }
 };
 
 //- CRUD Create  
@@ -83,7 +100,6 @@ const userGetAll = (req, res) => {
         .catch( err => res.status(400).json({ err }));
 
 };
-
 
 //- CRUD READ-ALL
 listarUsuarios = async() => {
@@ -150,6 +166,7 @@ module.exports = {
     renderLobby,
     renderPlayroom,
     userLogin,
+    userLogout,
     userPost,
     userGetAll,
     userUpdate,
