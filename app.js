@@ -70,26 +70,36 @@ module.exports.close = function(callback){
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//CONECCIÓN CLIENTE-SERVIDOR
-app.listen(port, () => {
-  console.info("Servidor", port, "en funcionamiento");
-});
-
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // ¿SOCKET-IO?
-const server        = require("http").Server(app);
+const http = require('http');
+const server        = http.createServer(app);
 const io            = require("socket.io")(server);
 
 io.on("connection", function(socket)  {
     console.log("Alguien se ha conectado con Sockets")
-  /*socket.emit("messages", function(){    
-  });*/
+  socket.emit("messages", function(){    
+  });
+
+  /*chat playroom*/
   socket.on("chat:message", (data) => {
     io.sockets.emit("chat:message", data);
  });
  socket.on("chat:typing", (data) => {
      socket.broadcast.emit("chat:typing", data);
  })
+ /*  lobby  */
+
+ 
 });
+
+
+
+
+
+//CONECCIÓN CLIENTE-SERVIDOR
+server.listen(port, () => {
+    console.info("Servidor", port, "en funcionamiento");
+  });

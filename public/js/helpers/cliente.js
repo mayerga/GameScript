@@ -1,4 +1,4 @@
-var socket = io.connect("http://localhost:3000", {
+var socket = io.connect("http://localhost:3000/", {
     "forceNew" : true
 });
 
@@ -20,7 +20,6 @@ btn.addEventListener("click", function () {
   });
 });
 
-
 socket.on("chat:message", function (data) {
     actions.innerHTML = "";
   output.innerHTML = (data.username + ": "+ data.message); 
@@ -34,3 +33,5 @@ message.addEventListener("keypress", function () {
 socket.on("chat:typing", function (data) {
   actions.innerHTML = ("El usuario: " + data + " esta escribiendo un mensaje");;
 });
+
+/* creador de salas*/
