@@ -61,6 +61,7 @@ A continuación, colocamos una serie de códigos para resolver dichas funciones:
 
 MÉTODOS REQUEST:
 ----------------
+- req.body			->	Solicita lo que venga dentro del formulario.
 - req.params.x 		->	Devuelve un parametro definido por el programador (x)
 - req.flash			->	Envia una alerta que aparece en la cabecera del body y se puede cerrar.
 
@@ -110,50 +111,5 @@ MÉTODOS APPI-REST:
 - app.delete();	//Eliminación.
 
 ===========================================================
-------------------------- MONGO-DB ------------------------
+------------------------- HAP/JOI -------------------------
 ===========================================================
-INDICAR DIRECCIÓN DONDE 
-SE ALMACENARÁN LOS DATOS: mongod --dbpath (dirPaquete);
-
-
-Métodos de mongo DB:
---------------------
-//Se aconseja meter todos los métodos en una función asincrona:
-- modelo.save()		-> Agrega el modelo a la BBDD.
-- Schema.find()
-- Schema.findOne()
-	//Parámetros de salida:
-	- .find()		-> Clausula where. ejemplo: .find({autor : "Julito"}) | .find({publicado : true})
-	- .limit()		-> Define el máximo de registros. Recibe parametros de tipo int. 
-	- .sort()		-> Define el orden de salida (-1: descendente | 1: ascendente). Ejemplo: ({author: -1}).
-	- .select()		-> Indica que muestre campos específicos del registro.
-	
-	//OPERADORES DE COMPARACIÓN: 
-    - eq  (equals | igual)
-    - ne  (not equals | no igual)
-    - gt  (greater than | mayor que)
-    - gte (greater than or equals | mayor o igual que)
-    - lt  (less than | menor que)
-    - lte (less than or equal to | menor o igual que)
-    - in  (Equivalente al in de SQL)
-    - nin (not in)
-		
-		Colocaremos los OC dentro de los parámetros de salida.
-		// Ejemplo1: NO EJECUTA
-			.find({precio: {$gte: 10, $lte: 30}})
-		// Ejemplo2: NO EJECUTA
-			.find({precio: {$in: [10, 15, 25]}})
-			
-	//OPERADORES LÓGICOS: 
-	- or  -> Se aplica si no se ejecuta la primera función.
-    - and -> Agrega nuevos filtros específicos a la búsqueda.
-	
-		Colocaremos los OL debajo del parametro correspondiente. 
-		//EJEMPLO:
-			.find()
-			.and([{author: "Julito"},{publicado: true}])
-			
-	//EXPRESIONES REGULARES:
-    - /^__/    -> Que empiece con. Ejemplo: /^Jul/
-    - /__$/    -> Que termine con. Ejemplo: /ito$/ 
-    - /.*__.*/ -> Que contenga.    Ejemplo: /.*uli.*/

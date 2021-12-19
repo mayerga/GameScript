@@ -4,30 +4,6 @@
     padding-bottom: 40px;
 }
 
-/*CSS BARRA NAVEGADOR CON BOTÓN SALIR */
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: var(--verde1);
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li a:hover {  /* Change the link color to #111 (black) on hover */
-    background-color:var(--verde2);
-}
-
 /*SECCION QUE COMPRENDE TABLERO Y CHAT*/
 .container-principal{
     margin-bottom: 40px;

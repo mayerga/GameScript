@@ -53,5 +53,5 @@
         this.style.backgroundColor = "#0d6efd";
         let imgTransferida = e.dataTransfer.getData('text'); 
         this.innerHTML = imgTransferida; 
-        window.open("http://localhost:3000/3_playroom.html");
+        window.open("/playroom");
     }

@@ -2,11 +2,15 @@ const {Router}  = require ('express');
 const user      = require('../controllers/user-controller');
 const router    = Router();
 
-router.get("/lobby", user.renderLobby);
-router.get("/playroom", user.renderPlayroom);
+const { siSesionActiva } = require('../helpers/session');
 
-//LOGIN
-router.post("/user/signin", user.userLogin);
+//LOGIN & LOGOUT
+router.post("/user/login", user.userLogin);
+router.get("/user/logout", siSesionActiva, user.userLogout);
+
+//RUTAS PRINCIPALES
+router.get("/lobby", siSesionActiva, user.renderLobby);
+router.get("/playroom", siSesionActiva, user.renderPlayroom);
 
 //CRUD
 router.post('/user/register', user.userPost);

@@ -44,19 +44,18 @@ Frameworks
 ---------------------
 --- Agenda Julito ---
 ---------------------
-
-    - Boton de autoincremento en LOBBY.
-    - DOCS
-    - Implementar chat con WEB-SOCKETS
-    - La lógica del juego gestionada con web sockets.
-    - Pasar todo a Handdlerbars.
-    - Crear botón para crear nuevas salas
-    - Aplicar buble for en handlebars que nos permita crear nuevas salas
+    - NAVEGABILIDAD: HOME | LOBBY | PLAYROOM | CONTACT | SALIR
+        1. Qué si no está registrado, solo pueda ver: Home y Lobby.
+        2. Qué si está registrado pueda ver Lobby, Contact y Salir.
+        3. Qué si accede a una sala pueda ver el Playroom.
+        4. Qué en el playroom solo pueda ver el botón Salir. 
+    - Aplicar {bucle for} en handlebars que nos permita crear nuevas salas una debajo de otra.
 
 ---------------------
 ---- Agenda Kevin ---
 ---------------------
-
+    - Implementar chat con WEB-SOCKETS
+    - La lógica del juego gestionada con web sockets.
 
 ---------------------
 --- Agenda Sergio ---

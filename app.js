@@ -1,20 +1,25 @@
 //DEPENDENCIAS EXTERNAS
-const express = require("express");
-const path = require("path");
-const mongoose = require("mongoose");
-const session = require("express-session");
-const exphbs = require("express-handlebars").engine;
-const passport = require("passport");
+const express   = require('express'); 
+const path      = require('path');
+const mongoose  = require('mongoose');
+const session   = require('express-session');
+const Handlebars= require('handlebars')
+const exphbs    = require('express-handlebars').engine;
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+const flash     = require('connect-flash');
+const passport  = require('passport');
 
 //DEPENDENCIAS PROPIAS
-const index = require("./routes/index-routes");
-const users = require("./routes/user-ruotes");
+const index     = require('./routes/index-routes');
+const users     = require('./routes/user-ruotes');
+const notes     = require('./routes/notes-routes');
 //const salas     = require('./routes/sala-controller');
 const port = 3000;
 
 //INICIALIZACIÓN
 const app = express();
 require("./config/passport");
+
 
 //CONECCIÓN A LA BBDD
 mongoose
@@ -30,15 +35,13 @@ mongoose
 
 //CONFIGURACIONES:
 app.set("views", path.join(__dirname, "views"));
-app.engine(
-  ".hbs",
-  exphbs({
-    defaultLayout: "main",
-    layoutsDir: path.join(app.get("views"), "layouts"),
-    partialsDir: path.join(app.get("views"), "partials"),
-    extname: ".hbs",
-  })
-);
+app.engine(".hbs", exphbs({
+      defaultLayout: "main",
+      layoutsDir: path.join(app.get("views"), "layouts"),
+      partialsDir: path.join(app.get("views"), "partials"),
+      handlebars: allowInsecurePrototypeAccess(Handlebars),
+      extname: ".hbs",
+    }));
 app.set("view engine", ".hbs");
 
 //MIDDLEWARES
@@ -54,14 +57,25 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
+
+//VARIABLES GLOBALES
+app.use((req, res, next) => {
+    res.locals.success_msg  = req.flash("success_msg");
+    res.locals.error_msg    = req.flash("error_msg");
+    res.locals.error        = req.flash("error");
+    res.locals.user         = req.user || null;
+    next();
+});
 
 //RUTAS
 app.use(index);
 app.use(users);
+app.use(notes);
 //app.use(salas);
 
-//PUBLIC
-app.use(express.static(path.join(__dirname, "/public")));
+//PUBLIC (FICHEROS ESTÁTICOS)
+app.use(express.static(path.join(__dirname, '/public')));
 app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use("/public/js", express.static(__dirname + "/public/js"));
 app.use("/public/img", express.static(__dirname + "/public/img"));

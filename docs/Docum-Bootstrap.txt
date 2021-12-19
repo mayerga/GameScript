@@ -8,8 +8,8 @@
 ------------------
 --- ALINEACIÓN ---
 ------------------
+-> .mx-auto             -> Centra el contenido dentro de una caja
 -> .text-center         -> Alinear contenido dentro de columnas
-
 ---------------
 --- SPACING ---
 ---------------
