@@ -12,6 +12,7 @@ const passport  = require('passport');
 //DEPENDENCIAS PROPIAS
 const index     = require('./routes/index-routes');
 const users     = require('./routes/user-ruotes');
+const notes     = require('./routes/notes-routes');
 //const salas     = require('./routes/sala-controller');
 const port      = 3000;
 
@@ -61,6 +62,7 @@ app.use((req, res, next) => {
 //RUTAS
 app.use(index);
 app.use(users);
+app.use(notes);
 //app.use(salas);
 
 //PUBLIC (FICHEROS ESTÁTICOS)

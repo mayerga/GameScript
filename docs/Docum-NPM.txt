@@ -61,6 +61,7 @@ A continuación, colocamos una serie de códigos para resolver dichas funciones:
 
 MÉTODOS REQUEST:
 ----------------
+- req.body			->	Solicita lo que venga dentro del formulario.
 - req.params.x 		->	Devuelve un parametro definido por el programador (x)
 - req.flash			->	Envia una alerta que aparece en la cabecera del body y se puede cerrar.
 
