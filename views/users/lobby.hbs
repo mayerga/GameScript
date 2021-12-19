@@ -188,7 +188,7 @@
                 <div class="col-sm text-center" style="border-style: inset;">       
                         <h1 style="color: white">SCORE CON ENRAUTAMIENTO INTERNO + WEBSOCKETS</h1>
                     <p id="salas-incrementable" style="font-size: 100px">0</p>
-                    <button class="btn btn-primary mb-2" type="button" onclick="incrementButtonSalas()">CREAR NUEVA SALA</button>                                                                
+                    <button id ="send-score" class="btn btn-primary mb-2" type="button" onclick="incrementButtonSalas()">CREAR NUEVA SALA</button>                                                                
                 </div> <!-- /BOTÓN NUEVA SALA -->  
 
                 <script src="/public/js/clases/incrementScore.js"></script>
@@ -282,3 +282,8 @@
     <script src="/public/js/appis/slides.js"></script>
     <script src="/public/js/appis/dragDrop.js"></script>
     <script src="/public/js/appis/webStorage.js"></script>    
+
+    <!--WEBSOCKETS-->
+    <script src="/socket.io/socket.io.min.js"></script>
+    <script src="/public/js/appis/clientelobby.js"></script>
+    

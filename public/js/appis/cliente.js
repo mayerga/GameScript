@@ -1,4 +1,4 @@
-var socket = io.connect("http://localhost:3000", {
+var socket = io.connect("http://localhost:3000/", {
     "forceNew" : true
 });
 
@@ -19,7 +19,6 @@ btn.addEventListener("click", function () {
     message: message.value,
   });
 });
-
 
 socket.on("chat:message", function (data) {
     actions.innerHTML = "";
