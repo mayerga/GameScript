@@ -18,6 +18,12 @@ router.get('/user/all', user.userGetAll);
 router.put('/user/:id', user.userUpdate);
 router.delete('/user/:id', user.userDelete);
 
+//EXPERIMENTO 1
+router.get("/notes", siSesionActiva, user.renderNotes);
+
+
+
+
 module.exports = router;
 
 

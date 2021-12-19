@@ -16,6 +16,23 @@ const userValidateSchema = Joi.object({
 
 });
 
+// async function incrementScore(value) {
+
+//     await User.findOneAndUpdate({ "username" : "Julito "}, {
+//         $set: { score: value }})
+
+// };
+//EXPERIMENTO 1
+const renderNotes = async (req, res) => {
+    // const notes = await Note.find({ user: req.user.id })
+    //   .sort({ date: "desc" })
+    //   .lean();
+    // res.render("notes/all-notes", { notes });
+    res.render("users/all-notes");
+};
+
+
+
 // --------------------------------------------------- //
 // ---------------  RUTAS PRINCIPALES ---------------- //
 // --------------------------------------------------- //
@@ -163,6 +180,7 @@ desactivarUsuario = async(id) => {
 }
 
 module.exports = {
+    renderNotes,
     renderLobby,
     renderPlayroom,
     userLogin,
