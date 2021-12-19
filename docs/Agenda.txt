@@ -1,4 +1,43 @@
 TODO: 
+---------------------
+--- Agenda Julito ---
+---------------------
+    - Terminar la implemenación del API REST -> AJAX.
+    - Documentar nueva API REST + AJAX
+    - Aplicar {bucle for} en handlebars que nos permita crear nuevas salas una debajo de otra.
+
+---------------------
+---- Agenda Kevin ---
+---------------------
+    - COMPULSORI: Documentar el incremento de SCORE + WebSockets.
+    - OP1: Hacer barra de incremento (¿?)
+        -> 
+        -> 
+    - OP2: Aplicar web Sockets a tablero de Juego (¿?)
+        -> Rastrear el inicio aleatorio -> Comentarlo.
+        ->  
+
+---------------------
+--- Agenda Sergio ---
+---------------------
+    - COMPULSORI: Imagen final con los 4 métodos CRUD de la API REST (Postman).
+    - FRONT: (OPC: Trello)  
+        -> Cariño al proyecto. 
+
+---------------------
+---- Agenda Manu ----
+---------------------
+
+
+
+
+
+
+
+
+
+
+
 ----------------------------------------
 --- Listar los frameworks utilizados ---
 ----------------------------------------
@@ -39,29 +78,3 @@ Frameworks
     - Documentar un API REST    -> Incompleto.
     - AJAX                      -> Incompleto.
     - Mongoose (MongoDB)        -> TERMINADO.
-
-
----------------------
---- Agenda Julito ---
----------------------
-    - NAVEGABILIDAD: HOME | LOBBY | PLAYROOM | CONTACT | SALIR
-        1. Qué si no está registrado, solo pueda ver: Home y Lobby.
-        2. Qué si está registrado pueda ver Lobby, Contact y Salir.
-        3. Qué si accede a una sala pueda ver el Playroom.
-        4. Qué en el playroom solo pueda ver el botón Salir. 
-    - Aplicar {bucle for} en handlebars que nos permita crear nuevas salas una debajo de otra.
-
----------------------
----- Agenda Kevin ---
----------------------
-    - Implementar chat con WEB-SOCKETS
-    - La lógica del juego gestionada con web sockets.
-
----------------------
---- Agenda Sergio ---
----------------------
-
-
----------------------
----- Agenda Manu ----
----------------------

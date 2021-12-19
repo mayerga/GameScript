@@ -1,6 +1,6 @@
 const Note  = require("../models/note-model");
 
-const agregarNota = ( req, res ) => {
+const agregarNota = async( req, res ) => {
     const { title, description } = req.body;
     const errors = [];
 
@@ -11,15 +11,22 @@ const agregarNota = ( req, res ) => {
         errors.push({text: 'Por favor, agregue una descripción'});
     }
     if ( errors.length > 0 ){
-        res.render('users/lobby', { errors, title, description });
+        res.render('users/lobby', { errors });
     } else {
-        res.send("Ok");
+        const newNote = new Note({ title, description });
+        await newNote.save();
+        console.log("Se ha creado una nueva nota:");
+        console.log(newNote);
+        res.redirect('/notes/mostrarNotas');
     };
 
 };
 
-const mostrarNotas = (req, res) => {
-    res.render("users/all-notes");
+const mostrarNotas = async(req, res) => {
+    
+    const notes = await Note.find();
+    res.render("users/all-notes", { notes });
+
 };
 
 
