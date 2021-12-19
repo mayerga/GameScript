@@ -33,5 +33,3 @@ message.addEventListener("keypress", function () {
 socket.on("chat:typing", function (data) {
   actions.innerHTML = ("El usuario: " + data + " esta escribiendo un mensaje");;
 });
-
-/* creador de salas*/
