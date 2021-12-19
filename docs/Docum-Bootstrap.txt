@@ -15,3 +15,8 @@
 ---------------
 -> PADDING & MARGING    -> https://getbootstrap.com/docs/4.0/utilities/spacing/
 -> GAP                  -> https://getbootstrap.com/docs/5.0/utilities/spacing/#gap 
+
+
+FONT-AWESOME
+------------
+<script src="https://kit.fontawesome.com/cdac618339.js" crossorigin="anonymous"></script>

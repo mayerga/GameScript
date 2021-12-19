@@ -135,7 +135,7 @@ const userUpdate = (req, res) => {
 //- CRUD Update  
 actualizarUser = async(id, body) => {
 
-    return user = await User.findOneAndUpdate({ "_id" : id}, {
+    return await User.findOneAndUpdate({ "_id" : id}, {
         $set: {
             username: body.username,
             password: body.password

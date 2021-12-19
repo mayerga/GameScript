@@ -1,5 +1,9 @@
 const Note  = require("../models/note-model");
 
+// --------------------------------------------------- //
+// ---------------------  CREATE --------------------- //
+// --------------------------------------------------- //
+
 const agregarNota = async( req, res ) => {
     const { title, description } = req.body;
     const errors = [];
@@ -16,16 +20,55 @@ const agregarNota = async( req, res ) => {
         const newNote = new Note({ title, description });
         await newNote.save();
         console.log("Se ha creado una nueva nota:");
+        //TODO: SOLICITAR NOMBRE DEL USUARIO PARA IMPRIMIRLO POR CONSOLA.
         console.log(newNote);
-        res.redirect('/notes/mostrarNotas');
+        req.flash('succes_msg', 'Nota agregada exitosamente');
+        res.redirect('/lobby');
     };
 
 };
 
-const mostrarNotas = async(req, res) => {
+// --------------------------------------------------- //
+// ----------------------  READ ---------------------- //
+// --------------------------------------------------- //
+
+const mostrarNotas = async( req, res ) => {
     
-    const notes = await Note.find();
-    res.render("users/all-notes", { notes });
+    const notes = await Note.find().sort({date: "-1"});
+    res.render("notes/all-notes", { notes });
+
+};
+
+// --------------------------------------------------- //
+// ---------------------  UPDATE --------------------- //
+// --------------------------------------------------- //
+
+const formularioEditarNota = async( req, res) => {
+
+    const note = await Note.findById( req.params.id )
+    res.render( 'notes/edit-note', { note } );
+
+}
+
+const editarNota = async( req, res) => {
+
+    const { title, description } = req.body;
+    
+    notaCambiada = await Note.findByIdAndUpdate( req.params.id, { title, description });
+    req.flash("success_msg", "Nota actualizada, satisfactoriamente.");
+    res.redirect("/notes/mostrarNotas");
+
+};
+
+// --------------------------------------------------- //
+// ---------------------  DELETE --------------------- //
+// --------------------------------------------------- //
+
+const eliminarNota = async( req, res ) => {
+
+    await Note.findByIdAndDelete(req.params.id);
+    req.flash("success_msg", "Nota eliminada, satisfactoriamente.");
+    res.redirect('/notes/mostrarNotas');
 
 };
 
@@ -33,5 +76,8 @@ const mostrarNotas = async(req, res) => {
 module.exports = {
     agregarNota,
     mostrarNotas,
+    formularioEditarNota,
+    editarNota,
+    eliminarNota,
 };
 
