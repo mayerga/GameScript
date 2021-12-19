@@ -59,6 +59,8 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+//RECUERDA: Al momento que passport, está autenticando el usuario, lo está guardando como 
+//req.user
 app.use(flash());
 
 //VARIABLES GLOBALES

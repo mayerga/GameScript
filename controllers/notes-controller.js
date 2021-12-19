@@ -18,10 +18,9 @@ const agregarNota = async( req, res ) => {
         res.render('users/lobby', { errors });
     } else {
         const newNote = new Note({ title, description });
+        newNote.user = req.user.id;
         await newNote.save();
-        console.log("Se ha creado una nueva nota:");
-        //TODO: SOLICITAR NOMBRE DEL USUARIO PARA IMPRIMIRLO POR CONSOLA.
-        console.log(newNote);
+        console.log(`\n${req.user.username} ha agregado una nueva nota:\n${newNote}`);
         req.flash('succes_msg', 'Nota agregada exitosamente');
         res.redirect('/lobby');
     };
@@ -34,7 +33,7 @@ const agregarNota = async( req, res ) => {
 
 const mostrarNotas = async( req, res ) => {
     
-    const notes = await Note.find().sort({date: "-1"});
+    const notes = await Note.find({ user: req.user.id }).sort({date: "-1"});
     res.render("notes/all-notes", { notes });
 
 };
