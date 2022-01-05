@@ -106,6 +106,23 @@ const io = require("socket.io")(server);
 io.on("connection", function (socket) {
   console.log("Alguien se ha conectado con Sockets");
 
+  /*  lobby  */
+  socket.on("score:incrementacion", (data) => {
+    console.log(data);
+    socket.broadcast.emit("score:incrementacion", data);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
   /*chat playroom*/
   socket.on("chat:message", (data) => {
     console.log(data);

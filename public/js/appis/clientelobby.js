@@ -11,13 +11,11 @@ btn2.addEventListener("click", function () {
   socket.emit("score:incrementacion", {
     incrementa: incrementa.innerHTML,
   });
-  //console.log(incrementa);
+ 
 });
 socket.on("score:incrementacion", function (data) {
   console.log(data.incrementa);
   incrementa.innerHTML = (data.incrementa);
 });
 
-// socket.on("score:difusion", function (data) {
-//     incrementa.innerHTML = (data);
-//   });
+
