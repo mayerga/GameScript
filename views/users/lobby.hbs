@@ -7,7 +7,7 @@
     <div class="BodyCenterLobby">
 
         <div class="container mb-4 text-center">
-            <h1 style="text-transform: uppercase;">Bienvenido {{ user.username }}</h1>
+            <h1 class="titulo" style="text-transform: uppercase;">Bienvenido {{ user.username }}</h1>
         </div>
 
         <!-- CONTENEDOR FILA 1 -->
@@ -60,7 +60,7 @@
 
 <!-- ------------------------------- COLUMNA 2 ------------------------------- -->
             <div class="col">
-                <div class="row">
+                <div class="row pb-1">
                     <!-- TITULO -->
                     <div>
                         <strong class="titulo letraTitulos">Salas:</strong>
@@ -172,21 +172,24 @@
             </div> <!-- /CONTENEDOR SALAS -->
         </div> <!-- /CONTENEDOR FILA 1 -->
         
+    <!-- ----------------------------------------------------------------------------- -->
+    <hr class="solid">
+    <!-- ----------------------------------------------------------------------------- -->        
         
         <!-- SEGUNDA FILA -->  
         <div class="container-xxl">
-            <div class="row p-4 gap-5">
+            <div class="row pt-2 gap-5">
 
                 <!-- BOTÓN SCORE -->  
                 <div class="col-sm text-center" style="border-style: inset;">       
-                        <h1 class="text-uppercase" style="color: white"> SCORE CON ENRAUTAMIENTO INTERNO + AJAX + XHR </h1>
+                        <h3 class="text-uppercase" style="color: white">NIVEL-3.1: <span style="font-size: 20px">MODIFICACIÓN Y ALMACENADO EN BBDD DE UNA ACCIÓN EFECTUADA EN UN MISMO ELEMENTO: (API REST + AJAX + XHR)</span></h3>
                     <p id="score-incrementable" style="font-size: 100px">{{{user.score}}}</p>
                     <button class="btn btn-primary mb-2" type="button" onclick="incrementButtonScore()">AUMENTAR SCORE</button>                                                                
                 </div> <!-- /BOTÓN SCORE -->  
 
                 <!-- BOTÓN NUEVA SALA -->
                 <div class="col-sm text-center" style="border-style: inset;">       
-                        <h1 style="color: white">SCORE CON ENRAUTAMIENTO INTERNO + WEBSOCKETS</h1>
+                        <h3 style="color: white">NIVEL-3.2: <span style="font-size: 20px">MODIFICACIÓN Y ALMACENADO EN BBDD DE UNA ACCIÓN EFECTUADA EN UN MISMO ELEMENTO: (CON WEBSOCKETS)</span></h3>
                     <p id="salas-incrementable" style="font-size: 100px">0</p>
                     <button id ="send-score" class="btn btn-primary mb-2" type="button" onclick="incrementButtonSalas()">CREAR NUEVA SALA</button>                                                                
                 </div> <!-- /BOTÓN NUEVA SALA -->  
@@ -196,32 +199,36 @@
             </div>
         </div> <!-- /SEGUNDA FILA -->
 
+    <!-- ----------------------------------------------------------------------------- -->
+    <hr class="solid">
+    <!-- ----------------------------------------------------------------------------- -->
+
         <!-- TERCERA FILA --> 
         <div class="row">
             <div class="container-xxl">
                 <div class="col-md-4 mx-auto">
                     <div class="card text-center">
                         <div class="card-header">
-                            <h3>NOTAS CON ENRAUTAMIENTO INTERNO + AJAX</h3>
+                            <h3>NIVEL-2: <span style="font-size: 20px">CREAR ELEMENTOS CON ENRAUTAMIENTO INTERNO (API-REST + AJAX)</span></h3>
                         </div>
 
-                        <!-- NOTAS CON ENRAUTAMIENTO INTERNO -->
+                        <!-- NOTAS CON ENRAUTAMIENTO INTERNO + AJAX -->
                         <div class="card-body">
                             <form action="/notes/new-note" method="POST">
                                 <div class="form-group">
-                                    <input type="text" name="title" class="form-control" placeholder="Title" autofocus/>
+                                    <input type="text" name="title" class="form-control" placeholder="Title"/>
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="description" class="form-control" placeholder="Description"></textarea>
+                                    <textarea name="description" class="form-control mt-3" placeholder="Description"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-primary btn-block" type="submit">
-                                        Save
+                                    <button class="btn btn-primary btn-block mt-2" type="submit">
+                                        Agregar nueva nota
                                     </button>
                                 </div>
                             </form>
                             <a href="/notes">
-                                <button class="btn btn-primary btn-block" type="button">
+                                <button class="btn btn-primary btn-block mt-2" type="button">
                                     Ver todas las notas
                                 </button>
                             </a>
@@ -231,34 +238,36 @@
             </div> <!-- /SEGUNDA FILA -->
         </div> 
 
+    <!-- ----------------------------------------------------------------------------- -->
+    <hr class="solid">
+    <!-- ----------------------------------------------------------------------------- -->
 
-
-  <!-- CUARTA FILA --> 
-        <div class="row pt-5">
+    <!-- CUARTA FILA --> 
+        <div class="row pt-1">
             <div class="container-xxl">
                 <div class="col-md-4 mx-auto">
                     <div class="card text-center">
                         <div class="card-header">
-                            <h3>NOTAS CON ENRAUTAMIENTO EXTERNO</h3>
+                            <h3>NIVEL-1: <span style="font-size: 20px">CREAR ELEMENTOS CON ENRAUTAMIENTO EXTERNO (API-REST)</span></h3>
                         </div>
 
-                        <!-- NOTAS CON ENRAUTAMIENTO INTERNO -->
+                        <!-- NOTAS CON ENRAUTAMIENTO EXTERNO -->
                         <div class="card-body">
                             <form action="/notes/agregarNota" method="POST">
                                 <div class="form-group">
-                                    <input type="text" name="title" class="form-control" placeholder="Title" autofocus/>
+                                    <input type="text" name="title" class="form-control" placeholder="Title"/>
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="description" class="form-control" placeholder="Description"></textarea>
+                                    <textarea name="description" class="form-control mt-3" placeholder="Description"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-primary btn-block" type="submit">
-                                        Save
+                                    <button class="btn btn-primary btn-block mt-2" type="submit">
+                                        Agregar nueva nota
                                     </button>
                                 </div>
                             </form>
                             <a href="/notes/mostrarNotas">
-                                <button class="btn btn-primary btn-block" type="button">
+                                <button class="btn btn-primary btn-block mt-2" type="button">
                                     Ver todas las notas
                                 </button>
                             </a>
@@ -267,9 +276,6 @@
                 </div>
             </div> <!-- /SEGUNDA FILA -->
         </div> 
-
-
-
 
 
     </div>

@@ -3,6 +3,7 @@ const express   = require('express');
 const path      = require('path');
 const mongoose  = require('mongoose');
 const session   = require('express-session');
+const methodOverride = require('method-override');
 const Handlebars= require('handlebars')
 const exphbs    = require('express-handlebars').engine;
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
@@ -47,6 +48,7 @@ app.set("view engine", ".hbs");
 //MIDDLEWARES
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
 app.use(
   session({
     secret: "mysecretapp",
@@ -57,6 +59,8 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+//RECUERDA: Al momento que passport, está autenticando el usuario, lo está guardando como 
+//req.user
 app.use(flash());
 
 //VARIABLES GLOBALES

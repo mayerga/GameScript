@@ -59,7 +59,7 @@ const userPost = (req, res) => {
 
     //VALIDACIÓN
     const { error, value } =  userValidateSchema.validate({ 
-        username      : body.username,
+        username    : body.username,
         password    : body.password
     });
 
@@ -88,7 +88,7 @@ crearUsuario = async(body) => {
 
     let user = new User({
         username    : body.username,
-        password    : body.password
+        password    : body.password,
     });
     
     return await user.save();
@@ -135,7 +135,7 @@ const userUpdate = (req, res) => {
 //- CRUD Update  
 actualizarUser = async(id, body) => {
 
-    return user = await User.findOneAndUpdate({ "_id" : id}, {
+    return await User.findOneAndUpdate({ "_id" : id}, {
         $set: {
             username: body.username,
             password: body.password

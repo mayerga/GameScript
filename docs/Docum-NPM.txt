@@ -70,7 +70,7 @@ MÉTODOS RESPONSE:
 - res.status(404) 	->	Devuelve un status http, en este ejemplo estamos devolviendo el status NOT FOUND.
 - res.send()	  	->	Envia una respuesta del tipo indicado dentro del parámetro.
 - res.json()		-> 	Envia una respuesta de tipo JSON.
-- res.redirect()	->	
+- res.redirect()	->	Redirige la vista a otra ruta señalada por el programador.
 
 
 ===========================================================
